@@ -6,7 +6,7 @@ const cors = require('cors');
 process.env.JWT_SECRET = process.env.JWT_SECRET || process.env.JWT_SECRET_KEY || 'jwt-secret-key-change-in-production';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 2000;
 
 app.use(cors());
 app.use(express.json());
