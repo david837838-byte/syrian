@@ -1346,38 +1346,42 @@ def insert_default_data(conn):
         SET min_deposit = 5, min_withdraw = 5, updated_at = CURRENT_TIMESTAMP
         WHERE code = 'USDT'
     ''')
+
+    # الشبكات - ربط ديناميكي برمز العملة لضمان السلامة المرجعية للمفاتيح الأجنبية
+    curr_map = {row[1].upper(): row[0] for row in cursor.execute("SELECT id, UPPER(code) FROM currencies").fetchall()}
     
-    # الشبكات
     networks_data = [
-        (1, 'TRC20', 'TRC20', 0.0, 1.0, 1.0),  # USDT TRC20
-        (1, 'ERC20', 'ERC20', 0.0, 5.0, 5.0),   # USDT ERC20
-        (1, 'BEP20', 'BEP20', 0.0, 0.5, 0.5),   # USDT BEP20
-        (2, 'Bitcoin', 'BTC', 0.0, 0.0001, 0.0002),  # BTC
-        (3, 'Ethereum', 'ETH', 0.0, 0.001, 0.002),   # ETH
-        (4, 'BSC', 'BSC', 0.0, 0.01, 0.0001),        # BNB
-        (5, 'Tron', 'TRON', 0.0, 0.1, 0.2)           # TRX
+        ('USDT', 'TRC20', 'TRC20', 0.0, 1.0, 1.0),   # USDT TRC20
+        ('USDT', 'ERC20', 'ERC20', 0.0, 5.0, 5.0),   # USDT ERC20
+        ('USDT', 'BEP20', 'BEP20', 0.0, 0.5, 0.5),   # USDT BEP20
+        ('BTC', 'Bitcoin', 'BTC', 0.0, 0.0001, 0.0002),  # BTC
+        ('ETH', 'Ethereum', 'ETH', 0.0, 0.001, 0.002),   # ETH
+        ('BNB', 'BSC', 'BSC', 0.0, 0.01, 0.0001),        # BNB
+        ('TRX', 'Tron', 'TRX', 0.0, 0.1, 0.2)           # TRX
     ]
     
-    for currency_id, name, code, fee_percentage, fee_fixed, min_amount in networks_data:
-        cursor.execute('''
-            INSERT INTO networks (currency_id, name, code, fee_percentage, fee_fixed, min_amount)
-            SELECT ?, ?, ?, ?, ?, ?
-            WHERE NOT EXISTS (
-                SELECT 1
-                FROM networks
-                WHERE currency_id = ?
-                  AND UPPER(COALESCE(code, '')) = UPPER(?)
-            )
-        ''', (
-            currency_id,
-            name,
-            code,
-            fee_percentage,
-            fee_fixed,
-            min_amount,
-            currency_id,
-            code
-        ))
+    for curr_code, name, code, fee_percentage, fee_fixed, min_amount in networks_data:
+        currency_id = curr_map.get(curr_code.upper())
+        if currency_id:
+            cursor.execute('''
+                INSERT INTO networks (currency_id, name, code, fee_percentage, fee_fixed, min_amount)
+                SELECT ?, ?, ?, ?, ?, ?
+                WHERE NOT EXISTS (
+                    SELECT 1
+                    FROM networks
+                    WHERE currency_id = ?
+                      AND UPPER(COALESCE(code, '')) = UPPER(?)
+                )
+            ''', (
+                currency_id,
+                name,
+                code,
+                fee_percentage,
+                fee_fixed,
+                min_amount,
+                currency_id,
+                code
+            ))
 
     governorates = [
         ('حلب', 'aleppo', 'قلعة حلب والأسواق التاريخية', 'مدينة التجارة والصناعة والتراث العمراني.', 'https://source.unsplash.com/1600x900/?Aleppo,Syria,castle', 'SY', 'سوريا'),
