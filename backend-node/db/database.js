@@ -8,4 +8,7 @@ const db = new Database(dbPath);
 // Enable foreign keys
 db.pragma('foreign_keys = ON');
 
+const { initializeDatabaseIfNeeded } = require('./initDb');
+initializeDatabaseIfNeeded(db);
+
 module.exports = db;
