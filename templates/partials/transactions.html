@@ -1,0 +1,195 @@
+<section id="transactions" class="section-hidden">
+    <div class="container">
+        <div class="transactions-hero js-reveal">
+            <div class="section-title transactions-title">
+                <span class="section-kicker">
+                    <i class="fas fa-right-left"></i>
+                    المتابعة المالية والطلبات
+                </span>
+                <h2>سجل المعاملات</h2>
+                <p>تابع جميع عمليات الإيداع والسحب والاستثمار من شاشة قراءة أوضح وأسهل.</p>
+            </div>
+            <div class="transactions-hero-panel">
+                <div class="transactions-hero-panel__badge">
+                    <i class="fas fa-clock-rotate-left"></i>
+                    <span>قراءة أسرع</span>
+                </div>
+                <h3>هنا ترى الطلب الجديد من جهة، وسجل العمليات السابقة من جهة أخرى ضمن نفس المسار.</h3>
+                <div class="hero-panel-summary">
+                    <div class="hero-panel-summary__item">
+                        <span>الحجم الظاهر</span>
+                        <strong id="transactionsHeroVolume">0.00 USDT</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>نسبة المعلّق</span>
+                        <strong id="transactionsHeroPendingRatio">0%</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>النشاط الأعلى</span>
+                        <strong id="transactionsHeroTopType">-</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>آخر حركة</span>
+                        <strong id="transactionsHeroLastMove">-</strong>
+                    </div>
+                </div>
+                <div id="transactionsHeroHighlights" class="hero-panel-ranking"></div>
+            </div>
+        </div>
+
+        <div class="transactions-summary-strip js-reveal">
+            <div class="transactions-summary-card">
+                <span>إجمالي الحركات</span>
+                <strong id="transactionsSummaryTotal">0</strong>
+                <small>كل الإيداعات والسحوبات والاستثمارات</small>
+            </div>
+            <div class="transactions-summary-card">
+                <span>المعلقة</span>
+                <strong id="transactionsSummaryPending">0</strong>
+                <small>تحتاج متابعة أو موافقة</small>
+            </div>
+            <div class="transactions-summary-card">
+                <span>المكتملة</span>
+                <strong id="transactionsSummaryCompleted">0</strong>
+                <small>تمت بنجاح داخل المنصة</small>
+            </div>
+            <div class="transactions-summary-card">
+                <span>آخر حركة</span>
+                <strong id="transactionsSummaryLastType">-</strong>
+                <small>آخر نوع عملية في السجل</small>
+            </div>
+        </div>
+
+        <div class="transactions-grid">
+            <div class="transaction-form-container">
+                <div class="transaction-card-header">
+                    <div>
+                        <span class="transaction-card-kicker">إجراء جديد</span>
+                        <h3><i class="fas fa-exchange-alt"></i> طلب جديد</h3>
+                    </div>
+                    <p>أرسل طلب إيداع أو سحب مع البيانات المطلوبة من نفس الواجهة.</p>
+                </div>
+
+                <div class="transaction-request-badges">
+                    <span class="transaction-request-badge"><i class="fas fa-shield-check"></i> كود بريد قبل السحب</span>
+                    <span class="transaction-request-badge"><i class="fas fa-arrow-trend-up"></i> إيداع مباشر داخل المنصة</span>
+                    <span class="transaction-request-badge"><i class="fas fa-eye"></i> متابعة الحالة من نفس السجل</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionType">نوع العملية</label>
+                    <select id="transactionType" class="form-control">
+                        <option value="deposit">إيداع رصيد</option>
+                        <option value="withdraw">سحب رصيد</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionCurrency">العملة</label>
+                    <select id="transactionCurrency" class="form-control">
+                        <option value="USDT">USDT</option>
+                        <option value="BTC">Bitcoin</option>
+                        <option value="ETH">Ethereum</option>
+                        <option value="BNB">BNB</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionAmount">المبلغ</label>
+                    <input type="number" id="transactionAmount" class="form-control" placeholder="أدخل المبلغ" min="50" step="0.00000001">
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionNetwork">شبكة التحويل</label>
+                    <select id="transactionNetwork" class="form-control">
+                        <option value="TRC20">TRC20 (Tron)</option>
+                        <option value="ERC20">ERC20 (Ethereum)</option>
+                        <option value="BEP20">BEP20 (BSC)</option>
+                        <option value="BTC">Bitcoin Network</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionAddress">عنوان المحفظة</label>
+                    <input type="text" id="transactionAddress" class="form-control" placeholder="أدخل عنوان المحفظة">
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionHash">رقم المعاملة (Hash) <small style="color: var(--gray);">(للإيداع فقط)</small></label>
+                    <input type="text" id="transactionHash" class="form-control" placeholder="أدخل رقم المعاملة">
+                </div>
+
+                <div class="form-group">
+                    <label for="transactionNote">ملاحظات (اختياري)</label>
+                    <textarea id="transactionNote" class="form-control" rows="3" placeholder="أي ملاحظات إضافية..."></textarea>
+                </div>
+
+                <button id="submitTransaction" class="btn btn-success" style="width: 100%; padding: 16px;">
+                    <i class="fas fa-paper-plane"></i> تقديم الطلب
+                </button>
+            </div>
+
+            <div class="transaction-history">
+                <div class="transaction-card-header">
+                    <div>
+                        <span class="transaction-card-kicker">السجل</span>
+                        <h3><i class="fas fa-history"></i> آخر المعاملات</h3>
+                    </div>
+                    <p>عرض مرتب لحالات الإيداع والسحب والاستثمار مع المبلغ والتاريخ والحالة.</p>
+                </div>
+
+                <div class="transaction-history-topline">
+                    <div class="transaction-history-topline__item">
+                        <span>سرعة القراءة</span>
+                        <strong>الأحدث أولاً</strong>
+                    </div>
+                    <div class="transaction-history-topline__item">
+                        <span>تفاصيل أوضح</span>
+                        <strong>نوع، حالة، ملاحظة</strong>
+                    </div>
+                </div>
+
+                <div class="transactions-filter-strip">
+                    <div class="form-group">
+                        <label for="transactionsTypeFilter">نوع الحركة</label>
+                        <select id="transactionsTypeFilter" class="form-control">
+                            <option value="all">الكل</option>
+                            <option value="deposit">إيداع</option>
+                            <option value="withdraw">سحب</option>
+                            <option value="investment">استثمار</option>
+                            <option value="investment_cancel">إلغاء استثمار</option>
+                            <option value="referral_bonus">مكافأة إحالة</option>
+                            <option value="internal_transfer_sent">تحويل داخلي مرسل</option>
+                            <option value="internal_transfer_received">تحويل داخلي وارد</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionsStatusFilter">الحالة</label>
+                        <select id="transactionsStatusFilter" class="form-control">
+                            <option value="all">كل الحالات</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="pending">قيد الانتظار</option>
+                            <option value="rejected">مرفوض</option>
+                        </select>
+                    </div>
+                    <div class="form-group transactions-filter-strip__search">
+                        <label for="transactionsKeywordFilter">بحث سريع</label>
+                        <input type="text" id="transactionsKeywordFilter" class="form-control" placeholder="ابحث بالملاحظة أو TX Hash أو العنوان">
+                    </div>
+                </div>
+
+                <div class="transactions-filter-meta">
+                    <span id="transactionsFilterCount">0 حركة ظاهرة</span>
+                    <small>اضغط على "تفاصيل" لأي حركة لمعرفة العنوان، الرسوم، الملاحظات، ووقت التنفيذ.</small>
+                </div>
+
+                <div id="transactionsList">
+                    <div class="transactions-empty-state">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h4>جاري تحميل المعاملات...</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

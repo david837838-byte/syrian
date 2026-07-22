@@ -1,0 +1,3557 @@
+/* 
+   Modern Theme - Glassmorphism & Dark Mode Overhaul
+   This file overrides main.css variables and introduces a modern aesthetic.
+*/
+
+:root {
+    /* Investment Palette - Navy, Emerald, Gold */
+    --font-ui: 'IBM Plex Sans Arabic', 'Cairo', 'Segoe UI', sans-serif;
+    --font-display: 'Cairo', 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+    --primary: #12836a;
+    --primary-strong: #0b6653;
+    --primary-light: #2bb693;
+    --primary-soft: rgba(18, 131, 106, 0.14);
+
+    --secondary: #c9a64b;
+    --secondary-strong: #a8842a;
+
+    /* Surface & Text */
+    --surface: #162233;
+    --surface-muted: #0b1420;
+    --surface-strong: #233247;
+    --dashboard-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(241, 245, 249, 0.93));
+    --dashboard-card-border: rgba(148, 163, 184, 0.16);
+    --dashboard-card-border-accent: rgba(18, 131, 106, 0.12);
+    --dashboard-card-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --dashboard-panel-bg: linear-gradient(180deg, rgba(8, 18, 30, 0.96), rgba(15, 31, 47, 0.92));
+    --dashboard-hero-panel-bg: linear-gradient(180deg, rgba(6, 18, 24, 0.98), rgba(10, 48, 39, 0.92) 56%, rgba(11, 67, 57, 0.9));
+    --dashboard-hero-panel-shadow: 0 26px 54px rgba(3, 10, 18, 0.24);
+    --dashboard-hero-border: rgba(201, 166, 75, 0.12);
+    --control-bg-dark: rgba(15, 23, 42, 0.6);
+    --control-bg-light: rgba(15, 23, 42, 0.07);
+    --control-border: rgba(255, 255, 255, 0.2);
+    --control-border-soft: rgba(148, 163, 184, 0.22);
+    --control-focus-ring: 0 0 0 4px rgba(18, 131, 106, 0.15);
+    --control-label-dark: #1e293b;
+    --control-text-dark: #102235;
+    --type-title-dark: #153047;
+    --type-copy-muted: #b8cfe5;
+    --type-kicker-strong: #0b6653;
+    --type-kicker-soft: #5fecc0;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 28px;
+    --radius-pill: 999px;
+
+    --text: #f8fbff;
+    --text-soft: #d4e4f7;
+    
+    --border: rgba(255, 255, 255, 0.15);
+    
+    /* Glassmorphism Variables */
+    --glass-bg: rgba(30, 41, 59, 0.65);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --glass-blur: blur(16px);
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Base Body Styling */
+html {
+    font-size: 16px;
+}
+
+body {
+    background: #0b1420;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(18, 131, 106, 0.11), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(201, 166, 75, 0.09), transparent 22%),
+        linear-gradient(180deg, rgba(8, 14, 24, 0.98), rgba(12, 22, 35, 0.98));
+    color: var(--text);
+    line-height: 1.75;
+    font-family: var(--font-ui) !important;
+}
+
+body::before, body::after {
+    opacity: 0.05 !important;
+}
+
+/* Typography Enhancements */
+body,
+body * {
+    font-family: 'IBM Plex Sans Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
+.fa,
+.fa-solid,
+.fas,
+.fa-regular,
+.far,
+.fa-light,
+.fal,
+.fa-thin,
+.fat,
+i[class^="fa-"],
+i[class*=" fa-"],
+span[class^="fa-"],
+span[class*=" fa-"] {
+    font-family: "Font Awesome 6 Free" !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.fa-brands,
+.fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cairo', 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif !important;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.18;
+}
+
+p,
+li,
+label,
+input,
+select,
+textarea,
+button,
+.btn,
+.nav-link,
+.sidebar-nav-list a.nav-link,
+.header-wallet-summary,
+.user-summary,
+.section-title p,
+.investments-decision-board__item,
+.investments-market-card,
+.hero-panel-summary__item,
+.hero-panel-footer__metric {
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+strong,
+b,
+th,
+.section-kicker,
+.sidebar-heading,
+.btn,
+.nav-link.active,
+.sidebar-nav-list a.nav-link.active {
+    font-weight: 700 !important;
+}
+
+input,
+select,
+textarea,
+button {
+    font-size: 1rem;
+}
+
+.stat-value,
+.account-summary-card strong,
+.transactions-summary-card strong,
+.analytics-summary-card strong,
+.hero-panel-footer__metric strong,
+.hero-panel-summary__item strong,
+.investments-market-card strong {
+    font-variant-numeric: tabular-nums;
+}
+
+.section-title h2,
+.hero-copy h1,
+#heroTitle,
+.investments-title h2,
+.wallet-title h2,
+.transactions-title h2,
+.analytics-title h2,
+.admin-subhero-title h2 {
+    text-wrap: balance;
+}
+
+/* Glassmorphic Floating Header */
+.site-header {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    border: var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    margin: 16px auto !important;
+    max-width: 1240px;
+    border-radius: 24px;
+    top: 16px !important;
+}
+
+.logo-copy strong {
+    color: var(--text) !important;
+}
+
+.main-nav a {
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    color: var(--text) !important;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background: var(--primary-soft) !important;
+    color: var(--type-kicker-soft) !important;
+    border: 1px solid rgba(18, 131, 106, 0.26) !important;
+    box-shadow: 0 0 18px rgba(18, 131, 106, 0.14) !important;
+}
+
+/* Glassmorphic Modals */
+.modal-content {
+    background: var(--surface) !important;
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-radius: 24px !important;
+}
+
+.modal-header {
+    border-bottom: var(--glass-border) !important;
+}
+
+.modal-footer {
+    border-top: var(--glass-border) !important;
+}
+
+/* Interactive Buttons (Sophisticated Redesign) */
+.btn {
+    border-radius: var(--radius-md) !important;
+    padding: 14px var(--space-7) !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 26px rgba(18, 131, 106, 0.32) !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 14px 34px rgba(18, 131, 106, 0.48) !important;
+    background: linear-gradient(135deg, var(--primary-strong), var(--primary)) !important;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary), var(--secondary-strong)) !important;
+    color: #142235 !important;
+    box-shadow: 0 8px 24px rgba(201, 166, 75, 0.3) !important;
+    border: none !important;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 12px 32px rgba(201, 166, 75, 0.46) !important;
+    background: linear-gradient(135deg, var(--secondary-strong), #d0b25f) !important;
+}
+
+.btn-outline {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid var(--primary-light) !important;
+    color: var(--primary-light) !important;
+}
+
+.btn-outline:hover {
+    background: rgba(18, 131, 106, 0.12) !important;
+    color: var(--primary-light) !important;
+    box-shadow: 0 0 20px rgba(18, 131, 106, 0.2) !important;
+}
+
+/* Inputs & Form Elements */
+.form-control, .form-select, input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select {
+    background: var(--control-bg-dark) !important;
+    border: 1px solid var(--control-border) !important;
+    color: var(--text) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.form-control::placeholder, .form-select::placeholder, input::placeholder, textarea::placeholder, select::placeholder {
+    color: #b9cfe3 !important;
+    opacity: 1 !important;
+}
+
+.form-group label, label {
+    color: var(--text) !important;
+    font-weight: 600 !important;
+}
+
+.form-control:focus, .form-select:focus, input:focus, textarea:focus, select:focus {
+    border-color: var(--primary) !important;
+    box-shadow: var(--control-focus-ring) !important;
+    outline: none !important;
+}
+
+.form-control:disabled, .form-select:disabled, input:disabled, textarea:disabled, select:disabled {
+    opacity: 0.68 !important;
+    background: rgba(15, 23, 42, 0.5) !important;
+}
+
+.form-control[readonly], input[readonly], textarea[readonly], select[readonly] {
+    background: rgba(15, 23, 42, 0.55) !important;
+    color: #dce8f5 !important;
+}
+
+/* Investment Cards Upgrade */
+.investment-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border) !important;
+    border-radius: 24px !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease !important;
+    overflow: hidden;
+}
+
+.investment-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+    border-color: rgba(18, 131, 106, 0.38) !important;
+}
+
+.investment-header, .investment-stats, .investment-minimum {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.stat-value {
+    color: var(--text) !important;
+}
+
+.stat-label {
+    color: var(--text-soft) !important;
+}
+
+/* Analytics & Dashboard Cards */
+.analytics-metric-card, .wallet-card, .admin-stat-card, .admin-chart-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border) !important;
+    border-radius: 24px !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.analytics-metric-card:hover, .admin-stat-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Hero Section Refinement */
+.hero-shell {
+    background: linear-gradient(125deg, rgba(15, 23, 42, 0.95) 10%, rgba(30, 41, 59, 0.85) 100%) !important;
+    border: var(--glass-border) !important;
+}
+
+.hero-quick-proof__item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: var(--glass-border) !important;
+}
+
+/* Breadcrumbs */
+.site-breadcrumbs {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-bottom: var(--glass-border) !important;
+    color: var(--text-soft) !important;
+}
+
+/* Section Kickers & Titles */
+.section-kicker {
+    background: linear-gradient(135deg, rgba(18, 131, 106, 0.18), rgba(201, 166, 75, 0.14)) !important;
+    border: 1px solid rgba(95, 236, 192, 0.28) !important;
+    color: var(--type-kicker-soft) !important;
+}
+
+.section-title h2 {
+    color: var(--text) !important;
+}
+
+.section-title p,
+.site-breadcrumbs,
+.site-breadcrumbs__label,
+.stat-label,
+.helper-text,
+.analytics-description,
+.card-description,
+.form-text,
+.form-group small {
+    color: var(--text-soft) !important;
+}
+
+/* Tables */
+.table, .table th, .table td {
+    color: var(--text) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.table thead th {
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Badges */
+.badge-success {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: var(--primary-light) !important;
+    border: 1px solid rgba(16, 185, 129, 0.2) !important;
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+/* Page Transitions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:not(.section-hidden) {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* =========================================================
+   Dashboard Sidebar Layout (Radical Change)
+========================================================= */
+
+/* Hide sidebar by default */
+.dashboard-sidebar {
+    display: none;
+}
+
+body.is-dashboard .dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    backdrop-filter: var(--glass-blur);
+    z-index: 1100;
+}
+
+/* Hide member-nav from Top Header in Dashboard Mode */
+body.is-dashboard .site-header .member-nav,
+body.is-dashboard .site-header .admin-only {
+    display: none !important;
+}
+
+/* Sidebar Components */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 20px;
+    border-bottom: var(--glass-border);
+    margin-bottom: 20px;
+}
+
+.sidebar-close-btn {
+    display: none;
+}
+
+.sidebar-user-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    margin: 0 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--glass-border);
+    border-radius: 16px;
+}
+
+.sidebar-avatar i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-user-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.sidebar-user-role {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-top: 4px;
+    width: fit-content;
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px;
+}
+
+.sidebar-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar-heading {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    margin: 16px 8px 8px;
+    letter-spacing: 0.05em;
+}
+
+.sidebar-nav-list a.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav-list a.nav-link i {
+    font-size: 1.2rem;
+    color: var(--text-soft);
+    width: 24px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav-list a.nav-link:hover,
+.sidebar-nav-list a.nav-link.active {
+    background: var(--primary-soft);
+    color: var(--primary-light);
+}
+
+.sidebar-nav-list a.nav-link:hover i,
+.sidebar-nav-list a.nav-link.active i {
+    color: var(--primary-light);
+}
+
+.sidebar-footer {
+    padding: 20px 24px 0;
+    border-top: var(--glass-border);
+    margin-top: 20px;
+}
+
+/* =========================================================
+   Dashboard Refinement Patch
+   Keeps the dark identity without crowding the layout.
+========================================================= */
+
+body.is-dashboard {
+    --dashboard-sidebar-width: 300px;
+    --dashboard-shell-gap: 20px;
+    --dashboard-shell-offset: calc(var(--dashboard-sidebar-width) + (var(--dashboard-shell-gap) * 2));
+}
+
+body.is-dashboard .site-header {
+    top: 18px !important;
+    max-width: none;
+    margin: 18px var(--dashboard-shell-gap) 0 var(--dashboard-shell-gap) !important;
+    border-radius: var(--radius-2xl);
+}
+
+body.is-dashboard .site-header .container,
+body.is-dashboard .site-breadcrumbs .container {
+    max-width: none;
+    padding-inline: 20px;
+}
+
+body.is-dashboard .header-content {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-4);
+    min-height: 76px;
+    padding: var(--space-3) 0;
+}
+
+body.is-dashboard .header-brand {
+    display: flex;
+    align-items: center;
+}
+
+body.is-dashboard .header-brand-note,
+body.is-dashboard .main-nav {
+    display: none !important;
+}
+
+body.is-dashboard .auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    max-width: min(100%, 520px);
+}
+
+body.is-dashboard .user-summary,
+body.is-dashboard .header-wallet-summary,
+body.is-dashboard .header-actions,
+body.is-dashboard .dashboard-sidebar-toggle {
+    min-width: 0;
+}
+
+body.is-dashboard .dashboard-sidebar-toggle {
+    order: 1;
+}
+
+body.is-dashboard .user-summary {
+    order: 2;
+}
+
+body.is-dashboard .header-wallet-summary {
+    order: 3;
+    max-width: 220px;
+}
+
+body.is-dashboard .header-actions {
+    order: 4;
+}
+
+body.is-dashboard .site-breadcrumbs {
+    margin: 0 var(--dashboard-shell-gap) 0 var(--dashboard-shell-gap);
+    border-radius: var(--space-5);
+    overflow: hidden;
+}
+
+body.is-dashboard .site-maintenance-banner {
+    top: 118px;
+    margin: 0 var(--dashboard-shell-gap) 0 var(--dashboard-shell-gap);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+body.is-dashboard .dashboard-sidebar {
+    top: 18px;
+    right: var(--dashboard-shell-gap);
+    bottom: 18px;
+    width: var(--dashboard-sidebar-width);
+    padding: 18px 0;
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -16px 0 46px rgba(2, 6, 23, 0.36);
+}
+
+body.is-dashboard .main-content-area {
+    margin-right: 0;
+    min-height: 100vh;
+    padding: 10px var(--dashboard-shell-gap) 96px;
+}
+
+body.is-dashboard section {
+    margin: 18px 0 !important;
+    padding: clamp(22px, 2vw, 32px) !important;
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 42px rgba(2, 6, 23, 0.28);
+}
+
+body.is-dashboard .investments-decision-board__item span,
+body.is-dashboard .investments-subtab__content small,
+body.is-dashboard .investment-toolbar-note {
+    color: #b8c5d8;
+}
+
+body.is-dashboard .investments-title,
+body.is-dashboard .investment-toolbar,
+body.is-dashboard .investments-market-card,
+body.is-dashboard .investments-subtab,
+body.is-dashboard .investments-insight-card,
+body.is-dashboard .investments-proof-card,
+body.is-dashboard .governorate-hero,
+body.is-dashboard .transactions-summary-card,
+body.is-dashboard .transaction-form-container,
+body.is-dashboard .transaction-history,
+body.is-dashboard .account-card,
+body.is-dashboard .wallet-card,
+body.is-dashboard .wallet-insight-card,
+body.is-dashboard .wallet-command-strip__item,
+body.is-dashboard .admin-overview-card,
+body.is-dashboard .admin-chart-card,
+body.is-dashboard .admin-report-card,
+body.is-dashboard .messages-sidebar-card,
+body.is-dashboard .messages-main-card,
+body.is-dashboard .analytics-chart-card,
+body.is-dashboard .analytics-summary-card {
+    background: var(--dashboard-card-bg) !important;
+    border: 1px solid var(--dashboard-card-border) !important;
+    box-shadow: var(--dashboard-card-shadow) !important;
+}
+
+body.is-dashboard .investments-hero {
+    gap: 18px;
+    align-items: stretch;
+}
+
+body.is-dashboard .investments-title,
+body.is-dashboard .wallet-title,
+body.is-dashboard .transactions-title,
+body.is-dashboard .analytics-title,
+body.is-dashboard .account-title,
+body.is-dashboard .messages-title {
+    padding: 30px;
+    color: var(--type-title-dark) !important;
+}
+
+body.is-dashboard .investments-hero-panel,
+body.is-dashboard .wallet-hero-panel,
+body.is-dashboard .admin-subhero-panel,
+body.is-dashboard .transactions-hero-panel,
+body.is-dashboard .analytics-hero-panel {
+    background: var(--dashboard-hero-panel-bg) !important;
+    box-shadow: var(--dashboard-hero-panel-shadow) !important;
+}
+
+body.is-dashboard .investments-subtabs {
+    gap: 14px;
+}
+
+body.is-dashboard .section-title h2,
+body.is-dashboard .section-title h3,
+body.is-dashboard .section-title strong,
+body.is-dashboard .wallet-title h2,
+body.is-dashboard .transactions-title h2,
+body.is-dashboard .analytics-title h2,
+body.is-dashboard .account-title h2,
+body.is-dashboard .messages-title h2,
+body.is-dashboard .investments-title h2 {
+    color: var(--type-title-dark) !important;
+}
+
+body.is-dashboard .section-title p,
+body.is-dashboard .section-title .section-kicker,
+body.is-dashboard .wallet-title p,
+body.is-dashboard .transactions-title p,
+body.is-dashboard .analytics-title p,
+body.is-dashboard .account-title p,
+body.is-dashboard .messages-title p,
+body.is-dashboard .investments-title p {
+    color: var(--type-copy-muted) !important;
+}
+
+body.is-dashboard .section-kicker,
+body.is-dashboard .section-title .section-kicker,
+body.is-dashboard .wallet-title .section-kicker,
+body.is-dashboard .transactions-title .section-kicker,
+body.is-dashboard .analytics-title .section-kicker,
+body.is-dashboard .account-title .section-kicker,
+body.is-dashboard .messages-title .section-kicker,
+body.is-dashboard .investments-title .section-kicker {
+    color: var(--type-kicker-strong) !important;
+}
+
+body.is-dashboard .investments-subtab {
+    min-height: 96px;
+    background: rgba(15, 23, 42, 0.06) !important;
+    border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+body.is-dashboard .investments-subtab.active {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(255, 255, 255, 0.96)) !important;
+    border-color: rgba(16, 185, 129, 0.26) !important;
+    box-shadow: 0 16px 34px rgba(16, 185, 129, 0.12) !important;
+}
+
+body.is-dashboard .investment-toolbar {
+    gap: 20px;
+    padding: 28px;
+}
+
+body.is-dashboard .investment-toolbar-main {
+    gap: 16px;
+}
+
+body.is-dashboard .investment-toolbar-field label {
+    color: var(--control-label-dark);
+    font-weight: 800;
+}
+
+body.is-dashboard .investment-toolbar .form-control {
+    background: var(--control-bg-light) !important;
+    border-color: var(--control-border-soft) !important;
+    color: var(--control-text-dark) !important;
+}
+
+body.is-dashboard .sidebar-header,
+body.is-dashboard .sidebar-footer {
+    border-color: rgba(255, 255, 255, 0.07);
+}
+
+body.is-dashboard .sidebar-user-card {
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+}
+
+body.is-dashboard .sidebar-heading {
+    color: rgba(186, 230, 214, 0.62);
+    letter-spacing: 0.08em;
+}
+
+body.is-dashboard .sidebar-nav-list a.nav-link {
+    min-height: 50px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    color: #ecfdf5;
+}
+
+body.is-dashboard .sidebar-nav-list a.nav-link i {
+    color: rgba(203, 213, 225, 0.78);
+}
+
+body.is-dashboard .sidebar-nav-list a.nav-link:hover,
+body.is-dashboard .sidebar-nav-list a.nav-link.active {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(15, 23, 42, 0.12));
+    border-color: rgba(52, 211, 153, 0.22);
+    color: #d1fae5;
+}
+
+body.is-dashboard .sidebar-nav-list a.nav-link:hover i,
+body.is-dashboard .sidebar-nav-list a.nav-link.active i {
+    color: #6ee7b7;
+}
+
+body.is-dashboard .smart-advisor-launcher {
+    left: auto;
+    right: calc(var(--dashboard-shell-offset) + 8px);
+    bottom: 26px;
+}
+
+body.is-dashboard .dashboard-sidebar-toggle {
+    display: inline-flex !important;
+    min-width: 154px;
+    padding-inline: 18px !important;
+}
+
+body.is-dashboard .dashboard-sidebar-toggle i {
+    transition: transform 0.26s ease;
+}
+
+body.is-dashboard.sidebar-open .dashboard-sidebar-toggle i,
+body.is-dashboard .dashboard-sidebar-toggle.is-open i {
+    transform: rotate(180deg);
+}
+
+/* =========================================================
+   Investment Brand Color Refresh
+========================================================= */
+
+.site-header,
+.dashboard-sidebar,
+.hero-shell,
+.investments-hero-panel,
+.wallet-hero-panel,
+.transactions-hero-panel,
+.analytics-hero-panel,
+.admin-subhero-panel {
+    background-image:
+        radial-gradient(circle at top right, rgba(201, 166, 75, 0.12), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(18, 131, 106, 0.16), transparent 28%) !important;
+}
+
+.site-header {
+    border-color: rgba(201, 166, 75, 0.12) !important;
+}
+
+.logo-mark,
+.investments-subtab__icon,
+.wallet-hero-panel__badge,
+.investments-hero-panel__badge,
+.transactions-hero-panel__badge,
+.analytics-hero-panel__badge,
+.admin-subhero-panel .section-kicker,
+.sidebar-avatar {
+    box-shadow: 0 10px 28px rgba(201, 166, 75, 0.14);
+}
+
+.btn-light,
+.btn-outline,
+.user-summary,
+.header-wallet-summary,
+.notifications-toggle,
+.sidebar-user-card,
+.investments-market-card,
+.investments-proof-card,
+.investments-insight-card,
+.investment-toolbar,
+.investment-card,
+.property-card,
+.wallet-card,
+.wallet-insight-card,
+.wallet-command-strip__item,
+.account-card,
+.transactions-summary-card,
+.transaction-form-container,
+.transaction-history,
+.analytics-summary-card,
+.analytics-chart-card,
+.messages-sidebar-card,
+.messages-main-card,
+.admin-overview-card,
+.admin-chart-card,
+.admin-report-card {
+    border-color: var(--dashboard-card-border-accent) !important;
+}
+
+.hero-panel-ranking__item.is-top,
+.investments-subtab.active,
+.badge-success,
+.status-badge.status-completed,
+.status-badge.status-active {
+    background: linear-gradient(135deg, rgba(18, 131, 106, 0.16), rgba(201, 166, 75, 0.12)) !important;
+    border-color: rgba(18, 131, 106, 0.22) !important;
+}
+
+.hero-shell,
+.investments-hero-panel,
+.wallet-hero-panel,
+.transactions-hero-panel,
+.analytics-hero-panel,
+.admin-subhero-panel {
+    border-color: var(--dashboard-hero-border) !important;
+}
+
+body.is-dashboard section {
+    background: var(--dashboard-panel-bg) !important;
+}
+
+body.is-dashboard .dashboard-sidebar {
+    background:
+        radial-gradient(circle at top, rgba(201, 166, 75, 0.12), transparent 22%),
+        linear-gradient(180deg, rgba(9, 18, 31, 0.98), rgba(16, 35, 54, 0.94) 54%, rgba(10, 26, 42, 0.98)) !important;
+}
+
+/* =========================================================
+   Stage Two - Animated Dashboard + Full Width Workspace
+========================================================= */
+
+body.is-dashboard {
+    --dashboard-sidebar-width: 320px;
+    --dashboard-shell-gap: 20px;
+    --dashboard-shell-offset: calc(var(--dashboard-sidebar-width) + (var(--dashboard-shell-gap) * 2));
+}
+
+body.is-dashboard .site-header,
+body.is-dashboard .site-breadcrumbs,
+body.is-dashboard .site-maintenance-banner,
+body.is-dashboard .main-content-area,
+body.is-dashboard .dashboard-sidebar {
+    transition:
+        margin 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        margin-right 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+body.is-dashboard .main-content-area .container {
+    max-width: none;
+    padding-inline: 10px;
+}
+
+body.is-dashboard .dashboard-sidebar {
+    right: var(--dashboard-shell-gap);
+    transform: translateX(calc(100% + 34px));
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.is-dashboard.sidebar-open .dashboard-sidebar {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.is-dashboard.sidebar-open .site-header {
+    margin-right: var(--dashboard-shell-offset) !important;
+}
+
+body.is-dashboard.sidebar-open .site-breadcrumbs,
+body.is-dashboard.sidebar-open .site-maintenance-banner {
+    margin-right: var(--dashboard-shell-offset) !important;
+}
+
+body.is-dashboard.sidebar-open .main-content-area {
+    margin-right: var(--dashboard-shell-offset);
+}
+
+body.is-dashboard .sidebar-close-btn {
+    display: inline-flex;
+}
+
+body.is-dashboard .sidebar-nav-list a.nav-link {
+    justify-content: flex-start;
+    font-weight: 700;
+}
+
+body.is-dashboard .sidebar-user-name,
+body.is-dashboard .logo-copy strong,
+body.is-dashboard .section-title h2,
+body.is-dashboard .investments-title h2,
+body.is-dashboard .wallet-title h2,
+body.is-dashboard .transactions-title h2,
+body.is-dashboard .analytics-title h2,
+body.is-dashboard .admin-subhero-title h2 {
+    letter-spacing: 0;
+}
+
+body.is-dashboard .investments-shell,
+body.is-dashboard .transactions-grid,
+body.is-dashboard .analytics-tabs,
+body.is-dashboard .messages-layout,
+body.is-dashboard .admin-dashboard {
+    width: 100%;
+}
+
+@media (max-width: 1180px) {
+    body.is-dashboard .site-header,
+    body.is-dashboard .site-breadcrumbs,
+    body.is-dashboard .site-maintenance-banner {
+        margin-right: var(--dashboard-shell-gap) !important;
+        margin-left: var(--dashboard-shell-gap) !important;
+    }
+
+    body.is-dashboard .main-content-area,
+    body.is-dashboard.sidebar-open .main-content-area {
+        margin-right: 0;
+    }
+
+    body.is-dashboard .main-content-area .container {
+        padding-inline: 2px;
+    }
+
+    body.is-dashboard .dashboard-sidebar {
+        width: min(86vw, 320px);
+        right: var(--dashboard-shell-gap);
+        transform: translateX(calc(100% + 24px));
+    }
+
+    body.is-dashboard.sidebar-open .dashboard-sidebar {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 760px) {
+    body.is-dashboard .auth-buttons {
+        gap: 10px;
+    }
+
+    body.is-dashboard .dashboard-sidebar-toggle {
+        min-width: 132px;
+        padding-inline: 14px !important;
+        font-size: 0.95rem !important;
+    }
+
+    body.is-dashboard .dashboard-sidebar {
+        top: 14px;
+        bottom: 14px;
+        right: 14px;
+        width: min(90vw, 320px);
+        border-radius: 24px;
+    }
+}
+
+/* =========================================================
+   Contrast Fix
+========================================================= */
+
+:root {
+    --contrast-dark: #153047;
+    --contrast-mid: #496175;
+    --contrast-soft: #70869a;
+    --contrast-on-dark: #f8fbff;
+    --contrast-on-dark-soft: #c7d4e3;
+}
+
+.btn-light,
+.btn-ghost,
+.notifications-toggle {
+    color: var(--type-title-dark) !important;
+}
+
+.btn-light i,
+.btn-ghost i,
+.notifications-toggle i,
+.dashboard-sidebar-toggle i,
+.user-summary i,
+.header-wallet-summary i {
+    color: var(--type-kicker-strong) !important;
+}
+
+.section-title p,
+.features-main-card__header p,
+.features-side-panel p,
+.features-proof-card p,
+.features-signal-card p,
+.feature-video-block__header p,
+.home-feature-card p,
+.home-testimonial-card__quote,
+.home-faq-item p,
+.trust-center p,
+.trust-center__band-header p,
+.investments-decision-board__item small,
+.investments-market-card small,
+.investments-insight-card__lead,
+.wallet-card p,
+.wallet-insight-card small,
+.account-card-header p,
+.transaction-history-topline__item span,
+.transaction-history-topline__item strong,
+.messages-sidebar-card p,
+.messages-main-card p,
+.analytics-chart-card p,
+.admin-overview-card p {
+    color: var(--type-copy-muted) !important;
+}
+
+.features-proof-card,
+.features-main-card,
+.features-side-panel,
+.features-signal-card,
+.feature-video-block,
+.home-feature-card,
+.home-testimonial-card,
+.home-faq-item,
+.trust-center__grid > *,
+.trust-center__pillars > *,
+.trust-center__commitments > *,
+.investments-title,
+.investments-decision-board__item,
+.investments-market-card,
+.investments-insight-card,
+.investment-toolbar,
+.investment-card,
+.property-card,
+.wallet-card,
+.wallet-insight-card,
+.wallet-command-strip__item,
+.account-card,
+.transactions-summary-card,
+.transaction-form-container,
+.transaction-history,
+.analytics-summary-card,
+.analytics-chart-card,
+.messages-sidebar-card,
+.messages-main-card,
+.admin-overview-card,
+.admin-chart-card,
+.admin-report-card,
+.header-wallet-summary,
+.user-summary,
+.dashboard-sidebar-toggle {
+    color: var(--type-title-dark) !important;
+}
+
+.features-proof-card strong,
+.features-main-card h3,
+.features-side-panel h3,
+.features-signal-card strong,
+.feature-video-block__header h3,
+.home-feature-card strong,
+.home-testimonial-card__person strong,
+.home-faq-item strong,
+.trust-center h3,
+.trust-center strong,
+.investments-title h2,
+.investments-decision-board__item strong,
+.investments-market-card strong,
+.investments-insight-card__header h3,
+.investment-card h3,
+.property-card h3,
+.wallet-card h3,
+.account-card h3,
+.transactions-title h2,
+.transaction-form-container h3,
+.transaction-history h3,
+.analytics-title h2,
+.analytics-chart-card h3,
+.admin-subhero-title h2,
+.admin-overview-card__label,
+.admin-chart-card h3,
+.messages-main-card h3,
+.messages-sidebar-card h3 {
+    color: var(--type-title-dark) !important;
+}
+
+.features-proof-card .section-kicker,
+.features-main-card .section-kicker,
+.features-side-panel__badge,
+.features-main-card__kicker,
+.trust-center .section-kicker,
+.investments-title .section-kicker,
+.wallet-title .section-kicker,
+.transactions-title .section-kicker,
+.analytics-title .section-kicker,
+.admin-subhero-title .section-kicker {
+    color: var(--type-kicker-strong) !important;
+}
+
+.hero-shell,
+.investments-hero-panel,
+.wallet-hero-panel,
+.transactions-hero-panel,
+.analytics-hero-panel,
+.admin-subhero-panel,
+.dashboard-sidebar {
+    color: var(--contrast-on-dark) !important;
+}
+
+.hero-shell p,
+.investments-hero-panel p,
+.wallet-hero-panel p,
+.transactions-hero-panel p,
+.analytics-hero-panel p,
+.admin-subhero-panel p,
+.dashboard-sidebar .sidebar-heading,
+.dashboard-sidebar .sidebar-user-role,
+.dashboard-sidebar .sidebar-user-info span:last-child {
+    color: var(--contrast-on-dark-soft) !important;
+}
+
+.main-nav a,
+.sidebar-nav-list a.nav-link,
+.investments-subtab,
+.hero-panel-ranking__item,
+.transaction-request-badge,
+.messages-tool-btn {
+    color: var(--type-title-dark) !important;
+}
+
+.main-nav a.active,
+.main-nav a:hover,
+.sidebar-nav-list a.nav-link.active,
+.sidebar-nav-list a.nav-link:hover {
+    color: var(--type-kicker-strong) !important;
+}
+
+/* =========================================================
+   Dashboard Sidebar + Section Contrast Hotfix
+========================================================= */
+
+body.is-dashboard section {
+    color: inherit !important;
+}
+
+body.is-dashboard .dashboard-sidebar .sidebar-user-name,
+body.is-dashboard .dashboard-sidebar .sidebar-heading,
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link,
+body.is-dashboard .dashboard-sidebar .sidebar-footer,
+body.is-dashboard .dashboard-sidebar .sidebar-footer .btn,
+body.is-dashboard .dashboard-sidebar .sidebar-header .logo-copy strong,
+body.is-dashboard .dashboard-sidebar .sidebar-header .logo-copy span {
+    color: #f8fbff !important;
+}
+
+body.is-dashboard .dashboard-sidebar .sidebar-user-role,
+body.is-dashboard .dashboard-sidebar .sidebar-user-info span:last-child,
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link i,
+body.is-dashboard .dashboard-sidebar .sidebar-footer small {
+    color: #cfe0ee !important;
+}
+
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link:hover,
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link.active {
+    color: #ffffff !important;
+}
+
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link:hover i,
+body.is-dashboard .dashboard-sidebar .sidebar-nav-list a.nav-link.active i {
+    color: #7ef0ba !important;
+}
+
+/* =========================================================
+   Public Landing Refresh - Home / Features / Trust
+========================================================= */
+
+:root {
+    --public-surface: linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(245, 248, 243, 0.95));
+    --public-surface-soft: linear-gradient(180deg, rgba(248, 251, 247, 0.96), rgba(240, 246, 241, 0.92));
+    --public-panel-dark: linear-gradient(155deg, rgba(8, 22, 31, 0.98), rgba(13, 45, 53, 0.94) 58%, rgba(12, 90, 67, 0.88));
+    --public-panel-deep: linear-gradient(160deg, rgba(8, 20, 18, 0.96), rgba(12, 55, 43, 0.92));
+    --public-card-border: rgba(25, 78, 66, 0.12);
+    --public-card-shadow: 0 22px 48px rgba(8, 20, 32, 0.08);
+    --public-text: #17324a;
+    --public-text-soft: #5c7285;
+    --public-title: #10324a;
+    --public-accent: #0f7b63;
+    --public-accent-soft: rgba(15, 123, 99, 0.1);
+    --public-gold: #b68a2f;
+}
+
+#home,
+#features,
+#trust {
+    font-family: 'IBM Plex Sans Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
+}
+
+#home .section-kicker,
+#features .section-kicker,
+#trust .section-kicker,
+#features .features-main-card__kicker,
+#trust .features-main-card__kicker {
+    background: linear-gradient(135deg, rgba(15, 123, 99, 0.14), rgba(182, 138, 47, 0.12)) !important;
+    border: 1px solid rgba(15, 123, 99, 0.16) !important;
+    color: var(--public-accent) !important;
+    box-shadow: none !important;
+}
+
+#home .section-kicker i,
+#features .section-kicker i,
+#trust .section-kicker i,
+#home .hero-trust-chip i,
+#home .hero-panel-badge i,
+#features .features-side-panel__badge i,
+#trust .trust-center__pillar-head i,
+#trust .trust-center__card-head i {
+    color: var(--public-accent) !important;
+}
+
+#home .hero-shell {
+    position: relative;
+    overflow: hidden;
+    padding: 42px 40px !important;
+    border-radius: 34px !important;
+    border: 1px solid rgba(198, 173, 112, 0.12) !important;
+    background:
+        linear-gradient(180deg, rgba(7, 17, 28, 0.52), rgba(7, 17, 28, 0.56)),
+        url("/static/images/hero-city-investment.png"),
+        radial-gradient(circle at top left, rgba(182, 138, 47, 0.12), transparent 24%),
+        radial-gradient(circle at 82% 78%, rgba(42, 163, 123, 0.15), transparent 26%),
+        linear-gradient(135deg, rgba(10, 20, 32, 0.98), rgba(17, 35, 49, 0.96) 46%, rgba(11, 78, 60, 0.92)) !important;
+    background-size: cover, cover, auto, auto, auto !important;
+    background-position: center, center, center, center, center !important;
+    box-shadow: 0 30px 70px rgba(4, 14, 24, 0.24) !important;
+}
+
+#home .hero-copy h1,
+#features .section-title h2,
+#trust .section-title h2,
+#features .features-main-card__header h3,
+#features .features-section-guides__header h3,
+#features .features-signals__header h3,
+#features .features-operational-band__header h3,
+#trust .trust-center__band-header h3,
+#home .investor-band-copy h3,
+#home .home-live-head h3,
+#home .home-feature-showcase__header h3,
+#home .home-governorate-map__copy h3,
+#home .home-testimonials__header h3,
+#home .home-faq__header h3 {
+    font-family: 'Cairo', 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif !important;
+}
+
+#home .hero-copy h1 {
+    color: #f7fbff !important;
+    font-size: clamp(2.8rem, 5.8vw, 5.1rem) !important;
+    line-height: 1.02 !important;
+    max-width: 10.5ch;
+    margin-bottom: 18px;
+}
+
+#home .hero-copy > p,
+#features .section-title p,
+#trust .section-title p {
+    color: rgba(230, 239, 247, 0.86) !important;
+    font-size: 1.03rem;
+    line-height: 1.95;
+    max-width: 62ch;
+}
+
+#home .hero-live-pill {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #eff8ff !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#home .hero-quick-proof__item,
+#home .hero-trust-chip,
+#home .hero-mini-chart-card,
+#home .hero-highlights-wrap,
+#home .hero-panel-ranking__item,
+#home .hero-panel-footer__metric {
+    background: rgba(11, 22, 36, 0.88) !important; /* Dark solid glassmorphic background */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+#home .hero-quick-proof__item strong,
+#home .hero-trust-chip span,
+#home .hero-highlights-label span,
+#home .hero-mini-chart-card__top strong,
+#home .hero-panel h3,
+#home .hero-panel-footer__metric strong {
+    color: #f7fbff !important;
+}
+
+#home .hero-quick-proof__item span,
+#home .hero-mini-chart-card__top span,
+#home .hero-highlights-label,
+#home .hero-panel-intro,
+#home .hero-panel-footer__metric span,
+#home .hero-panel-ranking__head span,
+#home .hero-panel-ranking__meta span {
+    color: rgba(220, 233, 242, 0.76) !important;
+}
+
+#home .hero-panel {
+    border-radius: 30px !important;
+    background:
+        radial-gradient(circle at top, rgba(182, 138, 47, 0.14), transparent 20%),
+        var(--public-panel-deep) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 24px 54px rgba(3, 10, 18, 0.24) !important;
+}
+
+#home .hero-panel-badge {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #f4fbff !important;
+}
+
+#home .investor-band,
+#home .home-live-panel,
+#home .home-journey,
+#home .home-feature-showcase,
+#home .home-governorate-map,
+#home .home-testimonials,
+#home .home-faq,
+#features .features-title,
+#features .features-signals,
+#features .features-main-card,
+#features .features-operational-band,
+#trust .trust-center,
+#trust .trust-center__band {
+    background: var(--public-surface) !important;
+    border: 1px solid var(--public-card-border) !important;
+    box-shadow: var(--public-card-shadow) !important;
+}
+
+#home .home-feature-showcase,
+#home .home-testimonials {
+    display: none !important;
+}
+
+#features .features-title,
+#trust .trust-center {
+    position: relative;
+    overflow: hidden;
+}
+
+#features .features-title::before,
+#trust .trust-center::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(182, 138, 47, 0.12), rgba(182, 138, 47, 0));
+    pointer-events: none;
+}
+
+#home .investor-band-copy p,
+#home .live-stat-card span,
+#home .home-live-progress-card__head span,
+#home .home-live-footer__item span,
+#home .journey-card p,
+#home .home-feature-card p,
+#home .home-governorate-map__copy p,
+#home .home-governorate-map__stat span,
+#home .home-testimonial-card__quote,
+#home .home-testimonial-card__person span,
+#home .home-faq-toggle span,
+#home .home-faq-details p,
+#features .features-proof-card p,
+#features .features-main-card__header p,
+#features .features-signals__header p,
+#features .features-signal-card p,
+#features .features-operational-band__header p,
+#features .features-operational-step p,
+#features .features-section-guides__header p,
+#features .features-section-guide-btn span,
+#features .features-side-panel p,
+#features .features-side-stat span,
+#features .features-side-panel__footer-item span,
+#trust .section-title p,
+#trust .trust-center__stat span,
+#trust .trust-center__stat small,
+#trust .trust-center__card p,
+#trust .trust-center__band-header p,
+#trust .trust-center__pillar p,
+#trust .trust-center__pillar-points,
+#trust .trust-center__commitment p,
+#trust .trust-center__commitment span {
+    color: var(--public-text-soft) !important;
+}
+
+#home .investor-band-copy h3,
+#home .live-stat-card strong,
+#home .home-live-progress-card__head strong,
+#home .home-live-footer__item strong,
+#home .journey-card h4,
+#home .home-feature-card strong,
+#home .home-governorate-map__stat strong,
+#home .home-testimonial-card__person strong,
+#home .home-faq-toggle strong,
+#features .features-proof-card strong,
+#features .features-signal-card strong,
+#features .features-operational-step h4,
+#features .features-section-guide-btn strong,
+#features .features-section-guide-details__top strong,
+#features .features-side-panel h3,
+#features .features-side-panel__footer-item strong,
+#trust .trust-center__stat strong,
+#trust .trust-center__card h3,
+#trust .trust-center__pillar-head h4,
+#trust .trust-center__commitment strong {
+    color: var(--public-title) !important;
+}
+
+#home .home-market-strip__item {
+    min-height: 168px;
+    background:
+        radial-gradient(circle at top right, rgba(182, 138, 47, 0.22), rgba(182, 138, 47, 0) 30%),
+        linear-gradient(160deg, rgba(9, 24, 33, 0.98), rgba(11, 63, 52, 0.92) 58%, rgba(18, 116, 92, 0.88)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 22px 42px rgba(7, 18, 11, 0.18) !important;
+}
+
+#home .home-market-strip__item span,
+#home .home-market-strip__item small {
+    color: rgba(233, 243, 247, 0.76) !important;
+}
+
+#home .home-market-strip__item strong {
+    color: #ffffff !important;
+}
+
+#home .live-stat-card,
+#home .home-live-progress-card,
+#home .journey-card,
+#home .home-feature-card,
+#home .home-governorate-map__stat,
+#home .home-governorate-button,
+#home .home-testimonial-card,
+#home .home-faq-item,
+#features .features-proof-card,
+#features .features-signal-card,
+#features .features-operational-step,
+#features .feature-accordion-item,
+#features .features-section-guide-btn,
+#features .features-section-guides__details,
+#trust .trust-center__stat,
+#trust .trust-center__card,
+#trust .trust-center__pillar,
+#trust .trust-center__commitment {
+    background: var(--public-surface-soft) !important;
+    border: 1px solid rgba(21, 74, 63, 0.12) !important;
+    box-shadow: 0 16px 30px rgba(7, 18, 24, 0.05) !important;
+}
+
+#home .home-feature-card__icon,
+#features .features-proof-card__icon,
+#features .features-section-guide-btn__icon,
+#trust .trust-center__pillar-head i {
+    background: linear-gradient(135deg, rgba(15, 123, 99, 0.12), rgba(182, 138, 47, 0.12)) !important;
+    color: var(--public-accent) !important;
+}
+
+#features .features-hero {
+    align-items: stretch;
+    gap: 24px;
+}
+
+#features .features-hero-panel,
+#features .features-side-panel {
+    background:
+        radial-gradient(circle at top right, rgba(182, 138, 47, 0.16), transparent 24%),
+        var(--public-panel-dark) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 26px 54px rgba(4, 14, 24, 0.2) !important;
+    color: #f5fbff !important;
+}
+
+#features .features-hero-panel__eyebrow,
+#features .features-side-panel__badge,
+#features .features-side-stat,
+#features .features-side-panel__footer-item,
+#features .features-hero-metric {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+#features .features-hero-panel h3,
+#features .features-side-panel h3,
+#features .features-side-stat strong,
+#features .features-hero-metric strong,
+#features .features-side-panel__footer-item strong {
+    color: #f6fbff !important;
+}
+
+#features .features-hero-panel__eyebrow,
+#features .features-side-panel__badge,
+#features .features-hero-metric span,
+#features .features-side-stat span,
+#features .features-side-panel__footer-item span,
+#features .features-side-panel p {
+    color: rgba(226, 238, 245, 0.8) !important;
+}
+
+#features .features-section-guide-btn.active,
+#features .feature-toggle.active {
+    background: linear-gradient(180deg, rgba(15, 123, 99, 0.1), rgba(255, 255, 255, 0.96)) !important;
+    border-color: rgba(15, 123, 99, 0.2) !important;
+}
+
+#trust .trust-center {
+    padding: 32px !important;
+    border-radius: 32px !important;
+}
+
+#trust .trust-center__stats,
+#trust .trust-center__grid,
+#trust .trust-center__pillars,
+#trust .trust-center__commitments {
+    gap: 18px;
+}
+
+#trust .trust-center__card-head i {
+    color: var(--public-accent) !important;
+}
+
+@media (max-width: 1100px) {
+    #home .hero-shell,
+    #features .features-hero,
+    #features .features-showcase,
+    #home .home-governorate-map {
+        grid-template-columns: 1fr !important;
+    }
+
+    #home .hero-copy h1 {
+        max-width: none;
+    }
+
+    #home .hero-panel,
+    #features .features-side-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    #home .hero-shell,
+    #home .investor-band,
+    #home .home-live-panel,
+    #home .home-journey,
+    #home .home-feature-showcase,
+    #home .home-governorate-map,
+    #home .home-testimonials,
+    #home .home-faq,
+    #features .features-title,
+    #features .features-hero-panel,
+    #features .features-main-card,
+    #features .features-side-panel,
+    #features .features-signals,
+    #features .features-operational-band,
+    #trust .trust-center,
+    #trust .trust-center__band {
+        padding: 22px !important;
+        border-radius: 24px !important;
+    }
+
+    #home .hero-copy h1 {
+        font-size: clamp(2.3rem, 11vw, 3.25rem) !important;
+        line-height: 1.08 !important;
+    }
+
+    #home .home-market-strip,
+    #trust .trust-center__stats,
+    #trust .trust-center__grid,
+    #trust .trust-center__pillars,
+    #trust .trust-center__commitments {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================================
+   Public Contrast Reset - Header / Auth / Light Surfaces
+========================================================= */
+
+:root {
+    --public-header-bg: linear-gradient(180deg, rgba(255, 251, 245, 0.96), rgba(243, 248, 244, 0.94));
+    --public-nav-bg: rgba(255, 255, 255, 0.84);
+    --public-nav-border: rgba(22, 50, 74, 0.12);
+    --public-nav-text: #18324a;
+    --public-nav-muted: #607587;
+    --public-nav-active-bg: linear-gradient(135deg, rgba(15, 123, 99, 0.14), rgba(182, 138, 47, 0.12));
+    --public-field-bg: #ffffff;
+    --public-field-border: rgba(23, 50, 74, 0.14);
+    --public-field-text: #11283d;
+    --public-field-placeholder: #7a8fa1;
+    --public-label: #18324a;
+    --public-subtle: #61768a;
+    --public-real-estate-image: url("/static/images/construction-bg.png");
+    --dashboard-real-estate-image: url("/static/images/construction-bg.png");
+}
+
+body:not(.is-dashboard) .site-header {
+    background: var(--public-header-bg) !important;
+    border: 1px solid rgba(182, 138, 47, 0.14) !important;
+    box-shadow: 0 22px 52px rgba(11, 24, 36, 0.12) !important;
+}
+
+@keyframes publicBgSlideshow {
+    0%, 22% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.76)),
+            url("/static/images/construction-bg.png");
+    }
+    25%, 47% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.76)),
+            url("/static/images/construction-bg-2.png");
+    }
+    50%, 72% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.76)),
+            url("/static/images/construction-bg-3.png");
+    }
+    75%, 97% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.76)),
+            url("/static/images/construction-bg-4.png");
+    }
+    100% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.76)),
+            url("/static/images/construction-bg.png");
+    }
+}
+
+body:not(.is-dashboard) {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    animation: publicBgSlideshow 36s infinite ease-in-out !important;
+}
+
+body:not(.is-dashboard)::before,
+body:not(.is-dashboard)::after {
+    display: none !important;
+}
+
+body:not(.is-dashboard) .logo-copy strong,
+body:not(.is-dashboard) .logo-copy span,
+body:not(.is-dashboard) .header-brand-note,
+body:not(.is-dashboard) .header-brand-note span {
+    color: var(--public-nav-text) !important;
+}
+
+body:not(.is-dashboard) .header-brand-note {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 247, 242, 0.9)) !important;
+    border: 1px solid rgba(15, 123, 99, 0.12) !important;
+}
+
+body:not(.is-dashboard) .header-brand-note i {
+    color: var(--public-accent) !important;
+}
+
+body:not(.is-dashboard) .nav-list {
+    background: var(--public-nav-bg) !important;
+    border: 1px solid var(--public-nav-border) !important;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+body:not(.is-dashboard) .main-nav a {
+    color: var(--public-nav-text) !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+}
+
+body:not(.is-dashboard) .main-nav a span {
+    color: inherit !important;
+}
+
+body:not(.is-dashboard) .main-nav a i {
+    color: var(--public-nav-muted) !important;
+}
+
+body:not(.is-dashboard) .main-nav a:hover,
+body:not(.is-dashboard) .main-nav a.active {
+    background: var(--public-nav-active-bg) !important;
+    color: var(--public-accent) !important;
+    border-color: rgba(15, 123, 99, 0.18) !important;
+    box-shadow: 0 10px 22px rgba(15, 123, 99, 0.1) !important;
+}
+
+body:not(.is-dashboard) .main-nav a:hover i,
+body:not(.is-dashboard) .main-nav a.active i {
+    color: var(--public-accent) !important;
+}
+
+body:not(.is-dashboard) .btn-ghost,
+body:not(.is-dashboard) .btn-light,
+body:not(.is-dashboard) .notifications-toggle,
+body:not(.is-dashboard) .user-summary,
+body:not(.is-dashboard) .header-wallet-summary,
+body:not(.is-dashboard) .dashboard-sidebar-toggle {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(243, 247, 244, 0.94)) !important;
+    border: 1px solid rgba(23, 50, 74, 0.12) !important;
+    color: var(--public-nav-text) !important;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08) !important;
+}
+
+body:not(.is-dashboard) .btn-ghost i,
+body:not(.is-dashboard) .btn-light i,
+body:not(.is-dashboard) .notifications-toggle i,
+body:not(.is-dashboard) .user-summary i,
+body:not(.is-dashboard) .header-wallet-summary i,
+body:not(.is-dashboard) .dashboard-sidebar-toggle i {
+    color: var(--public-accent) !important;
+}
+
+body:not(.is-dashboard) .header-wallet-summary__label,
+body:not(.is-dashboard) .header-wallet-summary small,
+body:not(.is-dashboard) .user-summary__name {
+    color: var(--public-subtle) !important;
+}
+
+#auth {
+    font-family: "IBM Plex Sans Arabic", "Cairo", sans-serif;
+}
+
+#auth .section-title,
+#auth .auth-container,
+#auth .auth-title {
+    color: var(--public-text) !important;
+}
+
+#auth .section-kicker,
+#auth .auth-form-kicker {
+    background: linear-gradient(135deg, rgba(15, 123, 99, 0.12), rgba(182, 138, 47, 0.1)) !important;
+    border: 1px solid rgba(15, 123, 99, 0.14) !important;
+    color: var(--public-accent) !important;
+}
+
+#auth .section-kicker i,
+#auth .auth-form-kicker i,
+#auth .form-group label i,
+#auth .auth-inline-point i,
+#auth .auth-side-badge i {
+    color: var(--public-accent) !important;
+}
+
+#auth .auth-title,
+#auth .auth-container {
+    background: linear-gradient(180deg, rgba(255, 252, 247, 0.98), rgba(244, 248, 244, 0.96)) !important;
+    border: 1px solid rgba(23, 50, 74, 0.1) !important;
+    box-shadow: 0 24px 52px rgba(11, 24, 36, 0.08) !important;
+}
+
+#auth .auth-title h2,
+#auth .auth-form-intro h3,
+#auth .auth-account-type-option span,
+#auth .auth-company-fields__header h4,
+#auth .auth-side-summary__item strong {
+    color: var(--public-title) !important;
+}
+
+#auth .auth-title p,
+#auth .auth-form-intro p,
+#auth .auth-social-divider,
+#auth .auth-social-note,
+#auth .auth-account-type-option small,
+#auth .auth-company-fields__header p,
+#auth .auth-inline-point span {
+    color: var(--public-subtle) !important;
+}
+
+#auth .auth-tabs {
+    background: rgba(231, 237, 232, 0.92) !important;
+    border: 1px solid rgba(23, 50, 74, 0.1) !important;
+}
+
+#auth .auth-tab {
+    color: var(--public-nav-muted) !important;
+}
+
+#auth .auth-tab.active {
+    background: #ffffff !important;
+    color: var(--public-accent) !important;
+    box-shadow: 0 8px 18px rgba(15, 123, 99, 0.08) !important;
+}
+
+#auth .form-group label {
+    color: var(--public-label) !important;
+}
+
+#auth .form-control,
+#auth .form-select,
+#auth textarea.form-control,
+#auth select.form-control,
+#auth input[type="text"],
+#auth input[type="email"],
+#auth input[type="password"],
+#auth input[type="tel"],
+#auth input[type="url"] {
+    background: var(--public-field-bg) !important;
+    border: 1px solid var(--public-field-border) !important;
+    color: var(--public-field-text) !important;
+    box-shadow: none !important;
+}
+
+#auth .form-control::placeholder,
+#auth textarea.form-control::placeholder,
+#auth input::placeholder {
+    color: var(--public-field-placeholder) !important;
+    opacity: 1 !important;
+}
+
+#auth .form-control:focus,
+#auth .form-select:focus,
+#auth textarea.form-control:focus,
+#auth select.form-control:focus {
+    background: #ffffff !important;
+    border-color: rgba(15, 123, 99, 0.42) !important;
+    color: var(--public-field-text) !important;
+    box-shadow: 0 0 0 4px rgba(15, 123, 99, 0.12) !important;
+}
+
+#auth .auth-social-divider span {
+    background: rgba(252, 252, 250, 0.98) !important;
+    color: var(--public-subtle) !important;
+}
+
+#auth .auth-inline-point,
+#auth .auth-account-type-option,
+#auth .auth-company-fields {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 247, 0.94)) !important;
+    border: 1px solid rgba(23, 50, 74, 0.1) !important;
+}
+
+#auth .auth-account-type-option.is-active {
+    background: linear-gradient(180deg, rgba(15, 123, 99, 0.1), rgba(255, 255, 255, 0.98)) !important;
+    border-color: rgba(15, 123, 99, 0.22) !important;
+}
+
+#auth .btn-link {
+    color: var(--public-accent) !important;
+}
+
+#auth .auth-side {
+    background:
+        linear-gradient(180deg, rgba(9, 27, 38, 0.96), rgba(10, 58, 51, 0.92)),
+        var(--governorate-image) !important;
+    color: #f6fbff !important;
+}
+
+#auth .auth-side h3,
+#auth .auth-side-summary__item strong {
+    color: #ffffff !important;
+}
+
+#auth .auth-side p,
+#auth .auth-side-summary__item span,
+#auth .auth-side-badge {
+    color: rgba(228, 239, 245, 0.82) !important;
+}
+
+#auth .auth-side-summary__item,
+#auth .auth-side-badge {
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body:not(.is-dashboard) .site-breadcrumbs,
+body:not(.is-dashboard) .site-breadcrumbs__label,
+body:not(.is-dashboard) .site-breadcrumbs__trail span,
+body:not(.is-dashboard) .site-breadcrumbs__trail strong {
+    color: #dbe6ef !important;
+}
+
+@media (max-width: 760px) {
+    body:not(.is-dashboard) .nav-list {
+        background: rgba(255, 255, 255, 0.96) !important;
+    }
+
+    #auth .auth-title,
+    #auth .auth-container,
+    #auth .auth-side {
+        border-radius: 24px !important;
+    }
+}
+
+/* =========================================================
+   Public Section Readability Lock
+========================================================= */
+
+#features .section-title h2,
+#features .features-main-card__header h3,
+#features .features-signals__header h3,
+#features .features-operational-band__header h3,
+#features .features-section-guides__header h3,
+#features .features-section-guide-details__top h4,
+#trust .section-title h2,
+#trust .trust-center__band-header h3,
+#investments .section-title h2,
+#investments .investments-decision-board__item strong,
+#investments .investments-decision-board__tip strong,
+#investments .investments-market-card strong,
+#investments .investments-insight-card__header h3,
+#investments .investments-decision-strip__header h3,
+#investments .properties-marketplace__header h3,
+#investments .property-card__head h4,
+#investments .property-card__price,
+#investments .investments-subtab__content strong {
+    color: #14324a !important;
+}
+
+#features .section-title p,
+#features .features-main-card__header p,
+#features .features-signals__header p,
+#features .features-signal-card p,
+#features .features-operational-band__header p,
+#features .features-operational-step p,
+#features .features-section-guides__header p,
+#features .features-section-guide-btn span,
+#features .features-section-guide-details__top p,
+#features .features-section-guide-point,
+#trust .section-title p,
+#trust .trust-center__stat span,
+#trust .trust-center__stat small,
+#trust .trust-center__card p,
+#trust .trust-center__band-header p,
+#trust .trust-center__pillar p,
+#trust .trust-center__pillar-points,
+#trust .trust-center__commitment p,
+#trust .trust-center__commitment span,
+#investments .section-title p,
+#investments .investments-decision-board__item span,
+#investments .investments-decision-board__item small,
+#investments .investments-decision-board__tip p,
+#investments .investments-market-card span,
+#investments .investments-market-card small,
+#investments .investments-insight-card__lead,
+#investments .investments-decision-strip__header p,
+#investments .investment-toolbar-note,
+#investments .properties-marketplace__header p,
+#investments .properties-marketplace__fee-box span,
+#investments .properties-marketplace__fee-box small,
+#investments .property-card__description,
+#investments .property-card__meta,
+#investments .property-card__contact,
+#investments .property-card__footer,
+#investments .property-fee-notice,
+#investments .investments-subtab__content small {
+    color: #5e7588 !important;
+}
+
+#features .features-section-guides__details,
+#features .features-section-guide-btn,
+#features .feature-accordion-item,
+#features .features-main-card,
+#features .features-signals,
+#features .features-operational-band,
+#trust .trust-center,
+#trust .trust-center__band,
+#trust .trust-center__stat,
+#trust .trust-center__card,
+#trust .trust-center__pillar,
+#trust .trust-center__commitment,
+#investments .investments-title,
+#investments .investments-decision-board__item,
+#investments .investments-decision-board__footer,
+#investments .investments-market-card,
+#investments .investments-insight-card,
+#investments .investments-decision-strip,
+#investments .investment-toolbar,
+#investments .properties-marketplace,
+#investments .property-card {
+    color: #14324a !important;
+}
+
+#trust .section-title,
+#trust .trust-center,
+#trust .trust-center strong,
+#trust .trust-center h3,
+#trust .trust-center h4,
+#features .features-main-card,
+#features .features-section-guides__details,
+#investments .investments-title,
+#investments .investment-toolbar,
+#investments .properties-marketplace,
+#investments .property-card {
+    text-shadow: none !important;
+}
+
+#investments .investment-toolbar-field label,
+#investments .form-group label {
+    color: #18324a !important;
+    font-weight: 800 !important;
+}
+
+#investments .investment-toolbar .form-control,
+#investments .investment-toolbar select,
+#investments .investment-toolbar input,
+#investments .properties-marketplace .form-control,
+#investments .properties-marketplace select,
+#investments .properties-marketplace input {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1px solid rgba(21, 50, 74, 0.16) !important;
+    color: #11283d !important;
+    box-shadow: none !important;
+}
+
+#investments .investment-toolbar .form-control::placeholder,
+#investments .investment-toolbar input::placeholder,
+#investments .properties-marketplace .form-control::placeholder,
+#investments .properties-marketplace input::placeholder {
+    color: #7b90a3 !important;
+    opacity: 1 !important;
+}
+
+#investments .investment-toolbar .form-control:focus,
+#investments .investment-toolbar select:focus,
+#investments .investment-toolbar input:focus,
+#investments .properties-marketplace .form-control:focus,
+#investments .properties-marketplace select:focus,
+#investments .properties-marketplace input:focus {
+    background: #ffffff !important;
+    border-color: rgba(15, 123, 99, 0.42) !important;
+    color: #11283d !important;
+    box-shadow: 0 0 0 4px rgba(15, 123, 99, 0.1) !important;
+}
+
+#investments .investments-subtab {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(245, 249, 246, 0.95)) !important;
+    border: 1px solid rgba(21, 50, 74, 0.12) !important;
+    color: #14324a !important;
+}
+
+#investments .investments-subtab.active {
+    background: linear-gradient(135deg, #12836a, #0b6653) !important;
+    border-color: #0b6653 !important;
+    box-shadow: 0 12px 28px rgba(18, 131, 106, 0.28) !important;
+}
+
+#investments .investments-subtab.active .investments-subtab__content strong {
+    color: #ffffff !important;
+}
+
+#investments .investments-subtab.active .investments-subtab__content small {
+    color: #e2e8f0 !important;
+}
+
+#investments .investments-subtab.active .investments-subtab__icon {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+}
+
+#investments .investments-subtab.active .investments-subtab__count {
+    background: #ffffff !important;
+    color: #0b6653 !important;
+}
+
+#investments .investments-subtab__count,
+#features .features-main-card__kicker,
+#trust .features-main-card__kicker {
+    color: #0f7b63 !important;
+}
+
+#features .features-section-guide-point strong,
+#trust .trust-center__stat strong,
+#trust .trust-center__card h3,
+#trust .trust-center__pillar-head h4,
+#trust .trust-center__commitment strong,
+#investments .properties-marketplace__fee-box strong {
+    color: #14324a !important;
+}
+
+#features .features-section-guide-btn__icon,
+#trust .trust-center__card-head i,
+#trust .trust-center__pillar-head i,
+#investments .property-card__type,
+#investments .property-kyc-preview__icon {
+    color: #0f7b63 !important;
+}
+
+::selection {
+    background: rgba(15, 123, 99, 0.22);
+    color: #10283d;
+}
+
+/* =========================================================
+   Dashboard Real Estate Background Layer
+========================================================= */
+
+@keyframes dashboardBgSlideshow {
+    0%, 22% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.78)),
+            url("/static/images/construction-bg.png");
+    }
+    25%, 47% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.78)),
+            url("/static/images/construction-bg-2.png");
+    }
+    50%, 72% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.78)),
+            url("/static/images/construction-bg-3.png");
+    }
+    75%, 97% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.78)),
+            url("/static/images/construction-bg-4.png");
+    }
+    100% {
+        background-image:
+            radial-gradient(circle at top right, rgba(196, 160, 84, 0.08), transparent 24%),
+            radial-gradient(circle at top left, rgba(15, 123, 99, 0.08), transparent 26%),
+            linear-gradient(180deg, rgba(8, 18, 30, 0.72), rgba(10, 24, 38, 0.78)),
+            url("/static/images/construction-bg.png");
+    }
+}
+
+body.is-dashboard {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    animation: dashboardBgSlideshow 36s infinite ease-in-out !important;
+}
+
+body.is-dashboard::before,
+body.is-dashboard::after {
+    display: none !important;
+}
+
+body.is-dashboard .site-header,
+body.is-dashboard .site-breadcrumbs,
+body.is-dashboard .site-maintenance-banner,
+body.is-dashboard .dashboard-sidebar {
+    background-image: none !important;
+    background-color: rgba(9, 21, 33, 0.96) !important;
+    background: linear-gradient(180deg, rgba(7, 18, 30, 0.98), rgba(11, 28, 43, 0.96)) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.is-dashboard section {
+    background: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+}
+
+body.is-dashboard .investments-title,
+body.is-dashboard .investment-card,
+body.is-dashboard .investment-toolbar,
+body.is-dashboard .investments-market-card,
+body.is-dashboard .investments-subtab,
+body.is-dashboard .investments-insight-card,
+body.is-dashboard .investments-proof-card,
+body.is-dashboard .investments-decision-board__item,
+body.is-dashboard .investments-decision-board__footer,
+body.is-dashboard .investments-decision-strip,
+body.is-dashboard .governorate-hero,
+body.is-dashboard .transactions-summary-card,
+body.is-dashboard .transaction-form-container,
+body.is-dashboard .transaction-history,
+body.is-dashboard .account-card,
+body.is-dashboard .wallet-card,
+body.is-dashboard .wallet-insight-card,
+body.is-dashboard .wallet-command-strip__item,
+body.is-dashboard .admin-overview-card,
+body.is-dashboard .admin-chart-card,
+body.is-dashboard .admin-report-card,
+body.is-dashboard .messages-sidebar-card,
+body.is-dashboard .messages-main-card,
+body.is-dashboard .analytics-chart-card,
+body.is-dashboard .analytics-summary-card,
+body.is-dashboard .properties-marketplace,
+body.is-dashboard .property-card {
+    background-image: none !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    color: #0f172a !important; /* High contrast text color */
+}
+
+/* Ensure all nested headings & text in light cards are dark and highly readable */
+body.is-dashboard .investment-toolbar h1,
+body.is-dashboard .investment-toolbar h2,
+body.is-dashboard .investment-toolbar h3,
+body.is-dashboard .investment-toolbar h4,
+body.is-dashboard .investment-toolbar h5,
+body.is-dashboard .investment-toolbar h6,
+body.is-dashboard .investments-market-card h3,
+body.is-dashboard .transaction-history h3,
+body.is-dashboard .account-card h3,
+body.is-dashboard .wallet-card h3,
+body.is-dashboard .admin-overview-card h3,
+body.is-dashboard .admin-chart-card h3,
+body.is-dashboard .analytics-summary-card h3,
+body.is-dashboard .property-card h3,
+body.is-dashboard .investment-card h3,
+body.is-dashboard .transaction-form-container h3,
+body.is-dashboard .wallet-insight-card h3,
+body.is-dashboard .messages-sidebar-card h3,
+body.is-dashboard .messages-main-card h3 {
+    color: #0f172a !important;
+}
+
+body.is-dashboard .investment-toolbar p,
+body.is-dashboard .investments-market-card p,
+body.is-dashboard .transaction-history p,
+body.is-dashboard .account-card p,
+body.is-dashboard .wallet-card p,
+body.is-dashboard .admin-overview-card p,
+body.is-dashboard .admin-chart-card p,
+body.is-dashboard .analytics-summary-card p,
+body.is-dashboard .property-card p,
+body.is-dashboard .investment-card p,
+body.is-dashboard .transaction-form-container p,
+body.is-dashboard .wallet-insight-card p,
+body.is-dashboard .investment-toolbar span,
+body.is-dashboard .investments-market-card span,
+body.is-dashboard .transaction-history span,
+body.is-dashboard .account-card span,
+body.is-dashboard .wallet-card span,
+body.is-dashboard .property-card span,
+body.is-dashboard .investment-card span,
+body.is-dashboard .transaction-form-container span,
+body.is-dashboard .wallet-insight-card span,
+body.is-dashboard .investment-toolbar label,
+body.is-dashboard .transaction-form-container label,
+body.is-dashboard .account-card label,
+body.is-dashboard .wallet-card label,
+body.is-dashboard .investment-toolbar strong,
+body.is-dashboard .investments-market-card strong,
+body.is-dashboard .transaction-history strong,
+body.is-dashboard .account-card strong,
+body.is-dashboard .wallet-card strong,
+body.is-dashboard .property-card strong,
+body.is-dashboard .investment-card strong,
+body.is-dashboard .transaction-form-container strong,
+body.is-dashboard .wallet-insight-card strong {
+    color: #334155 !important;
+}
+
+body.is-dashboard .transaction-history table,
+body.is-dashboard .transaction-history th,
+body.is-dashboard .transaction-history td,
+body.is-dashboard .transaction-history a,
+body.is-dashboard .transaction-history button {
+    color: #0f172a !important;
+}
+
+body.is-dashboard .investments-hero-panel,
+body.is-dashboard .wallet-hero-panel,
+body.is-dashboard .admin-subhero-panel,
+body.is-dashboard .transactions-hero-panel,
+body.is-dashboard .analytics-hero-panel {
+    background-image:
+        linear-gradient(180deg, rgba(7, 21, 28, 0.88), rgba(10, 52, 44, 0.82)),
+        var(--dashboard-real-estate-image) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.is-dashboard .header-content {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 20px !important;
+}
+
+body.is-dashboard .header-brand {
+    justify-self: end;
+    text-align: right;
+    gap: 10px;
+    min-width: 260px;
+}
+
+body.is-dashboard .auth-buttons {
+    justify-self: start;
+    max-width: none !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    flex: 1 1 auto;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+body.is-dashboard .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+}
+
+body.is-dashboard .header-wallet-summary,
+body.is-dashboard .user-summary,
+body.is-dashboard .dashboard-sidebar-toggle,
+body.is-dashboard .header-actions .btn,
+body.is-dashboard .notifications-wrap {
+    flex: 0 0 auto;
+}
+
+body.is-dashboard .logo-copy strong {
+    font-size: 1.3rem !important;
+}
+
+body.is-dashboard .logo-copy span {
+    font-size: 0.92rem !important;
+    color: rgba(231, 240, 247, 0.84) !important;
+}
+
+body.is-dashboard .investment-card {
+    border-color: rgba(188, 205, 218, 0.2) !important;
+    box-shadow: 0 18px 34px rgba(6, 14, 24, 0.18) !important;
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 248, 245, 0.78)),
+        var(--dashboard-real-estate-image) !important;
+    background-size: auto, cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+}
+
+body.is-dashboard .investment-card .investment-title,
+body.is-dashboard .investment-card .investment-amount,
+body.is-dashboard .investment-card .investment-footer-meta strong,
+body.is-dashboard .investment-card .stat-value,
+body.is-dashboard .investment-card .investment-location,
+body.is-dashboard .investment-card .investment-minimum,
+body.is-dashboard .investment-card .investment-user-position,
+body.is-dashboard .investment-card .progress-info,
+body.is-dashboard .investment-card .investment-description,
+body.is-dashboard .investment-card .investment-timeline__item strong {
+    color: #163148 !important;
+}
+
+body.is-dashboard .investment-card .investment-description,
+body.is-dashboard .investment-card .stat-label,
+body.is-dashboard .investment-card .investment-footer-meta span,
+body.is-dashboard .investment-card .progress-info span,
+body.is-dashboard .investment-card .investment-timeline__label {
+    color: #5d7387 !important;
+}
+
+body.is-dashboard .investment-card .progress-bar {
+    background: rgba(18, 47, 72, 0.12) !important;
+    border: 1px solid rgba(18, 47, 72, 0.08) !important;
+}
+
+body.is-dashboard .investment-card .progress-fill {
+    background: linear-gradient(90deg, #0f7b63, #2bb693) !important;
+}
+
+body.is-dashboard .investment-card .progress-info {
+    font-weight: 700 !important;
+}
+
+body.is-dashboard .investment-card .investment-badge {
+    background: linear-gradient(135deg, rgba(15, 123, 99, 0.14), rgba(182, 138, 47, 0.14)) !important;
+    color: #0f6e59 !important;
+    border: 1px solid rgba(15, 123, 99, 0.16) !important;
+}
+
+body.is-dashboard .investment-card .stat-item {
+    background: linear-gradient(180deg, rgba(236, 243, 250, 0.96), rgba(224, 235, 244, 0.9)) !important;
+    border: 1px solid rgba(20, 66, 97, 0.1) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68) !important;
+}
+
+body.is-dashboard .investment-card .stat-value {
+    color: #163e63 !important;
+    font-size: 1.35rem !important;
+    line-height: 1.1 !important;
+}
+
+body.is-dashboard .investment-card .stat-label {
+    color: #526b80 !important;
+    font-weight: 700 !important;
+}
+
+body.is-dashboard .investment-card .investment-header {
+    align-items: center !important;
+}
+
+body.is-dashboard .investment-card .investment-amount {
+    font-size: 2.15rem !important;
+}
+
+body.is-dashboard .investment-card .investment-location {
+    background: rgba(15, 123, 99, 0.08) !important;
+    border: 1px solid rgba(15, 123, 99, 0.12) !important;
+}
+
+body.is-dashboard .calc-investment-btn,
+body.is-dashboard #calculatorModal .btn-success {
+    background: linear-gradient(135deg, #eef6ff, #dcecff) !important;
+    border: 1px solid rgba(36, 116, 195, 0.22) !important;
+    color: #1670bf !important;
+    box-shadow: 0 10px 20px rgba(32, 92, 152, 0.1) !important;
+}
+
+body.is-dashboard #calculatorModal {
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(7, 18, 30, 0.52) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+body.is-dashboard #calculatorModal .modal-content {
+    width: min(100%, 640px) !important;
+    border-radius: 26px !important;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 248, 245, 0.9)),
+        var(--dashboard-real-estate-image) !important;
+    background-size: auto, cover !important;
+    background-position: center center !important;
+    color: #14324a !important;
+    box-shadow: 0 28px 54px rgba(7, 18, 30, 0.22) !important;
+}
+
+body.is-dashboard #calculatorModal .modal-header,
+body.is-dashboard #calculatorModal .modal-footer {
+    border-color: rgba(21, 50, 74, 0.1) !important;
+}
+
+body.is-dashboard #calculatorModal h2,
+body.is-dashboard #calculatorModal label,
+body.is-dashboard #calculatorModal strong {
+    color: #14324a !important;
+}
+
+body.is-dashboard #calculatorModal small,
+body.is-dashboard #calculatorModal span {
+    color: #607689 !important;
+}
+
+body.is-dashboard #calculatorModal .form-control {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(21, 50, 74, 0.14) !important;
+    color: #11283d !important;
+}
+
+@media (max-width: 1180px) {
+    body.is-dashboard .auth-buttons {
+        flex-wrap: wrap !important;
+    }
+
+    body.is-dashboard .header-actions {
+        flex-wrap: wrap !important;
+    }
+}
+
+/* Language Selector Styles */
+.lang-selector-container {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 0 10px;
+    height: 38px;
+    margin: 0 8px;
+    transition: all 0.2s ease;
+}
+
+.lang-selector-container:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary-light);
+}
+
+.lang-icon {
+    color: var(--primary-light);
+    margin-inline-end: 6px;
+    font-size: 14px;
+}
+
+.lang-selector-select {
+    background: transparent;
+    border: none;
+    color: var(--text-main, #ffffff);
+    font-family: var(--font-ui), sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    padding: 2px 0;
+}
+
+.lang-selector-select option {
+    background: var(--surface, #162233);
+    color: #ffffff;
+}
+
+/* LTR layouts alignment tweak */
+html[dir="ltr"] .lang-icon {
+    margin-right: 6px;
+    margin-left: 0;
+}
+
+/* Google Translate Widget UI Hide & Fixes */
+.skiptranslate, 
+.goog-te-banner-frame, 
+#goog-gt-tt, 
+.goog-te-balloon-frame,
+.goog-te-banner,
+iframe.goog-te-banner-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+/* Adjust font override when translated to non-Arabic */
+html[lang="en"] body,
+html[lang="ku"] body {
+    font-family: 'Outfit', 'Inter', 'Segoe UI', sans-serif !important;
+}
+
+/* Crisp Text Shadows for Headers Overlaying Images */
+#heroTitle,
+.hero-copy h1,
+.section-title h2,
+.investments-title h2,
+.wallet-title h2,
+.transactions-title h2,
+.analytics-title h2 {
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.78) !important;
+}
+
+#home .hero-copy p {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Additional contrast fix for tables inside cards */
+body.is-dashboard table.table th {
+    color: #0f172a !important;
+    background: rgba(15, 23, 42, 0.05) !important;
+}
+body.is-dashboard table.table td {
+    color: #1e293b !important;
+}
+
+/* Currency Network Options Contrast Overrides */
+body.is-dashboard .network-option {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    color: #0f172a !important;
+}
+
+body.is-dashboard .network-option i,
+body.is-dashboard .network-option div,
+body.is-dashboard .network-option small {
+    color: #0f172a !important;
+}
+
+body.is-dashboard .network-option.selected {
+    background: rgba(18, 131, 106, 0.16) !important;
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 6px 18px rgba(18, 131, 106, 0.22) !important;
+    color: var(--primary-strong) !important;
+}
+
+body.is-dashboard .network-option.selected i,
+body.is-dashboard .network-option.selected div,
+body.is-dashboard .network-option.selected small {
+    color: var(--primary-strong) !important;
+    font-weight: 700 !important;
+}
+
+/* Currency Network Badges (USDT, ERC20, BEP20) Contrast Overrides */
+body.is-dashboard .network-badge {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(15, 23, 42, 0.14) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    color: #0f172a !important;
+}
+
+body.is-dashboard .network-badge i,
+body.is-dashboard .network-badge div,
+body.is-dashboard .network-badge small {
+    color: #0f172a !important;
+}
+
+body.is-dashboard .network-badge.selected {
+    background: rgba(18, 131, 106, 0.16) !important;
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 6px 18px rgba(18, 131, 106, 0.22) !important;
+    color: var(--primary-strong) !important;
+}
+
+body.is-dashboard .network-badge.selected i,
+body.is-dashboard .network-badge.selected div,
+body.is-dashboard .network-badge.selected small {
+    color: var(--primary-strong) !important;
+    font-weight: 700 !important;
+}
+
+/* Form Controls and Selection Fields inside Dashboard Cards */
+body.is-dashboard .investment-toolbar .form-control,
+body.is-dashboard .transaction-form-container .form-control,
+body.is-dashboard .transaction-form-container select,
+body.is-dashboard .account-card .form-control,
+body.is-dashboard .account-card select,
+body.is-dashboard .wallet-card .form-control,
+body.is-dashboard .wallet-card select,
+body.is-dashboard .messages-main-card .form-control,
+body.is-dashboard .admin-report-card .form-control,
+body.is-dashboard .admin-settings .form-control,
+body.is-dashboard .admin-settings select,
+body.is-dashboard .admin-subhero-panel .form-control,
+body.is-dashboard .admin-wallets .form-control {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+}
+
+body.is-dashboard .investment-toolbar .form-control::placeholder,
+body.is-dashboard .transaction-form-container .form-control::placeholder,
+body.is-dashboard .account-card .form-control::placeholder,
+body.is-dashboard .wallet-card .form-control::placeholder,
+body.is-dashboard .messages-main-card .form-control::placeholder,
+body.is-dashboard .admin-settings .form-control::placeholder {
+    color: #64748b !important;
+}
+
+body.is-dashboard .investment-toolbar .form-control:focus,
+body.is-dashboard .transaction-form-container .form-control:focus,
+body.is-dashboard .account-card .form-control:focus,
+body.is-dashboard .wallet-card .form-control:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(18, 131, 106, 0.15) !important;
+}
+
+/* Admin Settings Section Contrast Fixes */
+body.is-dashboard #admin-settings,
+body.is-dashboard #admin-settings * {
+    color: #0f172a !important;
+}
+
+body.is-dashboard #admin-settings .section-kicker,
+body.is-dashboard #admin-settings .settings-title,
+body.is-dashboard #admin-settings .settings-subtitle,
+body.is-dashboard #admin-settings .admin-settings-section-title,
+body.is-dashboard #admin-settings .card-title,
+body.is-dashboard #admin-settings .accordion-button,
+body.is-dashboard #admin-settings .admin-tab.active,
+body.is-dashboard #admin-settings h3 {
+    color: #0b6653 !important;
+}
+
+body.is-dashboard #admin-settings small,
+body.is-dashboard #admin-settings .form-text,
+body.is-dashboard #admin-settings .help-text,
+body.is-dashboard #admin-settings .text-muted,
+body.is-dashboard #admin-settings .muted,
+body.is-dashboard #admin-settings .form-check-label,
+body.is-dashboard #admin-settings label {
+    color: #475569 !important;
+}
+
+body.is-dashboard #admin-settings .admin-content,
+body.is-dashboard #admin-settings .card,
+body.is-dashboard #admin-settings .settings-card,
+body.is-dashboard #admin-settings .admin-settings-card,
+body.is-dashboard #admin-settings .list-group-item,
+body.is-dashboard #admin-settings .admin-tabs {
+    background: #ffffff !important;
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body.is-dashboard #admin-settings .admin-tab {
+    color: #334155 !important;
+    background: #f8fafc !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+body.is-dashboard #admin-settings .admin-tab.active {
+    background: #ffffff !important;
+    border-color: rgba(18, 131, 106, 0.24) !important;
+}
+
+body.is-dashboard #admin-settings hr,
+body.is-dashboard #admin-settings .border-top,
+body.is-dashboard #admin-settings .border-bottom {
+    border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+body.is-dashboard #admin-settings .btn-outline,
+body.is-dashboard #admin-settings .btn-light {
+    color: #0f172a !important;
+    border-color: rgba(15, 23, 42, 0.18) !important;
+    background: #ffffff !important;
+}
+
+body.is-dashboard #admin-settings .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+    color: #ffffff !important;
+}
+
+body.is-dashboard #admin-settings .form-control,
+body.is-dashboard #admin-settings textarea,
+body.is-dashboard #admin-settings select {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+    color: #0f172a !important;
+}
+
+body.is-dashboard #admin-settings .form-control::placeholder,
+body.is-dashboard #admin-settings textarea::placeholder {
+    color: #64748b !important;
+}
+
+/* Accessibility Badges Contrast Overrides on Light Cards */
+body.is-dashboard .badge-success,
+body.is-dashboard .status-badge.status-completed,
+body.is-dashboard .status-badge.status-active {
+    background: rgba(16, 185, 129, 0.15) !important;
+    color: #065f46 !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+body.is-dashboard .badge-warning,
+body.is-dashboard .status-badge.status-pending {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #b45309 !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+body.is-dashboard .badge-danger,
+body.is-dashboard .status-badge.status-rejected,
+body.is-dashboard .status-badge.status-cancelled {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #991b1b !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Kickers Contrast */
+body.is-dashboard .section-kicker {
+    color: #0b6653 !important;
+    background: rgba(18, 131, 106, 0.08) !important;
+    border: 1px solid rgba(18, 131, 106, 0.16) !important;
+}
+
+/* Tab Cards & Subtabs Meta Text Color */
+body.is-dashboard .investments-subtab__content *,
+body.is-dashboard .investments-subtab__content small,
+body.is-dashboard .investments-decision-board__item span,
+body.is-dashboard .investment-toolbar-note {
+    color: #475569 !important;
+}
+
+/* Investment Cards Readable Elements */
+body.is-dashboard .investment-card .investment-title,
+body.is-dashboard .investment-card .investment-title h3,
+body.is-dashboard .investment-card .investment-minimum,
+body.is-dashboard .investment-card .investment-stats,
+body.is-dashboard .investment-card .investment-stat-label,
+body.is-dashboard .investment-card .investment-stat-value,
+body.is-dashboard .investment-card .progress-label,
+body.is-dashboard .investment-card .progress-percent {
+    color: #0f172a !important;
+}/* Financial preview card inside investment/deposit modals contrast fixes */
+.wallet-financial-card,
+.wallet-special-card,
+.special-wallet-admin-card {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+.wallet-financial-card__meta span,
+.wallet-special-card__meta-item span,
+.wallet-special-card span,
+.wallet-special-card p,
+.special-wallet-admin-card span,
+.special-wallet-admin-card p,
+.wallet-financial-card small,
+#investFeeSummaryText {
+    color: #475569 !important; /* Dark gray labels */
+}
+
+.wallet-financial-card__meta strong,
+.wallet-special-card__meta-item strong,
+.wallet-special-card strong,
+.special-wallet-admin-card strong {
+    color: #0f172a !important; /* Dark navy values */
+}
+
+/* Project details modal card and timeline contrast overrides */
+.investment-details-modal__card,
+.investment-details-modal__timeline-item,
+.investment-details-modal__risk {
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+    color: #0f172a !important;
+}
+
+.investment-details-modal__card span,
+.investment-details-modal__timeline-item span,
+.investment-details-modal__card small,
+.investment-details-modal__timeline-item small {
+    color: #475569 !important; /* Dark gray for labels */
+}
+
+.investment-details-modal__card strong,
+.investment-details-modal__timeline-item strong {
+    color: #0f172a !important; /* Dark navy for values */
+}
+
+.investment-details-modal__risk {
+    border-left: 4px solid #b45309 !important; /* Warning left border */
+    background: #fffbeb !important; /* Light amber background for warning */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+}
+
+.investment-details-modal__risk span,
+.investment-details-modal__risk strong {
+    color: #b45309 !important; /* Dark warning color */
+    font-weight: 700 !important;
+}
+
+.investment-details-modal__risk p {
+    color: #78350f !important; /* Deep dark amber text */
+    margin: 0 !important;
+}
+
+/* Legacy Wallet Card Inner Details Contrast Overrides (Global for all views) */
+.wallet-card,
+#legacyWalletShell .wallet-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+}
+
+.wallet-card .wallet-asset-network-label,
+.wallet-card .wallet-asset-helper,
+.wallet-card .wallet-quick-stat span,
+.wallet-card .wallet-address-toolbar span,
+.wallet-card #walletHelperText,
+.wallet-card p,
+.wallet-card span,
+#legacyWalletShell .wallet-card .wallet-asset-network-label,
+#legacyWalletShell .wallet-card .wallet-asset-helper,
+#legacyWalletShell .wallet-card .wallet-quick-stat span,
+#legacyWalletShell .wallet-card .wallet-address-toolbar span,
+#legacyWalletShell .wallet-card #walletHelperText,
+#legacyWalletShell .wallet-card p,
+#legacyWalletShell .wallet-card span {
+    color: #475569 !important; /* Dark gray labels */
+}
+
+.wallet-card h3,
+.wallet-card strong,
+.wallet-card .wallet-balance,
+.wallet-card .wallet-address,
+.wallet-card .wallet-asset-symbol-badge,
+#legacyWalletShell .wallet-card h3,
+#legacyWalletShell .wallet-card strong,
+#legacyWalletShell .wallet-card .wallet-balance,
+#legacyWalletShell .wallet-card .wallet-address,
+#legacyWalletShell .wallet-card .wallet-asset-symbol-badge {
+    color: #0f172a !important; /* Dark navy values */
+}
+
+/* Comprehensive Segmented Subtabs (Projects, Market Projects, Properties tabs) styling */
+.investments-subtab {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(15, 23, 42, 0.12) !important;
+    color: #475569 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.investments-subtab__content strong {
+    color: #0f172a !important; /* Deep navy */
+}
+
+.investments-subtab__content small {
+    color: #64748b !important; /* Slate gray */
+}
+
+.investments-subtab__count {
+    background: rgba(18, 131, 106, 0.1) !important;
+    color: var(--primary) !important;
+}
+
+/* Active State: Deep solid green with white text for premium contrast */
+.investments-subtab.active {
+    background: linear-gradient(135deg, #12836a, #0b6653) !important;
+    border-color: #0b6653 !important;
+    box-shadow: 0 12px 28px rgba(18, 131, 106, 0.28) !important;
+}
+
+.investments-subtab.active .investments-subtab__content strong {
+    color: #ffffff !important; /* Pure white */
+}
+
+.investments-subtab.active .investments-subtab__content small {
+    color: #e2e8f0 !important; /* Light slate */
+}
+
+.investments-subtab.active .investments-subtab__icon {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+}
+
+.investments-subtab.active .investments-subtab__count {
+    background: #ffffff !important;
+    color: #0b6653 !important;
+}
+
+/* Glassmorphism translucency for public view cards to reveal the rotating background construction images */
+body:not(.is-dashboard) .investments-title,
+body:not(.is-dashboard) .investments-decision-board__item,
+body:not(.is-dashboard) .investment-toolbar,
+body:not(.is-dashboard) .properties-marketplace,
+body:not(.is-dashboard) .property-card,
+body:not(.is-dashboard) .investment-card,
+body:not(.is-dashboard) .features-main-card,
+body:not(.is-dashboard) .features-side-panel,
+body:not(.is-dashboard) .trust-center__stat,
+body:not(.is-dashboard) .trust-center__card,
+body:not(.is-dashboard) .trust-center__pillar,
+body:not(.is-dashboard) .trust-center__commitment,
+body:not(.is-dashboard) .home-testimonial-card,
+body:not(.is-dashboard) .home-faq-item {
+    background: rgba(255, 255, 255, 0.3) !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07) !important;
+}
+
+body:not(.is-dashboard) .investments-decision-board__item {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Final Contrast and Readability Overrides for 30% Translucent Cards */
+
+/* 1. Analytics Section Text Colors */
+.analytics-summary-card,
+.analytics-chart-card {
+    color: #ffffff !important;
+}
+
+.analytics-chart-card h3,
+.analytics-summary-card h3 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+.analytics-chart-card p,
+.analytics-chart-card span,
+.analytics-chart-card small,
+.analytics-summary-card p,
+.analytics-summary-card span,
+.analytics-summary-card small,
+.analytics-summary-card__meta,
+.analytics-summary-card__meta span {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* 2. Transactions Section Text Colors */
+.transactions-summary-card span,
+.transactions-summary-card small,
+.transaction-history span,
+.transaction-history small,
+.transaction-form-container span,
+.transaction-form-container small,
+.transaction-form-container label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+.transactions-summary-card strong,
+.transaction-history strong,
+.transaction-form-container strong {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* 3. Wallet Section Card Text Colors */
+.wallet-insight-card span,
+.wallet-insight-card small,
+.wallet-hero-panel__item span,
+.wallet-hero-panel__item small,
+.wallet-quick-stat span,
+.wallet-quick-stat small,
+.wallet-card p,
+.wallet-card span,
+.wallet-address-toolbar span,
+.header-wallet-summary__label,
+#walletHelperText {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+.wallet-insight-card strong,
+.wallet-hero-panel__item strong,
+.wallet-quick-stat strong,
+.wallet-card strong,
+.wallet-card h3,
+.wallet-address-toolbar strong,
+#dashboardTotalBalance {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* 4. Investments Marketplace and Toolbar Note */
+.investment-toolbar label,
+.investment-toolbar p,
+.investment-toolbar span,
+.investment-toolbar-note,
+.properties-marketplace label,
+.properties-marketplace p,
+.properties-marketplace span {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* 5. General text shadow overrides for light text on dark background to ensure it is not used on translucent white cards */
+.investments-title p,
+.properties-marketplace p {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* 6. Generic dashboard card text color fallback */
+body.is-dashboard .card p,
+body.is-dashboard .card span,
+body.is-dashboard .card small,
+body.is-dashboard .wallet-card p,
+body.is-dashboard .wallet-card span,
+body.is-dashboard .wallet-card small,
+body.is-dashboard .investment-card p,
+body.is-dashboard .investment-card span,
+body.is-dashboard .investment-card small,
+body.is-dashboard .property-card p,
+body.is-dashboard .property-card span,
+body.is-dashboard .property-card small,
+body.is-dashboard .account-card p,
+body.is-dashboard .account-card span,
+body.is-dashboard .account-card small,
+body.is-dashboard .transactions-summary-card p,
+body.is-dashboard .transactions-summary-card span,
+body.is-dashboard .transactions-summary-card small,
+body.is-dashboard .analytics-summary-card p,
+body.is-dashboard .analytics-summary-card span,
+body.is-dashboard .analytics-summary-card small,
+body.is-dashboard .messages-sidebar-card p,
+body.is-dashboard .messages-sidebar-card span,
+body.is-dashboard .messages-sidebar-card small,
+body.is-dashboard .messages-main-card p,
+body.is-dashboard .messages-main-card span,
+body.is-dashboard .messages-main-card small {
+    color: var(--type-title-dark) !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* Card container root selector to target all text children for increased backdrop blur */
+body:not(.is-dashboard) .investments-title,
+body:not(.is-dashboard) .investments-decision-board__item,
+body:not(.is-dashboard) .investment-toolbar,
+body:not(.is-dashboard) .properties-marketplace,
+body:not(.is-dashboard) .property-card,
+body:not(.is-dashboard) .investment-card,
+body:not(.is-dashboard) .features-main-card,
+body:not(.is-dashboard) .features-side-panel,
+body:not(.is-dashboard) .trust-center__stat,
+body:not(.is-dashboard) .trust-center__card,
+body:not(.is-dashboard) .trust-center__pillar,
+body:not(.is-dashboard) .trust-center__commitment,
+body:not(.is-dashboard) .home-testimonial-card,
+body:not(.is-dashboard) .home-faq-item,
+body.is-dashboard .investments-title,
+body.is-dashboard .investment-card,
+body.is-dashboard .property-card,
+body.is-dashboard .wallet-card,
+body.is-dashboard .wallet-insight-card,
+body.is-dashboard .account-card,
+body.is-dashboard .transactions-summary-card,
+body.is-dashboard .transaction-form-container,
+body.is-dashboard .transaction-history,
+body.is-dashboard .analytics-summary-card,
+body.is-dashboard .analytics-chart-card,
+body.is-dashboard .messages-sidebar-card,
+body.is-dashboard .messages-main-card,
+body.is-dashboard .admin-overview-card,
+body.is-dashboard .admin-chart-card,
+body.is-dashboard .admin-report-card,
+#legacyWalletShell .wallet-card {
+    backdrop-filter: blur(28px) !important;
+    -webkit-backdrop-filter: blur(28px) !important;
+}
+
+/* ============================================================
+   ACCESSIBILITY AND COLOR CONTRAST RULES (WCAG AA COMPLIANCE)
+   ============================================================ */
+
+/* 1. Form Elements Styling - Legible Dark text on White Input Background */
+.form-control,
+.form-select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    color: #0f172a !important;      /* Dark navy for high contrast on white inputs */
+    background-color: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.22) !important;
+    font-weight: 500 !important;
+}
+
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #64748b !important;      /* Medium-dark gray placeholder for high contrast */
+    opacity: 1 !important;
+}
+
+/* Disabled State */
+.form-control:disabled,
+.form-select:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    opacity: 0.6 !important;
+    background: rgba(226, 232, 240, 0.9) !important;
+    color: #475569 !important;
+}
+
+/* Read-only State */
+.form-control[readonly],
+input[readonly],
+textarea[readonly] {
+    background: rgba(241, 245, 249, 0.9) !important;
+    color: #334155 !important;
+}
+
+/* 2. Labels and Headings - Dark text on light dashboard cards */
+body.is-dashboard .form-group label,
+body.is-dashboard label,
+body.is-dashboard .modal-title,
+body.is-dashboard .modal-body {
+    color: var(--type-title-dark) !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* 3. Navigation and Links */
+.main-nav a {
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    color: #f8fbff !important;      /* Changed from text-soft */
+    font-weight: 600 !important;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: rgba(18, 131, 106, 0.2) !important;
+    color: #5fecc0 !important;      /* New kicker-soft color */
+    border: 1px solid rgba(18, 131, 106, 0.3) !important;
+}
+
+.sidebar-nav-list a.nav-link {
+    color: #f8fbff !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-nav-list a.nav-link.active,
+.nav-link.active {
+    color: #5fecc0 !important;      /* Green accent */
+    font-weight: 700 !important;
+}
+
+/* All Links */
+a:not(.btn),
+.nav-link:not(.active) {
+    color: #5fecc0 !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+}
+
+a:not(.btn):hover,
+.nav-link:not(.active):hover {
+    color: #4dd9a8 !important;
+}
+
+/* 4. Section Kickers and Secondary Text */
+body.is-dashboard .section-kicker,
+body.is-dashboard .wallet-title .section-kicker,
+body.is-dashboard .transactions-title .section-kicker,
+body.is-dashboard .analytics-title .section-kicker,
+body.is-dashboard .account-title .section-kicker,
+body.is-dashboard .messages-title .section-kicker,
+body.is-dashboard .investments-title .section-kicker {
+    background: linear-gradient(135deg, rgba(18, 131, 106, 0.15), rgba(201, 166, 75, 0.12)) !important;
+    border: 1px solid rgba(18, 131, 106, 0.25) !important;
+    color: var(--type-kicker-strong) !important;
+    font-weight: 600 !important;
+}
+
+body.is-dashboard .section-title p,
+body.is-dashboard .hero-copy p {
+    color: var(--type-copy-muted) !important;
+}
+
+.breadcrumb,
+.site-breadcrumbs,
+.site-breadcrumbs__label {
+    color: #b8cfe5 !important;
+}
+
+/* 5. Dashboard and Analytics Cards */
+.stat-label,
+.analytics-label,
+.chart-label,
+.card-label {
+    color: #d4e4f7 !important;      /* High contrast slate */
+    font-weight: 600 !important;
+}
+
+.analytics-description,
+.card-description,
+.helper-text,
+.admin-info-text,
+.admin-help-text {
+    color: #b8cfe5 !important;
+    font-weight: 500 !important;
+}
+
+/* 6. Helper Text and Error Messages */
+.form-group small,
+.form-text,
+.invalid-feedback,
+.valid-feedback {
+    color: #b8cfe5 !important;
+    font-weight: 500 !important;
+}
+
+.invalid-feedback,
+.form-error-message {
+    color: #ff9999 !important;      /* Brighter readable red on dark */
+    font-weight: 600 !important;
+}
+
+/* 7. Tables */
+.table,
+.table th,
+.table td {
+    color: #f8fbff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.table thead th {
+    background: rgba(18, 131, 106, 0.15) !important;
+    color: #5fecc0 !important;
+    font-weight: 700 !important;
+}
+
+.table tbody tr:hover {
+    background: rgba(18, 131, 106, 0.08) !important;
+}
+
+/* 8. Badges */
+.badge,
+.badge-success {
+    background: rgba(95, 236, 192, 0.15) !important;
+    color: #5fecc0 !important;
+    border: 1px solid rgba(95, 236, 192, 0.3) !important;
+}
+
+.badge-warning {
+    background: rgba(245, 158, 11, 0.15) !important;
+    color: #fcd34d !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.badge-danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #ff9999 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* 9. Hero Section Elements */
+.hero-quick-proof__item {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #f8fbff !important;
+}
+
+.hero-quick-proof__item span {
+    color: #d4e4f7 !important;
+}
+
+/* 10. Modal and Popup overrides */
+.modal-body p,
+.modal-body label {
+    color: #d4e4f7 !important;
+}
+
+/* 11. Global dashboard typography pass for all sections */
+body.is-dashboard section,
+body.is-dashboard .section,
+body.is-dashboard .panel,
+body.is-dashboard .card,
+body.is-dashboard .widget,
+body.is-dashboard .content-block {
+    color: var(--type-title-dark) !important;
+}
+
+body.is-dashboard h1,
+body.is-dashboard h2,
+body.is-dashboard h3,
+body.is-dashboard h4,
+body.is-dashboard h5,
+body.is-dashboard h6,
+body.is-dashboard strong,
+body.is-dashboard b {
+    color: var(--type-title-dark) !important;
+}
+
+body.is-dashboard p,
+body.is-dashboard span,
+body.is-dashboard small,
+body.is-dashboard label,
+body.is-dashboard li {
+    color: var(--type-title-dark) !important;
+}
+
+body.is-dashboard .section-kicker,
+body.is-dashboard .section-title .section-kicker,
+body.is-dashboard .features-main-card__kicker,
+body.is-dashboard .features-side-panel__badge {
+    color: var(--type-kicker-strong) !important;
+    background: linear-gradient(135deg, rgba(18, 131, 106, 0.14), rgba(201, 166, 75, 0.12)) !important;
+    border: 1px solid rgba(18, 131, 106, 0.22) !important;
+}
+
+body.is-dashboard .btn,
+body.is-dashboard button,
+body.is-dashboard input,
+body.is-dashboard select,
+body.is-dashboard textarea {
+    font-family: 'IBM Plex Sans Arabic', 'Cairo', 'Segoe UI', sans-serif !important;
+}
+
+body.is-dashboard .form-control,
+body.is-dashboard textarea,
+body.is-dashboard select {
+    color: #0f172a !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.18) !important;
+}
+
+body.is-dashboard .form-control::placeholder,
+body.is-dashboard textarea::placeholder {
+    color: #64748b !important;
+}
+
+
+

@@ -1,0 +1,28 @@
+FROM node:18-alpine
+
+# تعيين متغيرات البيئة
+ENV APP_HOME=/app
+WORKDIR $APP_HOME
+
+# تثبيت المتطلبات النظامية
+RUN apk add --no-cache python3 make g++ postgresql-client
+
+# نسخ ملفات الحزم وتثبيتها
+COPY backend-node/package*.json ./backend-node/
+WORKDIR $APP_HOME/backend-node
+RUN npm ci --omit=dev
+
+# العودة للمجلد الرئيسي ونسخ الكود
+WORKDIR $APP_HOME
+COPY . .
+
+# إنشاء المجلدات الضرورية
+RUN mkdir -p logs uploads
+
+# تعيين منفذ التشغيل والتحقق من الصحة
+EXPOSE 5000
+
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 CMD node -e "const http = require('http'); http.get('http://127.0.0.1:5000/api/health', (res) => { if (res.statusCode === 200) process.exit(0); else process.exit(1); }).on('error', () => process.exit(1));"
+
+# أمر البدء
+CMD ["node", "backend-node/index.js"]

@@ -1,0 +1,124 @@
+<!-- الهيدر -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="header-brand">
+                <div class="logo">
+                    <div class="logo-mark-svg">
+                        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#047857" />
+                                    <stop offset="50%" stop-color="#10b981" />
+                                    <stop offset="100%" stop-color="#f59e0b" />
+                                </linearGradient>
+                                <filter id="logoGlow" x="-10%" y="-10%" width="120%" height="120%">
+                                    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#10b981" flood-opacity="0.18"/>
+                                </filter>
+                            </defs>
+                            <rect x="5" y="5" width="90" height="90" rx="26" fill="url(#logoGrad)" fill-opacity="0.08" stroke="url(#logoGrad)" stroke-width="1.5"/>
+                            <path d="M30 65 V35 C30 32.8 31.8 31 34 31 H44 C46.2 31 48 32.8 48 35 V65" fill="url(#logoGrad)" filter="url(#logoGlow)"/>
+                            <path d="M52 65 V47 C52 44.8 53.8 43 56 43 H66 C68.2 43 70 44.8 70 47 V65" fill="url(#logoGrad)" fill-opacity="0.75"/>
+                            <path d="M22 48 L40 30 L58 41 L78 20" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M78 20 H68 M78 20 V30" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="24" y="65" width="52" height="4" rx="2" fill="url(#logoGrad)"/>
+                        </svg>
+                    </div>
+                    <div class="logo-copy">
+                        <strong id="brandTitle">منصة الاستثمار الذكية</strong>
+                        <span id="brandSubtitle">منصة استثمار آمنة وموثوقة</span>
+                    </div>
+                </div>
+                <div class="header-brand-note">
+                    <i class="fas fa-circle-check"></i>
+                    <span>واجهة أحدث لعرض الفرص العقارية بثقة ووضوح</span>
+                </div>
+            </div>
+
+            <button
+                id="mobileNavToggle"
+                class="mobile-nav-toggle"
+                type="button"
+                aria-label="فتح القائمة"
+                aria-expanded="false"
+                aria-controls="mainNavMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav" id="mainNavMenu">
+                <ul class="nav-list">
+                    <li class="public-nav"><a href="#home" class="nav-link active" data-section="home"><i class="fas fa-house"></i><span>الرئيسية</span></a></li>
+                    <li class="member-nav" style="display: none;"><a href="#dashboard" class="nav-link" data-section="dashboard"><i class="fas fa-gauge-high"></i><span>لوحة التحكم</span></a></li>
+                    <li class="public-nav"><a href="#features" class="nav-link" data-section="features"><i class="fas fa-sparkles"></i><span>لماذا نحن</span></a></li>
+                    <li class="public-nav"><a href="#investments" class="nav-link" data-section="investments"><i class="fas fa-chart-column"></i><span>المشاريع</span></a></li>
+                    <li class="public-nav"><a href="#trust" class="nav-link" data-section="trust"><i class="fas fa-shield-halved"></i><span>مركز الثقة</span></a></li>
+                </ul>
+                <div class="mobile-nav-meta">
+                    <span>واجهة أوضح للمشاريع والمحفظة والمعاملات من شاشة واحدة.</span>
+                </div>
+            </nav>
+
+            <div class="auth-buttons">
+                <div class="user-dropdown-wrap" style="display: none; position: relative;">
+                    <button id="userInfo" class="user-summary" type="button">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName" class="user-summary__name">حسابي</span>
+                        <i class="fas fa-chevron-down" style="font-size: 0.74rem; margin-inline-start: 6px; opacity: 0.7;"></i>
+                    </button>
+                    <div id="userDropdownMenu" class="user-dropdown-menu" hidden>
+                        <div class="dropdown-header">
+                            <strong id="dropdownUserName">المستخدم</strong>
+                            <span id="dropdownUserEmail">user@example.com</span>
+                        </div>
+                        <ul class="dropdown-list">
+                            <li class="member-nav" style="display: none;"><a href="#dashboard" class="dropdown-item" data-section="dashboard"><i class="fas fa-gauge-high"></i> <span>لوحة التحكم الشخصية</span></a></li>
+                            <li class="member-nav" style="display: none;"><a href="#account" class="dropdown-item" data-section="account"><i class="fas fa-id-card"></i> <span>حسابي والإعدادات</span></a></li>
+                            <li class="member-nav" style="display: none;"><a href="#wallet" class="dropdown-item" data-section="wallet"><i class="fas fa-wallet"></i> <span>المحفظة</span></a></li>
+                            <li class="member-nav" style="display: none;"><a href="#transactions" class="dropdown-item" data-section="transactions"><i class="fas fa-arrow-right-arrow-left"></i> <span>المعاملات</span></a></li>
+                            <li class="member-nav" style="display: none;"><a href="#messages" class="dropdown-item" data-section="messages"><i class="fas fa-comments"></i> <span>الرسائل</span></a></li>
+                            <li class="member-nav" style="display: none;"><a href="#analytics" class="dropdown-item" data-section="analytics"><i class="fas fa-chart-pie"></i> <span>التحليلات</span></a></li>
+                            
+                            <!-- Admin links -->
+                            <li class="admin-only" style="display: none;"><a href="#admin" class="dropdown-item" data-section="admin"><i class="fas fa-user-shield"></i> <span>لوحة المدير</span></a></li>
+                            <li class="admin-only" style="display: none;"><a href="#admin-wallets" class="dropdown-item" data-section="admin-wallets"><i class="fas fa-vault"></i> <span>محافظ الأدمن</span></a></li>
+                            <li class="admin-only" style="display: none;"><a href="#admin-settings" class="dropdown-item" data-section="admin-settings"><i class="fas fa-sliders"></i> <span>الإعدادات</span></a></li>
+                            
+                            <li class="dropdown-divider"></li>
+                            <li><button id="dropdownLogoutBtn" type="button" class="dropdown-item text-danger"><i class="fas fa-sign-out-alt"></i> <span>تسجيل الخروج</span></button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button id="headerWalletSummary" class="header-wallet-summary" type="button" style="display: none;">
+                    <span class="header-wallet-summary__label">الرصيد المتاح</span>
+                    <strong id="headerWalletSummaryValue">0.00 USDT</strong>
+                    <small id="headerWalletSummaryMeta">افتح المحفظة لمزيد من التفاصيل</small>
+                </button>
+                <div class="header-actions">
+                    <div id="notificationsWrap" class="notifications-wrap" style="display: none;">
+                        <button id="notificationsToggleBtn" class="btn btn-light notifications-toggle" type="button" aria-label="مركز الإشعارات" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span id="notificationsCount" class="notifications-count" hidden>0</span>
+                        </button>
+                        <div id="notificationsPanel" class="notifications-panel" hidden>
+                            <div class="notifications-panel__head">
+                                <strong>الإشعارات</strong>
+                                <span id="notificationsPanelMeta">0 عناصر</span>
+                            </div>
+                            <div id="notificationsList" class="notifications-list"></div>
+                        </div>
+                    </div>
+                    <button id="installAppBtnHeader" class="btn btn-light install-app-btn" type="button" hidden>
+                        <i class="fas fa-mobile-screen-button"></i>
+                        <span>تطبيق Android / iPhone</span>
+                    </button>
+                    <button id="loginBtn" class="btn btn-ghost">دخول</button>
+                    <button id="registerBtn" class="btn btn-primary">ابدأ الآن</button>
+                    <button id="logoutBtn" class="btn btn-light" style="display: none;">خروج</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

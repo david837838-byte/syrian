@@ -1,0 +1,7 @@
+[OK] Default investments created successfully
+[OK] Database initialized successfully!
+[INFO] Server starting on http://localhost:5000
+[INFO] Default admin email: admin@invest.com
+[WARN] Change the default admin password before exposing this service.
+ * Serving Flask app 'app'
+ * Debug mode: off

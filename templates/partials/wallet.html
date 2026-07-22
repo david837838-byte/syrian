@@ -1,0 +1,350 @@
+﻿<section id="wallet" class="section-hidden">
+    <div class="container">
+        <div class="wallet-hero js-reveal">
+            <div class="section-title wallet-title">
+                <span class="section-kicker">
+                    <i class="fas fa-wallet"></i>
+                    محفظة رقمية مرتبطة بالاستثمار
+                </span>
+                <h2>إدارة التمويل والدفع الرقمي من واجهة واحدة</h2>
+                <p>تابع رصيدك، عنوان محفظتك، الشبكات المدعومة، وطلبات السحب والإيداع بدون تعقيد.</p>
+            </div>
+            <div class="wallet-hero-panel">
+                <div class="wallet-hero-panel__badge">
+                    <i class="fas fa-signal"></i>
+                    <span>لوحة تمويل عملية</span>
+                </div>
+                <h3>المحفظة هنا ليست صفحة جانبية، بل مركز الحركة بين الإيداع والسحب والاستثمار.</h3>
+                <div class="wallet-hero-panel__grid">
+                    <div class="wallet-hero-panel__item">
+                        <span>العملة</span>
+                        <strong>تبديل سريع</strong>
+                    </div>
+                    <div class="wallet-hero-panel__item">
+                        <span>الإجراء</span>
+                        <strong>إيداع أو سحب</strong>
+                    </div>
+                    <div class="wallet-hero-panel__item">
+                        <span>الوصول</span>
+                        <strong>من شاشة واحدة</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="walletVideoSection" class="feature-video-block feature-video-block--wallet js-reveal" hidden>
+            <div class="feature-video-block__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-film"></i>
+                        شرح المحفظة
+                    </span>
+                    <h3>فيديو يشرح الإيداع والسحب والتحويل الداخلي</h3>
+                </div>
+                <p>يظهر هنا فقط عندما يفعله الأدمن من الإعدادات ويضيف رابط الفيديو.</p>
+            </div>
+            <div id="walletVideoEmbed" class="feature-video-block__frame"></div>
+        </div>
+
+        <div id="legacyWalletSection">
+            <div class="wallet-proof-strip js-reveal">
+                <div class="wallet-proof-card">
+                    <strong>رصيد وعنوان</strong>
+                    <span>أهم معلومات المحفظة تظهر أولًا بشكل واضح وقابل للنسخ.</span>
+                </div>
+                <div class="wallet-proof-card">
+                    <strong>شبكات متعددة</strong>
+                    <span>التبديل بين العملات والشبكات من نفس الواجهة بدون تشتيت.</span>
+                </div>
+                <div class="wallet-proof-card">
+                    <strong>إجراءات مباشرة</strong>
+                    <span>QR، ربط المحفظة، إيداع، سحب، وتحويل داخلي بخطوات أقصر.</span>
+                </div>
+            </div>
+
+            <div class="network-selector">
+                <div class="network-option selected" data-currency="usdt">
+                    <i class="fab fa-usdt" style="font-size: 1.5rem;"></i>
+                    <div>USDT</div>
+                    <small>Tether</small>
+                </div>
+                <div class="network-option" data-currency="btc">
+                    <i class="fab fa-btc" style="font-size: 1.5rem;"></i>
+                    <div>Bitcoin</div>
+                    <small>BTC</small>
+                </div>
+                <div class="network-option" data-currency="eth">
+                    <i class="fab fa-ethereum" style="font-size: 1.5rem;"></i>
+                    <div>Ethereum</div>
+                    <small>ETH</small>
+                </div>
+                <div class="network-option" data-currency="bnb">
+                    <i class="fas fa-coins" style="font-size: 1.5rem;"></i>
+                    <div>BNB</div>
+                    <small>Binance</small>
+                </div>
+            </div>
+
+            <div class="wallet-command-strip js-reveal">
+                <div class="wallet-command-strip__item">
+                    <span>الحالة الحالية</span>
+                    <strong>تمويل رقمي جاهز</strong>
+                </div>
+                <div class="wallet-command-strip__item">
+                    <span>العملة الافتراضية</span>
+                    <strong>USDT / TRC20</strong>
+                </div>
+                <div class="wallet-command-strip__item">
+                    <span>أسرع إجراء</span>
+                    <strong>نسخ العنوان أو QR للإيداع</strong>
+                </div>
+            </div>
+
+            <div class="wallet-insight-strip js-reveal">
+                <div class="wallet-insight-card">
+                    <span>العملة الحالية</span>
+                    <strong id="walletInsightCurrency">USDT</strong>
+                    <small>تتبدل حسب اختيارك في الأعلى</small>
+                </div>
+                <div class="wallet-insight-card">
+                    <span>الشبكة الحالية</span>
+                    <strong id="walletInsightNetwork">TRC20</strong>
+                    <small>مرتبطة بعنوان الإيداع المعتمد</small>
+                </div>
+                <div class="wallet-insight-card">
+                    <span>العنوان</span>
+                    <strong id="walletInsightAddress">بانتظار الربط</strong>
+                    <small>يظهر فور إنشاء أو ربط المحفظة</small>
+                </div>
+                <div class="wallet-insight-card">
+                    <span>التحويل الداخلي</span>
+                    <strong id="walletInsightInternal">جاهز بين المستخدمين</strong>
+                    <small>باستخدام رقم الحساب العام</small>
+                </div>
+            </div>
+        </div>
+
+        <div id="walletSpecialAccessSection" class="wallet-special-access js-reveal" style="display: none;">
+            <div class="wallet-special-access__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-user-shield"></i>
+                        محافظ خاصة بصلاحية
+                    </span>
+                    <h3>المحافظ الخاصة</h3>
+                </div>
+            </div>
+            <div id="specialWalletsList" class="wallet-special-access__grid"></div>
+        </div>
+
+        <div id="walletRealAccountsSection" class="wallet-special-access wallet-real-channels js-reveal" style="display: none;">
+            <div class="wallet-special-access__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-fingerprint"></i>
+                        محفظتك الحقيقية
+                    </span>
+                    <h3>محافظ كريبتو مستقلة لكل مستخدم</h3>
+                    <p class="wallet-special-access__lead">هذا القسم الجديد يستخدم نفس رسوم الشبكة والحدود المعتمدة في النظام، بدون أي تعديل على المحفظة القديمة.</p>
+                </div>
+                <button id="createRealCryptoWalletBtn" class="btn btn-success btn-sm" type="button">
+                    <i class="fas fa-plus-circle"></i> إنشاء للمحددة
+                </button>
+            </div>
+            <div class="network-selector wallet-real-selector">
+                <div class="network-option selected" data-currency="usdt">
+                    <i class="fab fa-usdt" style="font-size: 1.5rem;"></i>
+                    <div>USDT</div>
+                    <small>Tether</small>
+                </div>
+                <div class="network-option" data-currency="btc">
+                    <i class="fab fa-btc" style="font-size: 1.5rem;"></i>
+                    <div>Bitcoin</div>
+                    <small>BTC</small>
+                </div>
+                <div class="network-option" data-currency="eth">
+                    <i class="fab fa-ethereum" style="font-size: 1.5rem;"></i>
+                    <div>Ethereum</div>
+                    <small>ETH</small>
+                </div>
+                <div class="network-option" data-currency="bnb">
+                    <i class="fas fa-coins" style="font-size: 1.5rem;"></i>
+                    <div>BNB</div>
+                    <small>Binance</small>
+                </div>
+            </div>
+            <div class="networks-grid" style="margin-bottom: 18px;">
+                <div class="network-badge selected" data-network="trc20">
+                    <i class="fab fa-usdt"></i>
+                    <div>TRC20</div>
+                    <small>USDT</small>
+                </div>
+                <div class="network-badge" data-network="erc20">
+                    <i class="fab fa-ethereum"></i>
+                    <div>ERC20</div>
+                    <small>ETH</small>
+                </div>
+                <div class="network-badge" data-network="bep20">
+                    <i class="fab fa-usdt"></i>
+                    <div>BEP20</div>
+                    <small>BNB</small>
+                </div>
+                <div class="network-badge" data-network="btc">
+                    <i class="fab fa-btc"></i>
+                    <div>Bitcoin</div>
+                    <small>BTC</small>
+                </div>
+            </div>
+            <div id="walletRealAccountsList" class="wallet-special-access__grid"></div>
+        </div>
+
+        <div id="walletRealCryptoSection" class="wallet-special-access wallet-real-channels js-reveal" style="display: none;">
+            <div class="wallet-special-access__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-coins"></i>
+                        المحافظ الحقيقية
+                    </span>
+                    <h3>محافظ كريبتو حقيقية</h3>
+                </div>
+            </div>
+            <div id="walletRealCryptoList" class="wallet-special-access__grid"></div>
+        </div>
+
+        <div id="walletRealChannelsSection" class="wallet-special-access wallet-real-channels js-reveal" style="display: none;">
+            <div class="wallet-special-access__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-building-columns"></i>
+                        القنوات الحقيقية
+                    </span>
+                    <h3>قنوات الدفع الحقيقية الأخرى</h3>
+                </div>
+            </div>
+            <div id="walletRealChannelsList" class="wallet-special-access__grid"></div>
+        </div>
+
+        <div id="legacyWalletShell" class="wallet-shell">
+            <div class="wallet-card">
+                <div id="walletOnboardingBanner" class="wallet-onboarding-banner" style="display: none;">
+                    <i class="fas fa-sparkles"></i>
+                    <div>
+                        <strong>محفظتك جاهزة للانطلاق</strong>
+                        <span>اختر العملة، انسخ عنوانك، ثم حوّل المال إليها لبدء الاستثمار.</span>
+                    </div>
+                </div>
+
+                <h3><i class="fas fa-wallet"></i> رصيد المحفظة</h3>
+                <div id="walletAssetMetaCard" class="wallet-asset-meta-card">
+                    <div class="wallet-asset-meta-row">
+                        <span id="walletAssetSymbolBadge" class="wallet-asset-symbol-badge">USDT</span>
+                        <div>
+                            <strong id="walletAssetName">USDT Wallet</strong>
+                            <div id="walletAssetNetworkLabel" class="wallet-asset-network-label">Tron (TRC20)</div>
+                        </div>
+                    </div>
+                    <p id="walletAssetHelper" class="wallet-asset-helper">
+                        سيتم ربط عنوان الإيداع الحالي على العملة والشبكة المحددتين.
+                    </p>
+                </div>
+                <div class="wallet-balance" id="walletBalance">0.00 USDT</div>
+                <div class="wallet-quick-stats">
+                    <div class="wallet-quick-stat">
+                        <span>الوصول</span>
+                        <strong>24/7</strong>
+                    </div>
+                    <div class="wallet-quick-stat">
+                        <span>التأكيد</span>
+                        <strong>بريد + كود</strong>
+                    </div>
+                    <div class="wallet-quick-stat">
+                        <span>التحويل</span>
+                        <strong>داخلي وخارجي</strong>
+                    </div>
+                </div>
+
+                <div class="wallet-address-card">
+                    <div class="wallet-address-toolbar">
+                        <span><i class="fas fa-key"></i> عنوان محفظتك</span>
+                        <button id="copyWalletAddressBtn" class="btn btn-light btn-sm" type="button" disabled>
+                            <i class="fas fa-copy"></i> نسخ
+                        </button>
+                    </div>
+                    <div class="wallet-address" id="userWalletAddress">
+                        جاري تحميل عنوان المحفظة...
+                    </div>
+                </div>
+
+                <p id="walletHelperText" style="position: relative; z-index: 1; margin-top: 14px; color: rgba(255,255,255,0.8);">
+                    اختر العملة ثم اربط عنوان محفظتك أو استخدم أزرار الإيداع والسحب بأمان.
+                </p>
+
+                <div class="wallet-actions">
+                    <button id="depositBtn" class="btn btn-light" type="button">
+                        <i class="fas fa-money-bill-wave"></i> إيداع
+                    </button>
+                    <button id="internalTransferBtn" class="btn btn-info" type="button">
+                        <i class="fas fa-right-left"></i> تحويل داخلي
+                    </button>
+                    <button id="generateWalletBtn" class="btn btn-success" type="button">
+                        <i class="fas fa-plus-circle"></i> محفظة جديدة
+                    </button>
+                    <button id="showQrBtn" class="btn btn-light" type="button">
+                        <i class="fas fa-qrcode"></i> رمز الإيداع
+                    </button>
+                    <button id="checkBalanceBtn" class="btn btn-info" type="button">
+                        <i class="fas fa-sync-alt"></i> تحديث الرصيد
+                    </button>
+                    <button id="withdrawBtn" class="btn btn-warning" type="button">
+                        <i class="fas fa-hand-holding-usd"></i> طلب سحب
+                    </button>
+                </div>
+            </div>
+
+            <div class="wallet-side">
+                <div class="wallet-side-topline">
+                    <div class="wallet-side-topline__card">
+                        <span>خطة الاستخدام</span>
+                        <strong>اختر العملة ثم الشبكة ثم نفّذ الإيداع أو السحب</strong>
+                    </div>
+                </div>
+                <h3><i class="fas fa-network-wired"></i> الشبكات المدعومة</h3>
+
+                <div class="networks-grid">
+                    <div class="network-badge selected" data-network="trc20">
+                        <i class="fab fa-usdt"></i>
+                        <div>TRC20</div>
+                        <small>رسوم: 1$</small>
+                    </div>
+                    <div class="network-badge" data-network="erc20">
+                        <i class="fab fa-ethereum"></i>
+                        <div>ERC20</div>
+                        <small>رسوم: 5$</small>
+                    </div>
+                    <div class="network-badge" data-network="bep20">
+                        <i class="fab fa-usdt"></i>
+                        <div>BEP20</div>
+                        <small>رسوم: 0.5$</small>
+                    </div>
+                    <div class="network-badge" data-network="btc">
+                        <i class="fab fa-btc"></i>
+                        <div>Bitcoin</div>
+                        <small>رسوم: 0.0001 BTC</small>
+                    </div>
+                </div>
+
+                <div class="wallet-note">
+                    <h4 class="wallet-note-title">
+                        <i class="fas fa-info-circle"></i> تعليمات الإيداع
+                    </h4>
+                    <ul>
+                        <li style="margin-bottom: 8px;">الحد الأدنى للإيداع والسحب يتغير حسب العملة المحددة.</li>
+                        <li style="margin-bottom: 8px;">إذا لم يكن لديك عنوان محفظة للعملة المختارة، استخدم زر "محفظة جديدة".</li>
+                        <li style="margin-bottom: 8px;">يمكنك التحويل داخليًا إلى مستخدم آخر داخل المنصة عبر رقم الحساب العام.</li>
+                        <li>احتفظ بـ TX Hash للمتابعة السريعة بعد الإيداع.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

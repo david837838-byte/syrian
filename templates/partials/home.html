@@ -1,0 +1,319 @@
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-shell">
+            <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+            <div class="hero-copy">
+                <div class="hero-topline">
+                    <span class="section-kicker" id="heroBadge">
+                        <i class="fas fa-map-marked-alt"></i>
+                        فرص عقارية موزعة على المحافظات السورية
+                    </span>
+                    <span class="hero-live-pill">
+                        <span class="hero-live-pill__dot"></span>
+                        تصميم أحدث لرحلة المستثمر
+                    </span>
+                </div>
+                <h1 id="heroTitle">استثمر في عقارات سوريا برؤية أوضح وتجربة أحدث</h1>
+                <p id="heroDescription">
+                    منصة رقمية تجمع المشاريع العقارية حسب المحافظة، وتعرض لكل منطقة قصتها وصورتها وفرصها
+                    الاستثمارية، مع إدارة دفع رقمي ومتابعة مباشرة من مكان واحد.
+                </p>
+
+                <div class="hero-quick-proof">
+                    <div class="hero-quick-proof__item">
+                        <strong>واجهة أوضح</strong>
+                        <span>قرار أسرع من أول نظرة</span>
+                    </div>
+                    <div class="hero-quick-proof__item">
+                        <strong>فرص منظمة</strong>
+                        <span>محافظات ومشاريع في مسار واحد</span>
+                    </div>
+                    <div class="hero-quick-proof__item">
+                        <strong>تشغيل أسهل</strong>
+                        <span>تمويل وتتبع ضمن تجربة واحدة</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#investments" class="btn btn-success btn-lg nav-link" data-section="investments">
+                        <i class="fas fa-building"></i>
+                        <span id="heroPrimaryCta">تصفح المشاريع</span>
+                    </a>
+                    <a href="#auth" class="btn btn-outline btn-lg nav-link" data-section="auth">
+                        <i class="fas fa-user-plus"></i>
+                        <span id="heroSecondaryCta">افتح حسابك</span>
+                    </a>
+                </div>
+
+                <div class="hero-app-buttons">
+                    <button id="installAppBtnHero" class="btn btn-secondary btn-lg install-app-btn" type="button" hidden>
+                        <i class="fas fa-download"></i>
+                        <span>تنزيل التطبيق Android / iPhone</span>
+                    </button>
+                    <div id="appInstallHint" class="hero-app-hint" hidden>
+                        <i class="fas fa-mobile-screen"></i>
+                        <span>يمكنك تثبيت المنصة كتطبيق على الهاتف والعمل منها مباشرة.</span>
+                    </div>
+                </div>
+
+                <div class="hero-trust-row js-reveal">
+                    <div class="hero-trust-chip">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>توثيق بريد وكود حماية قبل السحب</span>
+                    </div>
+                    <div class="hero-trust-chip">
+                        <i class="fas fa-landmark"></i>
+                        <span>عرض محافظات ومشاريع بهوية أوضح</span>
+                    </div>
+                    <div class="hero-trust-chip">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>تمويل واستثمار من واجهة واحدة</span>
+                    </div>
+                </div>
+                <div class="hero-highlights-wrap js-reveal">
+                    <div class="hero-highlights-label">
+                        <i class="fas fa-chart-line"></i>
+                        <span>مؤشرات البداية</span>
+                    </div>
+                    <div class="hero-highlights" id="heroHighlights"></div>
+                </div>
+
+                <div class="hero-mini-charts js-reveal">
+                    <article class="hero-mini-chart-card">
+                        <div class="hero-mini-chart-card__top">
+                            <span>نبض التمويل</span>
+                            <strong id="heroMiniFundingLabel">0%</strong>
+                        </div>
+                        <div class="hero-mini-chart-card__canvas">
+                            <canvas id="heroFundingChart"></canvas>
+                        </div>
+                    </article>
+                    <article class="hero-mini-chart-card">
+                        <div class="hero-mini-chart-card__top">
+                            <span>إشارة العائد</span>
+                            <strong id="heroMiniReturnLabel">0%</strong>
+                        </div>
+                        <div class="hero-mini-chart-card__canvas">
+                            <canvas id="heroReturnsChart"></canvas>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="hero-panel">
+                <div class="hero-panel-badge">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>أين تتركز الاستثمارات؟</span>
+                </div>
+                <h3 id="heroPanelTitle">أكثر المحافظات جذبًا للمستثمرين الآن</h3>
+                <p class="hero-panel-intro" id="heroPanelIntro">
+                    قراءة سريعة للمحافظات التي تستقطب التمويل والمستثمرين، حتى يلتقط الزائر نبض السوق من أول نظرة.
+                </p>
+                <div class="hero-panel-chart">
+                    <canvas id="heroGovernoratesChart"></canvas>
+                </div>
+                <div class="hero-panel-ranking" id="heroGovernorateLeaders"></div>
+                <div class="hero-panel-footer">
+                    <div class="hero-panel-footer__metric">
+                        <strong id="heroTopGovernorate">-</strong>
+                        <span>المحافظة المتصدرة</span>
+                    </div>
+                    <div class="hero-panel-footer__metric">
+                        <strong id="heroTopGovernorateFunding">$0</strong>
+                        <span>حجم التمويل فيها</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <div id="homeVideoSection" class="feature-video-block js-reveal" hidden>
+            <div class="feature-video-block__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-circle-play"></i>
+                        شرح المنصة
+                    </span>
+                    <h3>فيديو يوضح فكرة المنصة وخطوات البدء</h3>
+                </div>
+                <p>يمكن تشغيل هذا الفيديو أو إخفاؤه بالكامل من إعدادات الإدارة.</p>
+            </div>
+            <div id="homeVideoEmbed" class="feature-video-block__frame"></div>
+        </div>
+
+        <div class="investor-band">
+            <div class="investor-band-copy">
+                <span class="section-kicker">
+                    <i class="fas fa-circle-check"></i>
+                    رسالة ثقة للمستثمر
+                </span>
+                <h3 id="investorFocusTitle">منصة تعطي صورة أوضح قبل اتخاذ القرار</h3>
+                <p id="investorFocusText">
+                    نعرض المحافظة، المشروع، حالة التمويل، والجاهزية التشغيلية بلغة مباشرة تساعد المستثمر
+                    على فهم الفرصة بسرعة ومن دون غموض.
+                </p>
+            </div>
+            <div class="investor-band-points" id="investorFocusPoints"></div>
+        </div>
+
+        <div class="home-market-strip js-reveal">
+            <div class="home-market-strip__item">
+                <span>المشاريع النشطة</span>
+                <strong id="marketProjectsCount">0</strong>
+                <small>فرص جاهزة للعرض والاستكشاف</small>
+            </div>
+            <div class="home-market-strip__item">
+                <span>إجمالي رؤوس الأموال</span>
+                <strong id="marketCapitalCount">$0</strong>
+                <small>قراءة سريعة لحجم السوق الظاهر</small>
+            </div>
+            <div class="home-market-strip__item">
+                <span>متوسط العائد الشهري</span>
+                <strong id="marketReturnCount">0%</strong>
+                <small>مؤشر مباشر للمقارنة الأولية</small>
+            </div>
+            <div class="home-market-strip__item">
+                <span>المحافظات الجاهزة</span>
+                <strong id="marketGovernorateCount">0</strong>
+                <small>توزيع بصري منظم داخل المنصة</small>
+            </div>
+        </div>
+
+        <div class="home-extended">
+            <div class="home-live-panel js-reveal">
+                <div class="home-live-head">
+                    <span class="section-kicker">
+                        <i class="fas fa-signal"></i>
+                        مؤشرات مباشرة
+                    </span>
+                    <h3>واجهة أسرع في الفهم وأكثر إقناعًا للمستثمر</h3>
+                </div>
+                <div class="home-live-stats">
+                    <div class="live-stat-card">
+                        <strong id="liveGovernoratesCount" data-target="0">0</strong>
+                        <span>محافظة جاهزة للعرض</span>
+                    </div>
+                    <div class="live-stat-card">
+                        <strong id="liveProjectsCount" data-target="0">0</strong>
+                        <span>مشروع استثماري ظاهر</span>
+                    </div>
+                    <div class="live-stat-card">
+                        <strong id="liveInvestorsCount" data-target="0">0</strong>
+                        <span>مستثمر داخل الفرص الحالية</span>
+                    </div>
+                    <div class="live-stat-card live-stat-card--accent">
+                        <strong id="liveFundingRatio">0%</strong>
+                        <span>متوسط التمويل المنجز</span>
+                    </div>
+                </div>
+
+                <div class="home-live-progress-grid">
+                    <div class="home-live-progress-card">
+                        <div class="home-live-progress-card__head">
+                            <span>رأس المال المتابع</span>
+                            <strong id="liveTrackedCapitalCounter">$0</strong>
+                        </div>
+                        <div class="home-live-progress-bar">
+                            <span id="liveTrackedCapitalBar"></span>
+                        </div>
+                    </div>
+                    <div class="home-live-progress-card">
+                        <div class="home-live-progress-card__head">
+                            <span>جاهزية الفرص</span>
+                            <strong id="liveProjectsReadiness">0%</strong>
+                        </div>
+                        <div class="home-live-progress-bar home-live-progress-bar--warm">
+                            <span id="liveProjectsReadinessBar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-live-footer">
+                <div class="home-live-footer__item">
+                    <span>المسار الأسرع للبدء</span>
+                    <strong>تسجيل، محفظة، تمويل، استثمار</strong>
+                </div>
+                <div class="home-live-footer__item">
+                    <span>حالة الواجهة</span>
+                    <strong id="heroOperationsStatus">جاهزة للمستثمر</strong>
+                </div>
+            </div>
+
+            <div class="home-journey js-reveal">
+                <div class="journey-card">
+                    <span>01</span>
+                    <h4>استكشف المحافظة</h4>
+                    <p>ابدأ من المكان نفسه: الصورة، الوصف، وطبيعة الفرص العقارية في كل محافظة.</p>
+                </div>
+                <div class="journey-card">
+                    <span>02</span>
+                    <h4>أنشئ حسابك</h4>
+                    <p>بعد التسجيل تنتقل مباشرة إلى المحفظة لتجهيز عنوانك الرقمي والبدء بتمويل حسابك.</p>
+                </div>
+                <div class="journey-card">
+                    <span>03</span>
+                    <h4>حوّل وابدأ الاستثمار</h4>
+                    <p>انسخ عنوان المحفظة، أرسل المبلغ، ثم عد لاختيار المشروع المناسب ومتابعة التمويل.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-feature-showcase js-reveal">
+            <div class="home-feature-showcase__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-bolt"></i>
+                        نقاط قوة الواجهة
+                    </span>
+                    <h3>ما الذي يجعل البداية أوضح للمستثمر؟</h3>
+                </div>
+                <p>ملخص سريع للفروقات العملية التي تظهر من أول زيارة وتختصر القرار بدل أن تربك المستخدم.</p>
+            </div>
+            <div id="homeFeatureShowcase" class="home-feature-showcase__grid"></div>
+        </div>
+
+        <div class="home-governorate-map js-reveal">
+            <div class="home-governorate-map__copy">
+                <span class="section-kicker">
+                    <i class="fas fa-map"></i>
+                    خريطة المحافظات
+                </span>
+                <h3>استكشف المحافظات من واجهة تفاعلية سريعة</h3>
+                <p>اضغط على أي محافظة لترى قصتها الاستثمارية بسرعة، ثم انتقل إلى المشاريع المرتبطة بها عندما تريد المتابعة.</p>
+                <div id="homeGovernorateMapDetails" class="home-governorate-map__details"></div>
+            </div>
+            <div class="home-governorate-map__board">
+                <div id="homeGovernorateMap" class="home-governorate-map__grid"></div>
+            </div>
+        </div>
+
+        <div class="home-testimonials js-reveal">
+            <div class="home-testimonials__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-quote-right"></i>
+                        قصص نجاح
+                    </span>
+                    <h3>انطباعات تبني الثقة من أول قراءة</h3>
+                </div>
+                <p>رسائل قصيرة تحاكي ما يريد المستثمر سماعه: وضوح، سرعة، ومتابعة منظمة بعد البدء.</p>
+            </div>
+            <div id="homeTestimonials" class="home-testimonials__grid"></div>
+        </div>
+
+        <div class="home-faq js-reveal">
+            <div class="home-faq__header">
+                <div>
+                    <span class="section-kicker">
+                        <i class="fas fa-circle-question"></i>
+                        الأسئلة الشائعة
+                    </span>
+                    <h3>إجابات سريعة قبل أول خطوة</h3>
+                </div>
+                <p>شرح مختصر لأكثر ما يحتاجه الزائر لفهم طريقة العمل قبل التسجيل أو التمويل.</p>
+            </div>
+            <div id="homeFaqAccordion" class="home-faq__accordion"></div>
+        </div>
+    </div>
+</section>

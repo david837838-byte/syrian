@@ -1,0 +1,124 @@
+﻿<section id="admin-wallets" class="section-hidden">
+        <div class="container">
+            <div class="admin-subhero js-reveal">
+                <div class="section-title admin-subhero-title">
+                    <span class="section-kicker">
+                        <i class="fas fa-wallet"></i>
+                        المحافظ الرئيسية للنظام
+                    </span>
+                    <h2><i class="fas fa-wallet"></i> إدارة محافظ الأدمن</h2>
+                    <p>إدارة محافظ النظام الرئيسية لاستقبال المدفوعات</p>
+                </div>
+                <div class="admin-subhero-panel">
+                    <h3>كل المحافظ التشغيلية في مكان واحد مع فصل بين القائمة، الإضافة، والإحصائيات.</h3>
+                </div>
+            </div>
+            
+            <div class="admin-dashboard">
+                <div class="admin-tabs admin-wallet-tabs" style="margin-bottom: 30px;">
+                    <button type="button" class="admin-tab active" data-tab="admin-wallets-list">المحافظ</button>
+                    <button type="button" class="admin-tab" data-tab="add-admin-wallet">إضافة محفظة</button>
+                    <button type="button" class="admin-tab" data-tab="admin-wallet-stats">إحصائيات</button>
+                </div>
+                
+                <div id="admin-wallets-list" class="admin-content active">
+                    <div class="action-buttons" style="margin-bottom: 25px;">
+                        <button id="refreshAdminWalletsBtn" class="btn btn-info">
+                            <i class="fas fa-sync-alt"></i> تحديث
+                        </button>
+                        <button id="exportWalletsBtn" class="btn btn-light">
+                            <i class="fas fa-download"></i> تصدير
+                        </button>
+                    </div>
+
+                    <div id="adminWalletOverview" class="admin-reports-grid">
+                        <div class="admin-report-card">جاري تحميل ملخص المحافظ...</div>
+                    </div>
+
+                    <div class="admin-filter-bar">
+                        <input type="text" id="adminWalletSearch" class="form-control" placeholder="ابحث بالعنوان أو التسمية أو الشبكة">
+                        <select id="adminWalletCurrencyFilter" class="form-control">
+                            <option value="all">كل العملات</option>
+                        </select>
+                        <select id="adminWalletStatusFilter" class="form-control">
+                            <option value="all">كل الحالات</option>
+                            <option value="active">النشطة فقط</option>
+                            <option value="inactive">المعطلة فقط</option>
+                        </select>
+                    </div>
+                    
+                    <div id="adminWalletsList">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>جاري تحميل محافظ الأدمن...</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="add-admin-wallet" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-plus-circle"></i> إضافة محفظة أدمن جديدة
+                    </h3>
+                    
+                    <form id="addAdminWalletForm" class="admin-panel-form">
+                        <div class="form-group">
+                            <label for="adminWalletCurrency">العملة</label>
+                            <select id="adminWalletCurrency" class="form-control" required>
+                                <option value="">اختر العملة</option>
+                                <option value="USDT">USDT</option>
+                                <option value="BTC">Bitcoin</option>
+                                <option value="ETH">Ethereum</option>
+                                <option value="BNB">BNB</option>
+                                <option value="TRX">Tron</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="adminWalletNetwork">الشبكة</label>
+                            <select id="adminWalletNetwork" class="form-control" required>
+                                <option value="">اختر الشبكة</option>
+                                <option value="TRC20">TRC20</option>
+                                <option value="ERC20">ERC20</option>
+                                <option value="BEP20">BEP20</option>
+                                <option value="BTC">Bitcoin Network</option>
+                                <option value="ETH">Ethereum Network</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="adminWalletAddress">عنوان المحفظة</label>
+                            <input type="text" id="adminWalletAddress" class="form-control" placeholder="أدخل عنوان المحفظة" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="adminWalletLabel">تسمية المحفظة</label>
+                            <input type="text" id="adminWalletLabel" class="form-control" placeholder="مثال: المحفظة الرئيسية USDT">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success" style="width: 100%; padding: 16px;">
+                            <i class="fas fa-check-circle"></i> إضافة المحفظة
+                        </button>
+                        
+                        <div id="adminWalletError" style="color: var(--danger); margin-top: 15px; display: none; text-align: center;">
+                            <i class="fas fa-exclamation-circle"></i> <span id="adminWalletErrorText"></span>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="admin-wallet-stats" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-chart-bar"></i> إحصائيات محافظ الأدمن
+                    </h3>
+                    
+                    <div id="adminWalletStats">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>جاري تحميل الإحصائيات...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم إعدادات الأدمن -->

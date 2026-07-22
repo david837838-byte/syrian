@@ -1,0 +1,1300 @@
+﻿<section id="admin-settings" class="section-hidden">
+        <div class="container">
+            <div class="admin-subhero js-reveal">
+                <div class="section-title admin-subhero-title">
+                    <span class="section-kicker">
+                        <i class="fas fa-cogs"></i>
+                        ضبط الواجهة والتشغيل
+                    </span>
+                    <h2><i class="fas fa-cogs"></i> إعدادات النظام المتقدمة</h2>
+                    <p>إدارة جميع إعدادات المنصة بشكل كامل</p>
+                </div>
+                <div class="admin-subhero-panel">
+                    <h3>صفحة الإعدادات أصبحت أوضح للتنقل بين التسويق والمال والأمان والمحافظات.</h3>
+                </div>
+            </div>
+            
+            <div class="admin-dashboard">
+                <div class="admin-tabs admin-settings-tabs" style="margin-bottom: 30px;">
+                    <button type="button" class="admin-tab active" data-tab="general-settings">إعدادات عامة</button>
+                    <button type="button" class="admin-tab" data-tab="marketing-settings">واجهة المستثمر</button>
+                    <button type="button" class="admin-tab" data-tab="financial-settings">إعدادات مالية</button>
+                    <button type="button" class="admin-tab" data-tab="currency-settings">إعدادات العملات</button>
+                    <button type="button" class="admin-tab" data-tab="launch-settings">الإطلاق الحقيقي</button>
+                    <button type="button" class="admin-tab" data-tab="security-settings">إعدادات الأمان</button>
+                    <button type="button" class="admin-tab" data-tab="governorates-settings">المحافظات</button>
+                    <button type="button" class="admin-tab" data-tab="receiving-wallets">محافظ الاستقبال</button>
+                    <button type="button" class="admin-tab" data-tab="special-wallets">محافظ خاصة</button>
+                    <button type="button" class="admin-tab" data-tab="financial-channels">المحافظ الحقيقية</button>
+                </div>
+                
+                <div id="general-settings" class="admin-content active">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-cog"></i> الإعدادات العامة
+                    </h3>
+                    
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div class="form-group">
+                            <label for="siteTitle">اسم المنصة</label>
+                            <input type="text" id="siteTitle" class="form-control" value="منصة الاستثمار الذكية">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="siteDescription">وصف المنصة</label>
+                            <textarea id="siteDescription" class="form-control" rows="3">منصة استثمار آمنة وموثوقة</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="siteBackgroundImage">رابط الخلفية الافتراضية</label>
+                            <input type="url" id="siteBackgroundImage" class="form-control" placeholder="https://example.com/default-background.jpg">
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="maintenanceMode" class="form-check-input">
+                            <label class="form-check-label" for="maintenanceMode">وضع الصيانة</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 18px;">
+                            <label for="maintenanceMessage">رسالة وضع الصيانة للمستخدمين</label>
+                            <textarea id="maintenanceMessage" class="form-control" rows="3" placeholder="مثال: نحن الآن في وضع صيانة لتحسين المنصة. نعتذر عن الإزعاج وسنعود إليكم قريبًا."></textarea>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="registrationEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="registrationEnabled">تفعيل التسجيل</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="companyAccountsEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="companyAccountsEnabled">تفعيل تسجيل حسابات الشركات</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="depositEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="depositEnabled">تفعيل الإيداع</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="withdrawEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="withdrawEnabled">تفعيل السحب</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="internalTransferEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="internalTransferEnabled">تفعيل التحويل الداخلي بين المستخدمين</label>
+                        </div>
+
+                        <div id="coreFeatureStatusBox" style="margin-top: 22px; padding: 18px; border-radius: 12px; background: #eef6ff; border: 1px solid #dbeafe;">
+                            <div style="font-weight: 800; color: var(--secondary); margin-bottom: 10px;">
+                                <i class="fas fa-toggle-on"></i> حالة الميزات الأساسية
+                            </div>
+                            <div id="coreFeatureStatusSummary" style="color: var(--dark); line-height: 1.8;">
+                                جاري تحميل حالة الإعدادات...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="marketing-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-bullhorn"></i> إعدادات واجهة المستثمر
+                    </h3>
+
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div class="form-group">
+                            <label for="heroBadgeText">الشارة الرئيسية</label>
+                            <input type="text" id="heroBadgeText" class="form-control" placeholder="مثال: فرص عقارية موزعة على المحافظات السورية">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroTitleText">عنوان الواجهة الرئيسية</label>
+                            <input type="text" id="heroTitleText" class="form-control" placeholder="عنوان يشد المستثمر">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroDescriptionText">وصف الواجهة الرئيسية</label>
+                            <textarea id="heroDescriptionText" class="form-control" rows="4" placeholder="وصف يقنع المستثمر ويشرح الفكرة"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroPrimaryCtaText">نص الزر الرئيسي</label>
+                            <input type="text" id="heroPrimaryCtaText" class="form-control" placeholder="مثال: تصفح المشاريع">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroSecondaryCtaText">نص الزر الثانوي</label>
+                            <input type="text" id="heroSecondaryCtaText" class="form-control" placeholder="مثال: افتح حسابك">
+                        </div>
+
+                        <div style="margin: 26px 0 18px; padding: 20px; border-radius: 18px; background: #ffffff; border: 1px solid #e5e7eb;">
+                            <h4 style="margin-bottom: 16px; color: var(--secondary);">
+                                <i class="fas fa-circle-play"></i> فيديوهات الواجهة
+                            </h4>
+
+                            <div class="form-check" style="margin-bottom: 12px;">
+                                <input type="checkbox" id="homeVideoEnabled" class="form-check-input">
+                                <label class="form-check-label" for="homeVideoEnabled">تفعيل فيديو الصفحة الرئيسية</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="homeVideoUrl">رابط فيديو الصفحة الرئيسية</label>
+                                <input type="url" id="homeVideoUrl" class="form-control" placeholder="رابط YouTube أو Vimeo أو ملف MP4 مباشر">
+                                <small style="color: var(--gray);">عند ترك الرابط فارغًا لن يظهر الفيديو حتى لو كان التفعيل شغالًا. بعض فيديوهات YouTube تمنع العرض داخل المواقع، وعندها الأفضل رفع الفيديو مباشرة أو استخدام فيديو يسمح بالتضمين.</small>
+                            </div>
+                            <div class="action-buttons" style="margin-bottom: 14px;">
+                                <input type="file" id="homeVideoFile" accept="video/mp4,video/webm,video/ogg,video/quicktime,.mp4,.webm,.ogg,.mov,.m4v" hidden>
+                                <button id="uploadHomeVideoBtn" class="btn btn-light" type="button">
+                                    <i class="fas fa-upload"></i> رفع فيديو من الهاتف أو الكمبيوتر
+                                </button>
+                            </div>
+
+                            <div class="form-check" style="margin: 20px 0 12px;">
+                                <input type="checkbox" id="walletVideoEnabled" class="form-check-input">
+                                <label class="form-check-label" for="walletVideoEnabled">تفعيل فيديو قسم المحفظة</label>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="walletVideoUrl">رابط فيديو قسم المحفظة</label>
+                                <input type="url" id="walletVideoUrl" class="form-control" placeholder="رابط YouTube أو Vimeo أو ملف MP4 مباشر">
+                            </div>
+                            <div class="action-buttons" style="margin-top: 14px;">
+                                <input type="file" id="walletVideoFile" accept="video/mp4,video/webm,video/ogg,video/quicktime,.mp4,.webm,.ogg,.mov,.m4v" hidden>
+                                <button id="uploadWalletVideoBtn" class="btn btn-light" type="button">
+                                    <i class="fas fa-upload"></i> رفع فيديو من الهاتف أو الكمبيوتر
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroPanelTitleText">عنوان صندوق الشرح الجانبي</label>
+                            <input type="text" id="heroPanelTitleText" class="form-control" placeholder="مثال: كيف تظهر التجربة للمستثمر؟">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investorFocusTitleInput">عنوان رسالة الثقة</label>
+                            <input type="text" id="investorFocusTitleInput" class="form-control" placeholder="مثال: منصة تعطي صورة أوضح قبل اتخاذ القرار">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investorFocusTextInput">نص رسالة الثقة</label>
+                            <textarea id="investorFocusTextInput" class="form-control" rows="3" placeholder="رسالة ثقة موجزة وواضحة"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsTitleInput">عنوان قسم لماذا نحن</label>
+                            <input type="text" id="whyUsTitleInput" class="form-control" placeholder="مثال: واجهة حديثة، مشاريع أوضح، وقرار أسهل">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsDescriptionInput">وصف قسم لماذا نحن</label>
+                            <textarea id="whyUsDescriptionInput" class="form-control" rows="3" placeholder="مقدمة تسويقية قصيرة"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsKickerInput">شارة قسم لماذا نحن</label>
+                            <input type="text" id="whyUsKickerInput" class="form-control" placeholder="مثال: منصة موجهة للاستثمار العقاري">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsHeroPanelBadgeInput">شارة الصندوق الجانبي في لماذا نحن</label>
+                            <input type="text" id="whyUsHeroPanelBadgeInput" class="form-control" placeholder="مثال: لمحة سريعة">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsHeroPanelTitleInput">عنوان الصندوق الجانبي في لماذا نحن</label>
+                            <textarea id="whyUsHeroPanelTitleInput" class="form-control" rows="2" placeholder="رسالة سريعة تشرح قيمة القسم"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="footerDescriptionInput">وصف الفوتر</label>
+                            <textarea id="footerDescriptionInput" class="form-control" rows="3" placeholder="وصف مختصر في أسفل الموقع"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="privacyPolicyTextInput">نص سياسة الخصوصية</label>
+                            <textarea id="privacyPolicyTextInput" class="form-control" rows="5" placeholder="النص الذي يظهر عند الضغط على سياسة الخصوصية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="twitterUrlInput">رابط تويتر</label>
+                            <input type="url" id="twitterUrlInput" class="form-control" placeholder="https://twitter.com/your-page">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="facebookUrlInput">رابط فيسبوك</label>
+                            <input type="url" id="facebookUrlInput" class="form-control" placeholder="https://facebook.com/your-page">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instagramUrlInput">رابط إنستجرام</label>
+                            <input type="url" id="instagramUrlInput" class="form-control" placeholder="https://instagram.com/your-page">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedinUrlInput">رابط لينكد إن</label>
+                            <input type="url" id="linkedinUrlInput" class="form-control" placeholder="https://linkedin.com/company/your-page">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroHighlightsJson">بطاقات المؤشرات الرئيسية (JSON)</label>
+                            <textarea id="heroHighlightsJson" class="form-control" rows="6" placeholder='[{"value":"14 محافظة","label":"لكل محافظة صورة وهوية استثمارية"}]'></textarea>
+                            <small style="color: var(--gray);">يمكنك الكتابة بالمفاتيح العربية أيضًا مثل: <code>القيمة</code> و<code>الوصف</code>.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heroPanelItemsJson">عناصر الصندوق الجانبي (JSON)</label>
+                            <textarea id="heroPanelItemsJson" class="form-control" rows="6" placeholder='[{"icon":"fas fa-image","title":"خلفية مرتبطة بالمحافظة","description":"..."}]'></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investorPointsJson">نقاط الثقة للمستثمر (JSON)</label>
+                            <textarea id="investorPointsJson" class="form-control" rows="6" placeholder='["عرض واضح للمحافظة","تفاصيل تمويل شفافة"]'></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whyUsItemsJson">عناصر قسم لماذا نحن (JSON)</label>
+                            <textarea id="whyUsItemsJson" class="form-control" rows="10" placeholder='[{"icon":"fas fa-map-marked-alt","title":"محافظات بهوية بصرية","summary":"...","details":"...","points":["...","..."]}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsMetricsJson">مؤشرات الصندوق الجانبي في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsMetricsJson" class="form-control" rows="6" placeholder='[{"label":"وضوح القرار","value":"أعلى"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsProofItemsJson">بطاقات الإثبات في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsProofItemsJson" class="form-control" rows="8" placeholder='[{"icon":"fas fa-layer-group","title":"تجربة مرتبة","description":"..."}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsTrustSignalsIntroJson">مقدمة إشارات الثقة في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsTrustSignalsIntroJson" class="form-control" rows="5" placeholder='{"kicker":"إشارات الثقة","title":"مؤشرات مؤسسية","description":"..."}'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsTrustSignalsJson">إشارات الثقة في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsTrustSignalsJson" class="form-control" rows="8" placeholder='[{"value":"حوكمة أوضح","label":"لغة مؤسسية","description":"..."}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsOperationalIntroJson">مقدمة رحلة التشغيل في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsOperationalIntroJson" class="form-control" rows="5" placeholder='{"kicker":"رحلة التشغيل","title":"كيف تبدأ الرحلة؟","description":"..."}'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsOperationalStepsJson">خطوات رحلة التشغيل في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsOperationalStepsJson" class="form-control" rows="10" placeholder='[{"title":"إنشاء الحساب","description":"...","meta":"الخطوة 01"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsShowcaseKickerInput">شارة محور التجربة</label>
+                            <input type="text" id="whyUsShowcaseKickerInput" class="form-control" placeholder="مثال: محاور التجربة">
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsShowcaseTitleInput">عنوان محور التجربة</label>
+                            <input type="text" id="whyUsShowcaseTitleInput" class="form-control" placeholder="ما الذي سيراه المستثمر؟">
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsShowcaseDescriptionInput">وصف محور التجربة</label>
+                            <textarea id="whyUsShowcaseDescriptionInput" class="form-control" rows="3" placeholder="شرح مختصر أعلى الأكورديون"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSectionGuidesIntroJson">مقدمة شرح الأقسام في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsSectionGuidesIntroJson" class="form-control" rows="5" placeholder='{"kicker":"شرح الأقسام","title":"كل قسم مهم","description":"..."}'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSectionGuidesJson">بطاقات شرح الأقسام في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsSectionGuidesJson" class="form-control" rows="12" placeholder='[{"key":"investments","icon":"fas fa-building","title":"قسم المشاريع","summary":"...","description":"...","points":["..."],"section":"investments","actionLabel":"فتح المشاريع"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSideBadgeInput">شارة العمود الجانبي في لماذا نحن</label>
+                            <input type="text" id="whyUsSideBadgeInput" class="form-control" placeholder="مثال: أسباب الثقة">
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSideTitleInput">عنوان العمود الجانبي في لماذا نحن</label>
+                            <input type="text" id="whyUsSideTitleInput" class="form-control" placeholder="ما الذي يجعل المنصة أكثر إقناعًا؟">
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSideDescriptionInput">وصف العمود الجانبي في لماذا نحن</label>
+                            <textarea id="whyUsSideDescriptionInput" class="form-control" rows="3" placeholder="شرح مختصر عن أسباب الثقة"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSideStatsJson">بطاقات العمود الجانبي في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsSideStatsJson" class="form-control" rows="8" placeholder='[{"title":"واجهة موحدة","description":"..."}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="whyUsSideFooterJson">تذييل العمود الجانبي في لماذا نحن (JSON)</label>
+                            <textarea id="whyUsSideFooterJson" class="form-control" rows="6" placeholder='[{"label":"النتيجة","value":"ثقة أعلى"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeTestimonialsJson">قصص النجاح في الرئيسية (JSON)</label>
+                            <textarea id="homeTestimonialsJson" class="form-control" rows="8" placeholder='[{"name":"مستثمر عقاري","role":"قرار أسرع","quote":"...","metric":"ثقة أعلى"}]'></textarea>
+                            <small style="color: var(--gray);">يمكنك كتابة: <code>الاسم</code>، <code>الدور</code>، <code>النص</code>، <code>المؤشر</code>.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeFeatureShowcaseJson">نقاط قوة الواجهة في الرئيسية (JSON)</label>
+                            <textarea id="homeFeatureShowcaseJson" class="form-control" rows="8" placeholder='[{"title":"مؤشرات سريعة","description":"...","icon":"fas fa-chart-line"}]'></textarea>
+                            <small style="color: var(--gray);">يمكنك كتابة: <code>العنوان</code>، <code>الوصف</code>، <code>أيقونة</code>.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeFaqJson">الأسئلة الشائعة في الرئيسية (JSON)</label>
+                            <textarea id="homeFaqJson" class="form-control" rows="8" placeholder='[{"question":"كيف أبدأ؟","answer":"..."}]'></textarea>
+                            <small style="color: var(--gray);">يمكنك كتابة: <code>السؤال</code> و<code>الجواب</code> بدل <code>question</code> و<code>answer</code>.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="aboutPlatformTextInput">عن المنصة</label>
+                            <textarea id="aboutPlatformTextInput" class="form-control" rows="4" placeholder="كيف تريد تعريف المنصة للمستثمرين والمستخدمين؟"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="termsOfUseTextInput">الشروط والأحكام</label>
+                            <textarea id="termsOfUseTextInput" class="form-control" rows="5" placeholder="ملخص شروط الاستخدام العامة"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="riskDisclosureTextInput">إفصاح المخاطر</label>
+                            <textarea id="riskDisclosureTextInput" class="form-control" rows="5" placeholder="اكتب رسالة واضحة عن مخاطر الاستثمار والسيولة والمدة"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="aboutPlatformPointsJson">نقاط عن المنصة (JSON)</label>
+                            <textarea id="aboutPlatformPointsJson" class="form-control" rows="5" placeholder='["عرض أوضح للمشاريع","ربط المحفظة والاستثمار"]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="termsOfUsePointsJson">نقاط الشروط والأحكام (JSON)</label>
+                            <textarea id="termsOfUsePointsJson" class="form-control" rows="5" placeholder='["مسؤولية المستخدم عن البيانات","استخدام المنصة ضمن السياسات"]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="privacyPolicyPointsJson">نقاط سياسة الخصوصية (JSON)</label>
+                            <textarea id="privacyPolicyPointsJson" class="form-control" rows="5" placeholder='["حماية البيانات","استخدام تشغيلي للدعم"]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="riskDisclosurePointsJson">نقاط إفصاح المخاطر (JSON)</label>
+                            <textarea id="riskDisclosurePointsJson" class="form-control" rows="5" placeholder='["العائد المتوقع ليس ضمانًا","قراءة التفاصيل قبل التمويل"]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterKickerInput">شارة مركز الثقة</label>
+                            <input type="text" id="trustCenterKickerInput" class="form-control" placeholder="مثال: الثقة والقانون والتشغيل">
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterTitleInput">عنوان مركز الثقة</label>
+                            <input type="text" id="trustCenterTitleInput" class="form-control" placeholder="عنوان يوضح الغرض من القسم">
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterDescriptionInput">وصف مركز الثقة</label>
+                            <textarea id="trustCenterDescriptionInput" class="form-control" rows="4" placeholder="شرح كيف سيفهم المستثمر الشروط والخصوصية والمخاطر"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterStatsJson">مؤشرات مركز الثقة (JSON)</label>
+                            <textarea id="trustCenterStatsJson" class="form-control" rows="8" placeholder='[{"label":"الشفافية","value":"سياسات واضحة","description":"..."}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterCardsJson">بطاقات مركز الثقة (JSON)</label>
+                            <textarea id="trustCenterCardsJson" class="form-control" rows="12" placeholder='[{"icon":"fas fa-building-shield","title":"عن المنصة","content_key":"about_platform_text","preview":"...","button_label":"عرض التفاصيل","action_type":"info","action_target":"about_platform"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterPillarsIntroJson">مقدمة أركان الثقة (JSON)</label>
+                            <textarea id="trustCenterPillarsIntroJson" class="form-control" rows="5" placeholder='{"kicker":"أركان الثقة","title":"معايير مؤسسية","description":"..."}'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterPillarsJson">أركان الثقة (JSON)</label>
+                            <textarea id="trustCenterPillarsJson" class="form-control" rows="12" placeholder='[{"icon":"fas fa-building-shield","title":"الحوكمة","description":"...","points":["...","..."]}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterCommitmentsIntroJson">مقدمة التزامات المنصة (JSON)</label>
+                            <textarea id="trustCenterCommitmentsIntroJson" class="form-control" rows="5" placeholder='{"kicker":"التزامات المنصة","title":"ماذا يرى المستخدم؟","description":"..."}'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="trustCenterCommitmentsJson">التزامات المنصة (JSON)</label>
+                            <textarea id="trustCenterCommitmentsJson" class="form-control" rows="10" placeholder='[{"title":"وضوح الرسوم","value":"قبل التنفيذ","description":"..."}]'></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="financial-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-money-bill-wave"></i> الإعدادات المالية
+                    </h3>
+                    
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div class="form-group">
+                            <label for="minDeposit">الحد الأدنى للإيداع (USDT)</label>
+                            <input type="number" id="minDeposit" class="form-control" value="50" min="10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="minWithdraw">الحد الأدنى للسحب (USDT)</label>
+                            <input type="number" id="minWithdraw" class="form-control" value="100" min="50">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profitRate">نسبة الربح الأساسية (%)</label>
+                            <input type="range" id="profitRate" class="form-control" min="5" max="30" value="15" step="0.5">
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                                <span>5%</span>
+                                <span id="profitRateValue" style="font-weight: 800; color: var(--primary);">15%</span>
+                                <span>30%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="referralBonus">مكافأة الإحالة (%)</label>
+                            <input type="number" id="referralBonus" class="form-control" value="5" min="0" max="20">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investmentCancellationFeeRate">نسبة خصم إلغاء الاستثمار (%)</label>
+                            <input type="number" id="investmentCancellationFeeRate" class="form-control" value="1" min="0" max="100" step="0.1">
+                            <small style="color: var(--gray);">يُخصم هذا المعدل من أصل الاستثمار عند الإلغاء قبل بدء توزيع الأرباح.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investorInvestmentFeePercentage">نسبة رسوم المنصة على المستثمر (%)</label>
+                            <input type="number" id="investorInvestmentFeePercentage" class="form-control" value="0" min="0" max="100" step="0.1">
+                            <small style="color: var(--gray);">تُضاف هذه الرسوم فوق مبلغ الاستثمار نفسه، وتتحول مباشرة إلى محفظة الأدمن على نفس شبكة الدفع.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyInvestmentFeeMode">طريقة عمولة الاستثمار على مشاريع الشركات</label>
+                            <select id="companyInvestmentFeeMode" class="form-control">
+                                <option value="percentage">نسبة من مبلغ استثمار المستثمر</option>
+                                <option value="fixed">مبلغ ثابت</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyInvestmentFeePercentage">نسبة عمولة الاستثمار على مشاريع الشركات (%)</label>
+                            <input type="number" id="companyInvestmentFeePercentage" class="form-control" value="1" min="0" max="100" step="0.1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyInvestmentFeeFixedAmount">عمولة الاستثمار الثابتة على مشاريع الشركات</label>
+                            <input type="number" id="companyInvestmentFeeFixedAmount" class="form-control" value="25" min="0" step="0.01">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyInvestmentFeeCurrency">عملة عمولة مشاريع الشركات</label>
+                            <select id="companyInvestmentFeeCurrency" class="form-control">
+                                <option value="USDT">USDT</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BNB">BNB</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyInvestmentFeeNetwork">شبكة تحويل عمولة مشاريع الشركات</label>
+                            <select id="companyInvestmentFeeNetwork" class="form-control">
+                                <option value="TRC20">TRC20</option>
+                                <option value="ERC20">ERC20</option>
+                                <option value="BEP20">BEP20</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BSC">BSC</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyWalletSetupFeeAmount">رسوم أول محفظة للشركة</label>
+                            <input type="number" id="companyWalletSetupFeeAmount" class="form-control" value="15" min="0" step="0.01">
+                            <small style="color: var(--gray);">تُخصم مرة واحدة فقط عند أول إنشاء محفظة لشركة داخل المنصة، وتتحول إلى محفظة الأدمن المناسبة.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyWalletSetupFeeCurrency">عملة رسوم أول محفظة للشركة</label>
+                            <select id="companyWalletSetupFeeCurrency" class="form-control">
+                                <option value="USDT">USDT</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BNB">BNB</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyWalletSetupFeeNetwork">شبكة خصم رسوم أول محفظة للشركة</label>
+                            <select id="companyWalletSetupFeeNetwork" class="form-control">
+                                <option value="TRC20">TRC20</option>
+                                <option value="ERC20">ERC20</option>
+                                <option value="BEP20">BEP20</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BSC">BSC</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyListingFeeMode">طريقة رسوم نشر العقار</label>
+                            <select id="propertyListingFeeMode" class="form-control">
+                                <option value="percentage">نسبة من قيمة العقار</option>
+                                <option value="fixed">مبلغ ثابت</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyListingFeePercentage">نسبة رسوم نشر العقار (%)</label>
+                            <input type="number" id="propertyListingFeePercentage" class="form-control" value="1" min="0" max="100" step="0.1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyListingFeeFixedAmount">رسوم نشر العقار الثابتة</label>
+                            <input type="number" id="propertyListingFeeFixedAmount" class="form-control" value="10" min="0" step="0.01">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyListingFeeCurrency">عملة رسوم النشر</label>
+                            <select id="propertyListingFeeCurrency" class="form-control">
+                                <option value="USDT">USDT</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BNB">BNB</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="propertyListingFeeNetwork">شبكة خصم الرسوم</label>
+                            <select id="propertyListingFeeNetwork" class="form-control">
+                                <option value="TRC20">TRC20</option>
+                                <option value="ERC20">ERC20</option>
+                                <option value="BEP20">BEP20</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BSC">BSC</option>
+                            </select>
+                            <small style="color: var(--gray);">يجب أن تكون هناك محفظة استقبال مفعلة لنفس العملة والشبكة حتى تُخصم الرسوم بنجاح.</small>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="profitAutoCreditEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="profitAutoCreditEnabled">إضافة الأرباح تلقائياً إلى محفظة المستخدم</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profitDistributionMode">دورية إضافة الأرباح</label>
+                            <select id="profitDistributionMode" class="form-control">
+                                <option value="monthly">شهري</option>
+                                <option value="daily">يومي</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="currency-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-coins"></i> إعدادات العملات
+                    </h3>
+                    
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div class="form-group">
+                            <label>العملات المتاحة</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                                <div class="form-check">
+                                    <input type="checkbox" id="currencyUSDT" class="form-check-input" checked>
+                                    <label class="form-check-label" for="currencyUSDT">
+                                        <span class="currency-badge usdt">USDT</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="currencyBTC" class="form-check-input" checked>
+                                    <label class="form-check-label" for="currencyBTC">
+                                        <span class="currency-badge btc">Bitcoin</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="currencyETH" class="form-check-input" checked>
+                                    <label class="form-check-label" for="currencyETH">
+                                        <span class="currency-badge eth">Ethereum</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="currencyBNB" class="form-check-input">
+                                    <label class="form-check-label" for="currencyBNB">
+                                        <span class="currency-badge bnb">BNB</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="defaultCurrency">العملة الافتراضية</label>
+                            <select id="defaultCurrency" class="form-control">
+                                <option value="USDT">USDT</option>
+                                <option value="BTC">Bitcoin</option>
+                                <option value="ETH">Ethereum</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="launch-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-rocket"></i> إعدادات الإطلاق الحقيقي
+                    </h3>
+
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div id="launchReadinessPanel" style="margin-bottom: 22px; padding: 20px; border-radius: 18px; background: #ffffff; border: 1px solid #e5e7eb;">
+                            <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start; margin-bottom: 14px;">
+                                <div>
+                                    <div style="font-weight:800; color: var(--secondary); margin-bottom: 8px;">
+                                        <i class="fas fa-list-check"></i> جاهزية الإطلاق
+                                    </div>
+                                    <div id="launchReadinessLead" style="color: var(--dark); line-height: 1.8;">
+                                        جاري فحص جاهزية المنصة للنشر الحقيقي...
+                                    </div>
+                                </div>
+                                <div id="launchReadinessScore" style="padding: 10px 16px; border-radius: 999px; background: #ecfeff; color: #0f766e; font-weight: 800;">
+                                    --
+                                </div>
+                            </div>
+                            <div id="launchReadinessMetrics" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin-bottom: 14px;"></div>
+                            <div id="launchReadinessChecks" style="display:grid; gap:10px;"></div>
+                        </div>
+
+                        <div class="alert alert-warning" style="margin-bottom: 20px;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                هذه الإعدادات تجهيز للربط الحقيقي. لا تفعّل الوضع الحقيقي قبل إضافة مفاتيح الربط ومصدر التحقق الفعلي للإيداع.
+                            </div>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="realMoneyEnabled" class="form-check-input">
+                            <label class="form-check-label" for="realMoneyEnabled">تجهيز تفعيل الوضع الحقيقي</label>
+                        </div>
+
+                        <div class="form-check" style="margin-top: 14px;">
+                            <input type="checkbox" id="legacyWalletSectionEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="legacyWalletSectionEnabled">إظهار المحفظة القديمة</label>
+                        </div>
+
+                        <div class="form-check" style="margin-top: 14px;">
+                            <input type="checkbox" id="realWalletsSectionEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="realWalletsSectionEnabled">إظهار قسم المحافظ الحقيقية</label>
+                        </div>
+
+                        <div class="form-check" style="margin-top: 14px;">
+                            <input type="checkbox" id="financialChannelsEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="financialChannelsEnabled">إظهار القنوات المالية الحقيقية</label>
+                        </div>
+
+                        <div class="form-check" style="margin-top: 14px;">
+                            <input type="checkbox" id="realCryptoWalletCreationEnabled" class="form-check-input" checked>
+                            <label class="form-check-label" for="realCryptoWalletCreationEnabled">السماح بإنشاء محافظ كريبتو حقيقية جديدة</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 18px;">
+                            <label for="realWalletGenerationMode">طريقة إنشاء المحافظ الحقيقية</label>
+                            <select id="realWalletGenerationMode" class="form-control">
+                                <option value="manual_pool">مخزون يدوي فقط</option>
+                                <option value="tatum_xpub">Tatum XPUB فقط</option>
+                                <option value="hybrid">Tatum ثم fallback يدوي</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletBlockchainProvider">مزود البلوكشين</label>
+                            <select id="realWalletBlockchainProvider" class="form-control">
+                                <option value="tatum">Tatum</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletProviderApiKey">مفتاح API للمزود</label>
+                            <input type="text" id="realWalletProviderApiKey" class="form-control" placeholder="Tatum API Key">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletProviderBaseUrl">الرابط الأساسي للمزود</label>
+                            <input type="text" id="realWalletProviderBaseUrl" class="form-control" placeholder="https://api.tatum.io">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletEthTestnetType">Ethereum Testnet Type</label>
+                            <input type="text" id="realWalletEthTestnetType" class="form-control" placeholder="ethereum-sepolia">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletXpubTron">XPUB TRON / TRC20</label>
+                            <textarea id="realWalletXpubTron" class="form-control" rows="2" placeholder="XPUB الخاص بمحفظة TRON الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletXpubEthereum">XPUB Ethereum / ERC20</label>
+                            <textarea id="realWalletXpubEthereum" class="form-control" rows="2" placeholder="XPUB الخاص بمحفظة Ethereum الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletXpubBsc">XPUB BSC / BEP20</label>
+                            <textarea id="realWalletXpubBsc" class="form-control" rows="2" placeholder="XPUB الخاص بمحفظة BSC الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realWalletXpubBitcoin">XPUB Bitcoin</label>
+                            <textarea id="realWalletXpubBitcoin" class="form-control" rows="2" placeholder="XPUB الخاص بمحفظة Bitcoin الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>الشبكات الأولى للإطلاق</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                                <div class="form-check">
+                                    <input type="checkbox" id="launchTRC20" class="form-check-input" checked>
+                                    <label class="form-check-label" for="launchTRC20">TRC20</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="launchERC20" class="form-check-input" checked>
+                                    <label class="form-check-label" for="launchERC20">ERC20</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="launchBEP20" class="form-check-input" checked>
+                                    <label class="form-check-label" for="launchBEP20">BEP20</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="launchBTC" class="form-check-input" checked>
+                                    <label class="form-check-label" for="launchBTC">BTC</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="depositVerificationMode">وضع تحقق الإيداع</label>
+                            <select id="depositVerificationMode" class="form-control">
+                                <option value="simulated">محاكاة حالية</option>
+                                <option value="onchain">تحقق On-chain</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="depositVerificationProvider">مصدر التحقق الحقيقي للإيداع</label>
+                            <select id="depositVerificationProvider" class="form-control">
+                                <option value="tatum">Tatum</option>
+                                <option value="alchemy">Alchemy</option>
+                                <option value="tron_grid">TronGrid + EVM RPC</option>
+                                <option value="custom">Custom Provider</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="withdrawExecutionMode">تنفيذ السحب</label>
+                            <select id="withdrawExecutionMode" class="form-control">
+                                <option value="admin_approval">موافقة أدمن ثم تنفيذ حقيقي</option>
+                                <option value="manual_only">مراجعة يدوية فقط</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rtcStunUrls">روابط STUN للاتصال الصوتي</label>
+                            <textarea id="rtcStunUrls" class="form-control" rows="3" placeholder="stun:stun.l.google.com:19302&#10;stun:stun1.l.google.com:19302"></textarea>
+                            <small style="color: var(--text-soft); display: block; margin-top: 8px;">ضع كل رابط في سطر مستقل أو افصل بينها بفواصل.</small>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="rtcTurnEnabled" class="form-check-input">
+                            <label class="form-check-label" for="rtcTurnEnabled">تفعيل TURN للصوت الحقيقي عبر الإنترنت</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rtcTurnUrl">رابط TURN</label>
+                            <input type="text" id="rtcTurnUrl" class="form-control" placeholder="turn:your-domain.com:3478">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rtcTurnUsername">اسم مستخدم TURN</label>
+                            <input type="text" id="rtcTurnUsername" class="form-control" placeholder="turn-user">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rtcTurnPassword">كلمة مرور TURN</label>
+                            <input type="password" id="rtcTurnPassword" class="form-control" placeholder="كلمة مرور TURN">
+                        </div>
+
+                        <div class="form-group">
+                            <label>طرق الخروج في نهاية المشروع</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                                <div class="form-check">
+                                    <input type="checkbox" id="exitMethodCrypto" class="form-check-input" checked>
+                                    <label class="form-check-label" for="exitMethodCrypto">Crypto</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="exitMethodBank" class="form-check-input" checked>
+                                    <label class="form-check-label" for="exitMethodBank">Bank</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="exitMethodPaypal" class="form-check-input" checked>
+                                    <label class="form-check-label" for="exitMethodPaypal">PayPal</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="security-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-shield-alt"></i> إعدادات الأمان
+                    </h3>
+                    
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px;">
+                        <div class="form-group">
+                            <label for="sessionTimeout">مهلة الجلسة (دقيقة)</label>
+                            <input type="number" id="sessionTimeout" class="form-control" value="60" min="15" max="1440">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="maxLoginAttempts">أقصى محاولات تسجيل دخول</label>
+                            <input type="number" id="maxLoginAttempts" class="form-control" value="5" min="3" max="10">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lockoutDurationMinutes">مدة قفل الحساب المؤقت (دقيقة)</label>
+                            <input type="number" id="lockoutDurationMinutes" class="form-control" value="15" min="1" max="1440">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deviceLoginAttemptsLimit">أقصى محاولات الجهاز في تسجيل الدخول</label>
+                            <input type="number" id="deviceLoginAttemptsLimit" class="form-control" value="6" min="1" max="20">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deviceResetAttemptsLimit">أقصى محاولات الجهاز في إعادة التعيين</label>
+                            <input type="number" id="deviceResetAttemptsLimit" class="form-control" value="6" min="1" max="20">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deviceLockoutDurationMinutes">مدة حظر الجهاز المؤقت (دقيقة)</label>
+                            <input type="number" id="deviceLockoutDurationMinutes" class="form-control" value="60" min="1" max="1440">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="backupRetentionCount">عدد النسخ الاحتياطية المحتفظ بها</label>
+                            <input type="number" id="backupRetentionCount" class="form-control" value="10" min="1" max="200">
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="backupAutoCreateBeforeRestore" class="form-check-input" checked>
+                            <label class="form-check-label" for="backupAutoCreateBeforeRestore">إنشاء نسخة احتياطية تلقائيًا قبل الاستعادة</label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="twoFactorAuth" class="form-check-input">
+                            <label class="form-check-label" for="twoFactorAuth">تفعيل المصادقة الثنائية</label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="emailVerification" class="form-check-input" checked>
+                            <label class="form-check-label" for="emailVerification">التحقق من البريد الإلكتروني</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label for="mailSenderName">اسم المرسل في رسائل البريد</label>
+                            <input type="text" id="mailSenderName" class="form-control" value="منصة الاستثمار الذكية الآمنة" placeholder="مثال: منصة الاستثمار الذكية الآمنة">
+                            <small style="color: var(--gray);">هذا الاسم يظهر للمستخدم عند وصول كود التحقق أو أي رسالة بريدية من المنصة</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mailProviderPreset">نوع مزود الإرسال</label>
+                            <select id="mailProviderPreset" class="form-control">
+                                <option value="custom">مخصص يدوي</option>
+                                <option value="gmail">Gmail</option>
+                                <option value="outlook">Outlook</option>
+                                <option value="zoho">Zoho Mail</option>
+                                <option value="business_smtp">بريد أعمال على دومين خاص</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mailDeliveryProfile">مستوى موثوقية الوصول</label>
+                            <select id="mailDeliveryProfile" class="form-control">
+                                <option value="transactional">موثوق جداً - مزود رسائل نظامية + دومين موثق</option>
+                                <option value="business_domain">جيد - بريد أعمال على دومينك</option>
+                                <option value="personal">أضعف - Gmail/Outlook شخصي</option>
+                                <option value="custom">مخصص - أنت تحدد البنية بنفسك</option>
+                            </select>
+                            <small style="color: var(--gray);">هذا الخيار يوضح جودة الوصول المتوقعة إلى صندوق الوارد، وليس مجرد نجاح الاتصال SMTP</small>
+                        </div>
+
+                        <div id="mailReliabilityStatus" style="margin-bottom: 20px; padding: 14px 16px; border-radius: 10px; font-weight: 600;"></div>
+
+                        <div class="form-group">
+                            <label for="mailServer">خادم SMTP</label>
+                            <input type="text" id="mailServer" class="form-control" value="smtp.gmail.com" placeholder="smtp.gmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mailPort">منفذ SMTP</label>
+                            <input type="number" id="mailPort" class="form-control" value="587" min="1" max="65535">
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" id="mailUseTls" class="form-check-input" checked>
+                            <label class="form-check-label" for="mailUseTls">استخدام TLS للبريد</label>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label for="mailUsername">اسم مستخدم البريد المرسل</label>
+                            <input type="text" id="mailUsername" class="form-control" placeholder="your-email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mailPassword">كلمة مرور البريد أو App Password</label>
+                            <input type="password" id="mailPassword" class="form-control" placeholder="كلمة المرور أو App Password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mailDefaultSender">البريد الذي ترسل منه المنصة</label>
+                            <input type="email" id="mailDefaultSender" class="form-control" placeholder="noreply@example.com">
+                        </div>
+
+                        <div style="border-top: 1px solid #e5e7eb; margin-top: 24px; padding-top: 24px;">
+                            <div class="form-group">
+                                <label for="testEmailRecipient">إرسال رسالة تجريبية إلى</label>
+                                <input type="email" id="testEmailRecipient" class="form-control" placeholder="اكتب بريدك لتجربة الإرسال">
+                            </div>
+                            <button id="sendTestEmailBtn" type="button" class="btn btn-light">
+                                <i class="fas fa-paper-plane"></i> إرسال رسالة تجريبية
+                            </button>
+                            <div id="emailTestStatus" style="display: none; margin-top: 16px; padding: 14px 16px; border-radius: 10px; font-weight: 600;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="governorates-settings" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-map-marked-alt"></i> إدارة المحافظات السورية
+                    </h3>
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+                        <div class="form-group">
+                            <label for="governorateName">اسم المحافظة</label>
+                            <input type="text" id="governorateName" class="form-control" placeholder="مثال: حلب">
+                        </div>
+                        <div class="form-group">
+                            <label for="governorateSymbolInput">رمز المحافظة</label>
+                            <input type="text" id="governorateSymbolInput" class="form-control" placeholder="مثال: قلعة حلب والأسواق التاريخية">
+                        </div>
+                        <div class="form-group">
+                            <label for="governorateImageUrl">رابط صورة الخلفية</label>
+                            <input type="url" id="governorateImageUrl" class="form-control" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="governorateDescription">وصف تشجيعي قصير</label>
+                            <textarea id="governorateDescription" class="form-control" rows="3" placeholder="ماذا يميز هذه المحافظة عقارياً؟"></textarea>
+                        </div>
+                        <div class="action-buttons">
+                            <button id="addGovernorateBtn" class="btn btn-success" type="button">
+                                <i class="fas fa-plus-circle"></i> إضافة محافظة
+                            </button>
+                            <button id="cancelGovernorateEditBtn" class="btn btn-light" type="button" style="display: none;">
+                                <i class="fas fa-times"></i> إلغاء التعديل
+                            </button>
+                        </div>
+                    </div>
+                    <div id="governoratesAdminList"></div>
+                </div>
+                <div id="receiving-wallets" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-wallet"></i> محافظ الاستقبال
+                    </h3>
+                    
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px; margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px; color: var(--dark);">
+                            <i class="fas fa-plus-circle"></i> إضافة محفظة استقبال جديدة
+                        </h4>
+                        
+                        <div class="form-group">
+                            <label for="receivingWalletCurrency">العملة</label>
+                            <select id="receivingWalletCurrency" class="form-control" required>
+                                <option value="">اختر العملة</option>
+                                <option value="1">USDT</option>
+                                <option value="2">Bitcoin</option>
+                                <option value="3">Ethereum</option>
+                                <option value="4">BNB</option>
+                                <option value="5">Tron</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="receivingWalletNetwork">الشبكة</label>
+                            <select id="receivingWalletNetwork" class="form-control" required>
+                                <option value="">اختر الشبكة</option>
+                                <option value="1">TRC20 (TRON)</option>
+                                <option value="2">ERC20 (Ethereum)</option>
+                                <option value="3">BEP20 (BSC)</option>
+                                <option value="4">Bitcoin Network</option>
+                                <option value="5">Ethereum Network</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="receivingWalletAddress">عنوان المحفظة</label>
+                            <input type="text" id="receivingWalletAddress" class="form-control" placeholder="أدخل عنوان المحفظة لاستقبال الأموال" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="receivingWalletLabel">اسم المحفظة</label>
+                            <input type="text" id="receivingWalletLabel" class="form-control" placeholder="مثال: محفظة USDT الرئيسية">
+                        </div>
+                        
+                        <button id="addReceivingWalletBtn" class="btn btn-success" style="width: 100%; padding: 16px;">
+                            <i class="fas fa-check-circle"></i> إضافة محفظة الاستقبال
+                        </button>
+                    </div>
+                    
+                    <h4 style="margin-bottom: 20px; color: var(--dark);">
+                        <i class="fas fa-list"></i> قائمة محافظ الاستقبال
+                    </h4>
+                    
+                    <div id="receivingWalletsList">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>جاري تحميل محافظ الاستقبال...</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="special-wallets" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-user-shield"></i> المحافظ الخاصة بصلاحيات الأدمن
+                    </h3>
+
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px; margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px; color: var(--dark);">
+                            <i class="fas fa-plus-circle"></i> إنشاء أو تعديل محفظة خاصة
+                        </h4>
+
+                        <input type="hidden" id="specialWalletProfileId">
+
+                        <div class="form-group">
+                            <label for="specialWalletTitle">اسم المحفظة الخاصة</label>
+                            <input type="text" id="specialWalletTitle" class="form-control" placeholder="مثال: محفظة VIP للاستثمار العقاري">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletDescription">وصف مختصر</label>
+                            <textarea id="specialWalletDescription" class="form-control" rows="3" placeholder="اشرح للمستخدم لماذا أُضيفت هذه المحفظة وما استخدامها"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletAccessNote">رسالة الوصول للمستخدم</label>
+                            <input type="text" id="specialWalletAccessNote" class="form-control" placeholder="مثال: هذه المحفظة مخصصة لتحويلات المشروع الخاص بكم">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletCurrency">العملة</label>
+                            <select id="specialWalletCurrency" class="form-control">
+                                <option value="">اختر العملة</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletNetwork">الشبكة</label>
+                            <select id="specialWalletNetwork" class="form-control">
+                                <option value="">اختر الشبكة</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletAdminWallet">محفظة الاستقبال المرتبطة</label>
+                            <select id="specialWalletAdminWallet" class="form-control">
+                                <option value="">استخدم نفس الشبكة بدون ربط عنوان محدد</option>
+                            </select>
+                            <small style="color: var(--gray);">إذا اخترت محفظة استقبال هنا، سيظهر عنوانها للمستخدم مباشرة داخل المحفظة الخاصة.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialWalletAllowedUsers">أرقام الحسابات المسموح لها</label>
+                            <textarea id="specialWalletAllowedUsers" class="form-control" rows="3" placeholder="مثال: 100006, 100045, 100120"></textarea>
+                            <small style="color: var(--gray);">اكتب أرقام الحسابات العامة للمستخدمين مفصولة بفاصلة.</small>
+                        </div>
+
+                        <div class="form-check" style="margin-bottom: 18px;">
+                            <input type="checkbox" id="specialWalletIsActive" class="form-check-input" checked>
+                            <label class="form-check-label" for="specialWalletIsActive">تفعيل هذه المحفظة الخاصة</label>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="saveSpecialWalletBtn" class="btn btn-success" type="button">
+                                <i class="fas fa-save"></i> حفظ المحفظة الخاصة
+                            </button>
+                            <button id="cancelSpecialWalletEditBtn" class="btn btn-light" type="button" style="display: none;">
+                                <i class="fas fa-times"></i> إلغاء التعديل
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="specialWalletProfilesList">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>جاري تحميل المحافظ الخاصة...</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="financial-channels" class="admin-content">
+                    <h3 style="margin-bottom: 25px; color: var(--secondary);">
+                        <i class="fas fa-building-columns"></i> القنوات المالية الحقيقية
+                    </h3>
+
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px; margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px; color: var(--dark);">
+                            <i class="fas fa-plus-circle"></i> إنشاء أو تعديل قناة مالية
+                        </h4>
+
+                        <input type="hidden" id="financialChannelId">
+
+                        <div class="form-group">
+                            <label for="financialChannelType">نوع القناة</label>
+                            <select id="financialChannelType" class="form-control">
+                                <option value="crypto">كريبتو</option>
+                                <option value="bank">بنك</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="wish_money">Wish Money</option>
+                                <option value="manual">يدوي / مخصص</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelTitle">اسم القناة</label>
+                            <input type="text" id="financialChannelTitle" class="form-control" placeholder="مثال: حساب التحويل البنكي - سوريا">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelDescription">وصف مختصر</label>
+                            <textarea id="financialChannelDescription" class="form-control" rows="3" placeholder="متى يستخدمها العميل وما الذي يميزها؟"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelCountryCode">الدولة</label>
+                            <select id="financialChannelCountryCode" class="form-control">
+                                <option value="">كل الدول</option>
+                            </select>
+                        </div>
+
+                        <div id="financialChannelCryptoScope">
+                            <div class="form-group">
+                                <label for="financialChannelCurrency">العملة</label>
+                                <select id="financialChannelCurrency" class="form-control">
+                                    <option value="">اختر العملة</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="financialChannelNetwork">الشبكة</label>
+                                <select id="financialChannelNetwork" class="form-control">
+                                    <option value="">اختر الشبكة</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="financialChannelAdminWallet">محفظة الاستقبال المرتبطة</label>
+                                <select id="financialChannelAdminWallet" class="form-control">
+                                    <option value="">بدون ربط مباشر</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelAccountLabel">اسم الحساب / التسمية</label>
+                            <input type="text" id="financialChannelAccountLabel" class="form-control" placeholder="مثال: الحساب الرئيسي - دمشق">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelAccountIdentifier">رقم الحساب / البريد / العنوان</label>
+                            <input type="text" id="financialChannelAccountIdentifier" class="form-control" placeholder="IBAN أو بريد PayPal أو عنوان المحفظة">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelExtraDetails">تفاصيل إضافية</label>
+                            <textarea id="financialChannelExtraDetails" class="form-control" rows="3" placeholder="SWIFT، اسم المستفيد، ملاحظات التحويل، أو أي بيانات إضافية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelInstructions">تعليمات للمستخدم</label>
+                            <textarea id="financialChannelInstructions" class="form-control" rows="3" placeholder="مثال: بعد التحويل أرسل صورة الإيصال إلى الدعم أو اذكر رقم الحساب الخاص بك"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="financialChannelDisplayOrder">ترتيب الظهور</label>
+                            <input type="number" id="financialChannelDisplayOrder" class="form-control" value="0" min="0" step="1">
+                        </div>
+
+                        <div class="form-check" style="margin-bottom: 18px;">
+                            <input type="checkbox" id="financialChannelIsActive" class="form-check-input" checked>
+                            <label class="form-check-label" for="financialChannelIsActive">تفعيل القناة</label>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="saveFinancialChannelBtn" class="btn btn-success" type="button">
+                                <i class="fas fa-save"></i> حفظ القناة المالية
+                            </button>
+                            <button id="cancelFinancialChannelEditBtn" class="btn btn-light" type="button" style="display: none;">
+                                <i class="fas fa-times"></i> إلغاء التعديل
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="background: #f8fafc; padding: 30px; border-radius: 20px; margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 20px; color: var(--dark);">
+                            <i class="fas fa-fingerprint"></i> مخزون عناوين محافظ الكريبتو الحقيقية
+                        </h4>
+
+                        <input type="hidden" id="realCryptoPoolId">
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolCurrency">العملة</label>
+                            <select id="realCryptoPoolCurrency" class="form-control">
+                                <option value="">اختر العملة</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolNetwork">الشبكة</label>
+                            <select id="realCryptoPoolNetwork" class="form-control">
+                                <option value="">اختر الشبكة</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolAddress">عنوان المحفظة المستقلة</label>
+                            <input type="text" id="realCryptoPoolAddress" class="form-control" placeholder="أدخل عنوانًا حقيقيًا مستقلًا مخصصًا للتوزيع على المستخدمين">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolLabel">اسم مختصر</label>
+                            <input type="text" id="realCryptoPoolLabel" class="form-control" placeholder="مثال: TRC20 Wallet #01">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolProvider">المزود / المصدر</label>
+                            <input type="text" id="realCryptoPoolProvider" class="form-control" placeholder="مثال: Internal Treasury أو Exchange Custody">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="realCryptoPoolNotes">ملاحظات</label>
+                            <textarea id="realCryptoPoolNotes" class="form-control" rows="3" placeholder="أي ملاحظات تشغيلية أو مصدر هذه المحفظة"></textarea>
+                        </div>
+
+                        <div class="form-check" style="margin-bottom: 18px;">
+                            <input type="checkbox" id="realCryptoPoolIsActive" class="form-check-input" checked>
+                            <label class="form-check-label" for="realCryptoPoolIsActive">تفعيل هذا العنوان للتوزيع</label>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="saveRealCryptoPoolBtn" class="btn btn-success" type="button">
+                                <i class="fas fa-save"></i> حفظ عنوان المحفظة الحقيقية
+                            </button>
+                            <button id="cancelRealCryptoPoolEditBtn" class="btn btn-light" type="button" style="display: none;">
+                                <i class="fas fa-times"></i> إلغاء التعديل
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="adminRealCryptoWalletPoolList" style="margin-bottom: 26px;">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>جاري تحميل مخزون المحافظ الحقيقية...</h4>
+                        </div>
+                    </div>
+
+                    <div id="financialChannelsList">
+                        <div style="text-align: center; padding: 40px; color: var(--gray);">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h4>جاري تحميل القنوات المالية...</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <button id="saveAllSettingsBtn" class="btn btn-success btn-lg">
+                        <i class="fas fa-save"></i> حفظ جميع الإعدادات
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>

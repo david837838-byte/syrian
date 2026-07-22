@@ -1,0 +1,489 @@
+<section id="account" class="section-hidden">
+    <div class="container">
+        <div class="account-hero js-reveal">
+            <div class="section-title account-title">
+                <span class="section-kicker">
+                    <i class="fas fa-id-card"></i>
+                    الملف الشخصي والإعدادات
+                </span>
+                <h2>بيانات حسابك وتحكمك الشخصي من مكان واحد</h2>
+                <p>تابع رقم حسابك العام، حالة التوثيق، رمز الإحالة، وطرق التواصل، وعدّل بياناتك بسهولة من نفس الصفحة.</p>
+            </div>
+            <div class="account-hero-panel">
+                <div class="account-hero-panel__badge">
+                    <i class="fas fa-user-cog"></i>
+                    <span>لوحة الحساب</span>
+                </div>
+                <h3>هذا القسم يجمع هويتك داخل المنصة، حالة حسابك، والإعدادات التي تحتاجها باستمرار.</h3>
+                <div class="account-hero-panel__grid">
+                    <div class="account-hero-panel__item">
+                        <span>البيانات</span>
+                        <strong>واضحة ومباشرة</strong>
+                    </div>
+                    <div class="account-hero-panel__item">
+                        <span>التوثيق</span>
+                        <strong>من نفس الصفحة</strong>
+                    </div>
+                    <div class="account-hero-panel__item">
+                        <span>الدعم</span>
+                        <strong>جاهز للتواصل</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="account-summary-strip js-reveal">
+            <div class="account-summary-card">
+                <span>عدد الاستثمارات</span>
+                <strong id="accountSummaryInvestments">0</strong>
+                <small>فرص دخلت فيها حتى الآن</small>
+            </div>
+            <div class="account-summary-card">
+                <span>إجمالي رأس المال</span>
+                <strong id="accountSummaryCapital">0.00 USDT</strong>
+                <small>ما دخلته في المشاريع الحالية</small>
+            </div>
+            <div class="account-summary-card">
+                <span>الأرباح الحالية</span>
+                <strong id="accountSummaryReturns">0.00 USDT</strong>
+                <small>العائد المتولد في حسابك</small>
+            </div>
+            <div class="account-summary-card">
+                <span>الإحالات</span>
+                <strong id="accountSummaryReferrals">0</strong>
+                <small>المستخدمون القادمون من رمزك</small>
+            </div>
+        </div>
+
+        <div class="account-shell">
+            <div class="account-main">
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-user-circle"></i> بيانات الحساب</h3>
+                            <p id="accountProfileLead">جاري تحميل بيانات الملف الشخصي...</p>
+                        </div>
+                        <span id="accountRoleBadge" class="status-badge status-completed">مستخدم</span>
+                    </div>
+
+                    <div class="account-grid">
+                        <div class="account-stat">
+                            <span>رقم الحساب</span>
+                            <strong id="accountPublicId">100001</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>البريد الإلكتروني</span>
+                            <strong id="accountEmail">user@example.com</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>تاريخ الإنشاء</span>
+                            <strong id="accountCreatedAt">-</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>حالة البريد</span>
+                            <strong id="accountEmailStatus">موثق</strong>
+                        </div>
+                    </div>
+                    <div class="account-inline-actions">
+                        <button id="copyPublicIdBtn" type="button" class="btn btn-light btn-sm">
+                            <i class="fas fa-copy"></i> نسخ رقم الحساب
+                        </button>
+                        <button id="goToWalletFromAccountBtn" type="button" class="btn btn-ghost btn-sm">
+                            <i class="fas fa-wallet"></i> فتح المحفظة
+                        </button>
+                    </div>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-user-check"></i> توثيق الحساب KYC</h3>
+                            <p id="accountKycLead">ارفع مستندات الهوية مرة واحدة، وبعد اعتماد الحساب يمكنك نشر العقارات مباشرة دون تكرار KYC لكل إعلان.</p>
+                        </div>
+                        <span id="accountKycStatusBadge" class="status-badge status-pending">غير موثق</span>
+                    </div>
+
+                    <div class="account-grid compact">
+                        <div class="account-stat">
+                            <span>الحالة الحالية</span>
+                            <strong id="accountKycStatusText">غير موثق</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>نوع المستند</span>
+                            <strong id="accountKycDocumentType">-</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>تاريخ الإرسال</span>
+                            <strong id="accountKycSubmittedAt">-</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>آخر مراجعة</span>
+                            <strong id="accountKycReviewedAt">-</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountKycFullName">الاسم الكامل كما يظهر في المستند</label>
+                        <input type="text" id="accountKycFullName" class="form-control" placeholder="الاسم الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountKycDocumentType">نوع المستند</label>
+                        <select id="accountKycDocumentTypeInput" class="form-control">
+                            <option value="">اختر نوع المستند</option>
+                            <option value="national_id">هوية وطنية</option>
+                            <option value="passport">جواز سفر</option>
+                            <option value="residence">إقامة</option>
+                            <option value="ownership">إثبات ملكية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountKycFiles">مستندات التوثيق</label>
+                        <input type="file" id="accountKycFiles" class="form-control" accept="image/*,application/pdf" multiple>
+                        <small style="color: var(--gray);">يمكنك رفع صور الهوية أو الجواز أو ملفات PDF المرتبطة بالتوثيق.</small>
+                    </div>
+                    <div id="accountKycPreview" class="property-kyc-preview"></div>
+                    <div id="accountKycRejectionNoteWrap" class="wallet-note" style="display: none; margin-top: 12px;">
+                        <h4 class="wallet-note-title"><i class="fas fa-circle-exclamation"></i> ملاحظة المراجعة</h4>
+                        <p id="accountKycRejectionNote" style="margin: 0; color: var(--text-soft);">-</p>
+                    </div>
+                    <button id="submitAccountKycBtn" type="button" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> إرسال طلب التوثيق
+                    </button>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-sliders-h"></i> إعدادات المستخدم</h3>
+                            <p>حدّث اسمك ورقم هاتفك ودولتك المفضلة ليبقى ملفك الشخصي محدثًا.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNameInput">الاسم</label>
+                        <input type="text" id="accountNameInput" class="form-control" placeholder="اسم المستخدم">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountPhoneInput">رقم الهاتف</label>
+                        <input type="text" id="accountPhoneInput" class="form-control" placeholder="+963 ...">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCountryInput">الدولة المفضلة</label>
+                        <select id="accountCountryInput" class="form-control">
+                            <option value="">اختر الدولة</option>
+                        </select>
+                    </div>
+                    <button id="saveAccountProfileBtn" type="button" class="btn btn-success">
+                        <i class="fas fa-save"></i> حفظ بياناتي
+                    </button>
+                </div>
+
+                <div id="companyProfileCard" class="account-card" style="display: none;">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-building"></i> ملف الشركة</h3>
+                            <p id="companyProfileLead">بيانات الشركة المرتبطة بهذا الحساب تظهر هنا ويمكن تحديثها من نفس الصفحة.</p>
+                        </div>
+                        <span id="companyVerificationBadge" class="status-badge status-pending">قيد الإعداد</span>
+                    </div>
+                    <div class="account-grid">
+                        <div class="account-stat">
+                            <span>حالة التوثيق</span>
+                            <strong id="companyVerificationStatus">قيد الإعداد</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>اسم الشركة</span>
+                            <strong id="companyDisplayName">-</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>عدد الملفات</span>
+                            <strong id="companyDocumentsCount">0</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>مشاريع الشركة</span>
+                            <strong id="companyProjectsCount">0</strong>
+                        </div>
+                    </div>
+                    <div id="companyVerificationNoteWrap" class="wallet-note" style="display: none; margin-top: 12px;">
+                        <h4 class="wallet-note-title"><i class="fas fa-circle-info"></i> ملاحظة التحقق</h4>
+                        <p id="companyVerificationNote" style="margin: 0; color: var(--text-soft);">-</p>
+                    </div>
+                    <div class="account-grid" style="margin-top: 16px;">
+                        <div class="form-group">
+                            <label for="accountCompanyNameInput">اسم الشركة</label>
+                            <input type="text" id="accountCompanyNameInput" class="form-control" placeholder="اسم الشركة الرسمي">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountRepresentativeNameInput">اسم الممثل</label>
+                            <input type="text" id="accountRepresentativeNameInput" class="form-control" placeholder="المدير أو الممثل القانوني">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountTradeNameInput">الاسم التجاري</label>
+                            <input type="text" id="accountTradeNameInput" class="form-control" placeholder="الاسم التجاري">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountRegistrationNumberInput">رقم السجل</label>
+                            <input type="text" id="accountRegistrationNumberInput" class="form-control" placeholder="رقم السجل التجاري">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountRepresentativeTitleInput">صفة الممثل</label>
+                            <input type="text" id="accountRepresentativeTitleInput" class="form-control" placeholder="مدير عام أو مفوض">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountCompanyPhoneInput">هاتف الشركة</label>
+                            <input type="text" id="accountCompanyPhoneInput" class="form-control" placeholder="+963 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountCompanyEmailInput">بريد الشركة</label>
+                            <input type="email" id="accountCompanyEmailInput" class="form-control" placeholder="company@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountCompanyCountryInput">دولة الشركة</label>
+                            <select id="accountCompanyCountryInput" class="form-control">
+                                <option value="">اختر الدولة</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="accountCompanyCityInput">المدينة</label>
+                            <input type="text" id="accountCompanyCityInput" class="form-control" placeholder="المدينة الرئيسية">
+                        </div>
+                        <div class="form-group">
+                            <label for="accountCompanyWebsiteInput">الموقع الإلكتروني</label>
+                            <input type="url" id="accountCompanyWebsiteInput" class="form-control" placeholder="https://example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCompanyAddressInput">عنوان الشركة</label>
+                        <input type="text" id="accountCompanyAddressInput" class="form-control" placeholder="العنوان الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCompanyDescriptionInput">نبذة مختصرة</label>
+                        <textarea id="accountCompanyDescriptionInput" class="form-control" rows="3" placeholder="نشاط الشركة أو نوع المشاريع"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCompanyLogoInput">رابط شعار الشركة <small style="color: var(--gray);">(اختياري)</small></label>
+                        <input type="url" id="accountCompanyLogoInput" class="form-control" placeholder="https://example.com/logo.png">
+                    </div>
+                    <div id="companyLogoPreviewWrap" class="wallet-note" style="display: none; margin-top: 12px;">
+                        <h4 class="wallet-note-title"><i class="fas fa-image"></i> شعار الشركة</h4>
+                        <div style="margin-top: 10px;">
+                            <img id="companyLogoPreview" src="" alt="شعار الشركة" style="max-width: 96px; max-height: 96px; border-radius: 16px; object-fit: cover; border: 1px solid rgba(148,163,184,0.24);">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCompanyFiles">وثائق الشركة للمراجعة</label>
+                        <input type="file" id="accountCompanyFiles" class="form-control" accept="image/*,application/pdf" multiple>
+                        <small style="color: var(--gray);">أضف السجل التجاري أو الهوية أو أي ملف داعم، ثم اضغط إرسال ملف الشركة للمراجعة.</small>
+                    </div>
+                    <div id="accountCompanyDocumentsPreview" class="property-kyc-preview"></div>
+                    <button id="saveCompanyProfileBtn" type="button" class="btn btn-primary">
+                        <i class="fas fa-building-circle-check"></i> حفظ بيانات الشركة
+                    </button>
+                    <button id="submitCompanyVerificationBtn" type="button" class="btn btn-success" style="margin-top: 12px;">
+                        <i class="fas fa-paper-plane"></i> إرسال ملف الشركة للمراجعة
+                    </button>
+                </div>
+
+                <div class="account-card" id="accountTwoFactorCard">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-shield-halved"></i> المصادقة الثنائية (2FA)</h3>
+                            <p>قم بتفعيل المصادقة الثنائية لحماية حسابك باستخدام تطبيقات المصادقة (مثل Google Authenticator).</p>
+                        </div>
+                        <span id="accountTwoFactorStatusBadge" class="status-badge status-pending">غير مفعلة</span>
+                    </div>
+                    
+                    <!-- setup 2FA section -->
+                    <div id="twoFactorSetupSection" style="display:none; border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 16px;">
+                        <div class="wallet-note" style="margin-bottom: 16px;">
+                            <h4 class="wallet-note-title"><i class="fas fa-qrcode"></i> خطوات التفعيل</h4>
+                            <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                1. امسح رمز الـ QR أدناه باستخدام تطبيق المصادقة الخاص بك، أو أدخل المفتاح السري يدوياً.<br>
+                                2. أدخل الرمز المكون من 6 أرقام للتحقق والتفعيل.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px;">
+                            <div id="twoFactorQrCode" style="background: white; padding: 12px; border-radius: 8px;"></div>
+                            <div style="text-align: center; width: 100%;">
+                                <span style="font-size: 13px; color: var(--gray);">المفتاح السري:</span>
+                                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px;">
+                                    <code id="twoFactorSecretText" style="font-size: 16px; font-weight: bold; background: var(--bg-soft); padding: 4px 8px; border-radius: 4px; letter-spacing: 1px;">-</code>
+                                    <button id="copyTwoFactorSecretBtn" class="btn btn-light btn-xs" type="button"><i class="fas fa-copy"></i> نسخ</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="twoFactorSetupCode">رمز التحقق (6 أرقام)</label>
+                            <input type="text" id="twoFactorSetupCode" class="form-control" placeholder="000000" maxlength="6" style="text-align: center; font-size: 20px; letter-spacing: 4px;">
+                        </div>
+                        <div style="display:flex; gap: 10px;">
+                            <button id="confirmTwoFactorBtn" type="button" class="btn btn-success">
+                                <i class="fas fa-circle-check"></i> تأكيد وتفعيل
+                            </button>
+                            <button id="cancelTwoFactorSetupBtn" type="button" class="btn btn-ghost">
+                                إلغاء
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2FA enabled section -->
+                    <div id="twoFactorEnabledSection" style="display:none; border-top: 1px solid var(--border-color); padding-top: 16px; margin-top: 16px;">
+                        <div class="wallet-note wallet-note--success" style="margin-bottom: 16px; background: rgba(16, 185, 129, 0.1); border-right: 4px solid var(--emerald-500);">
+                            <h4 class="wallet-note-title" style="color: var(--emerald-500);"><i class="fas fa-lock"></i> حسابك محمي بالكامل</h4>
+                            <p style="margin: 0; font-size: 14px;">المصادقة الثنائية مفعلة بنجاح على هذا الحساب. سيُطلب منك الرمز في كل مرة تقوم بتسجيل الدخول فيها.</p>
+                        </div>
+                        
+                        <div id="twoFactorBackupCodesContainer" style="display:none; background: var(--bg-soft); padding: 12px; border-radius: 8px; border: 1px dashed var(--border-color); margin-bottom: 16px;">
+                            <h4 style="font-size: 14px; margin-top: 0; margin-bottom: 8px; color: var(--emerald-500);"><i class="fas fa-key"></i> رموز النسخ الاحتياطي (احفظها في مكان آمن):</h4>
+                            <div id="twoFactorBackupCodesList" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; font-family: monospace; font-size: 14px; font-weight: bold; text-align: center; color: var(--text-color);">
+                            </div>
+                            <small style="display: block; margin-top: 8px; color: var(--gray);">يمكنك استخدام هذه الرموز لمرة واحدة في حال فقدان الوصول لتطبيق المصادقة.</small>
+                        </div>
+
+                        <div class="form-group" id="twoFactorDisableCodeGroup">
+                            <label for="twoFactorDisableCode">أدخل رمز الـ 2FA لتأكيد إلغاء التفعيل</label>
+                            <input type="text" id="twoFactorDisableCode" class="form-control" placeholder="000000" maxlength="6" style="text-align: center; font-size: 20px; letter-spacing: 4px;">
+                        </div>
+
+                        <button id="disableTwoFactorBtn" type="button" class="btn btn-danger">
+                            <i class="fas fa-unlock"></i> إلغاء تفعيل المصادقة الثنائية
+                        </button>
+                    </div>
+
+                    <div id="twoFactorInitialSection" style="margin-top: 16px;">
+                        <button id="setupTwoFactorBtn" type="button" class="btn btn-primary">
+                            <i class="fas fa-gears"></i> إعداد المصادقة الثنائية
+                        </button>
+                    </div>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-lock"></i> تغيير كلمة المرور</h3>
+                            <p>استخدم كلمة مرور جديدة أقوى للحفاظ على أمان حسابك.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountCurrentPassword">كلمة المرور الحالية</label>
+                        <input type="password" id="accountCurrentPassword" class="form-control" placeholder="********">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountNewPassword">كلمة المرور الجديدة</label>
+                        <input type="password" id="accountNewPassword" class="form-control" placeholder="********">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountConfirmPassword">تأكيد كلمة المرور الجديدة</label>
+                        <input type="password" id="accountConfirmPassword" class="form-control" placeholder="********">
+                    </div>
+                    <button id="changeAccountPasswordBtn" type="button" class="btn btn-warning">
+                        <i class="fas fa-key"></i> تغيير كلمة المرور
+                    </button>
+                </div>
+            </div>
+
+            <aside class="account-side">
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-gift"></i> رمز الإحالة</h3>
+                            <p>شارك الرمز مع الآخرين ليُسجّلوا من خلالك.</p>
+                        </div>
+                        <button id="copyReferralCodeBtn" type="button" class="btn btn-light btn-sm">
+                            <i class="fas fa-copy"></i> نسخ
+                        </button>
+                    </div>
+                    <div class="account-referral-code" id="accountReferralCode">INV100001</div>
+                    <div class="account-grid compact">
+                        <div class="account-stat">
+                            <span>نسبة الإحالة الحالية</span>
+                            <strong id="accountReferralRate">5%</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>عدد المسجلين من خلالك</span>
+                            <strong id="accountReferralCount">0</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>إجمالي أرباح الإحالة</span>
+                            <strong id="accountReferralEarnings">0.00 USDT</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fab fa-google"></i> ربط Google</h3>
+                            <p id="accountGoogleLead">اربط حساب Google لتسهيل الدخول الآمن لاحقًا من نفس البريد.</p>
+                        </div>
+                    </div>
+                    <div class="account-contact-list">
+                        <div class="account-contact-item">
+                            <span>الحالة</span>
+                            <strong id="accountGoogleStatus">غير مربوط</strong>
+                        </div>
+                        <div class="account-contact-item">
+                            <span>طريقة الدخول</span>
+                            <strong id="accountAuthProvider">بالبريد وكلمة المرور</strong>
+                        </div>
+                    </div>
+                    <div class="auth-social-block account-google-block">
+                        <div class="auth-social-divider"><span>اربط الحساب عبر</span></div>
+                        <div id="googleAuthButtonLink" class="google-auth-button-slot" data-google-context="link"></div>
+                        <div id="googleAuthUnavailableLink" class="auth-social-note" hidden>ربط Google غير مفعّل حاليًا.</div>
+                    </div>
+                </div>
+
+                <div class="account-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-laptop-house"></i> الأجهزة المعروفة</h3>
+                            <p id="accountDevicesLead">يمكنك مراجعة الأجهزة التي استُخدمت في حسابك مؤخرًا لمتابعة الأمان والنشاط.</p>
+                        </div>
+                        <button id="refreshAccountDevicesBtn" type="button" class="btn btn-light btn-sm">
+                            <i class="fas fa-rotate"></i> تحديث
+                        </button>
+                    </div>
+                    <div class="account-grid compact">
+                        <div class="account-stat">
+                            <span>عدد الأجهزة</span>
+                            <strong id="accountDeviceCount">0</strong>
+                        </div>
+                        <div class="account-stat">
+                            <span>الأجهزة المحظورة</span>
+                            <strong id="accountLockedDeviceCount">0</strong>
+                        </div>
+                    </div>
+                    <div id="accountDevicesList" class="account-contact-list">
+                        <div class="account-contact-item">
+                            <span>الحالة</span>
+                            <strong>جاري تحميل الأجهزة...</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="account-card">
+                    <h3><i class="fas fa-headset"></i> تواصل معنا</h3>
+                    <p id="accountSupportLead">يمكنك التواصل مع فريق المنصة مباشرة عند وجود أي استفسار أو مشكلة تشغيلية.</p>
+                    <div class="account-contact-list">
+                        <div class="account-contact-item">
+                            <span>البريد</span>
+                            <strong id="accountSupportEmail">support@invest-platform.com</strong>
+                        </div>
+                        <div class="account-contact-item">
+                            <span>الهاتف</span>
+                            <strong id="accountSupportPhone">+966500000000</strong>
+                        </div>
+                    </div>
+                    <div class="wallet-actions" style="margin-top: 16px;">
+                        <a id="contactSupportEmailBtn" class="btn btn-light" href="mailto:support@invest-platform.com">
+                            <i class="fas fa-envelope"></i> مراسلة
+                        </a>
+                        <a id="contactSupportPhoneBtn" class="btn btn-light" href="tel:+966500000000">
+                            <i class="fas fa-phone"></i> اتصال
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

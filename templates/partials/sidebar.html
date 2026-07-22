@@ -1,0 +1,56 @@
+<!-- الشريط الجانبي (لوحة التحكم) -->
+<aside class="dashboard-sidebar" id="dashboardSidebar">
+    <div class="sidebar-header">
+        <div class="logo">
+            <span class="logo-mark">
+                <i class="fas fa-city"></i>
+            </span>
+            <div class="logo-copy">
+                <strong>لوحة التحكم</strong>
+            </div>
+        </div>
+        <button class="btn btn-ghost sidebar-close-btn" id="sidebarCloseBtn" aria-label="إغلاق القائمة">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="sidebar-user-card">
+        <div class="sidebar-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="sidebar-user-info">
+            <span class="sidebar-user-name" id="sidebarUserName">مستخدم</span>
+            <span class="sidebar-user-role badge-success">عضو نشط</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <ul class="sidebar-nav-list">
+            <li class="sidebar-heading">القائمة الرئيسية</li>
+            <li><a href="#home" class="nav-link" data-section="home"><i class="fas fa-house"></i><span>الرئيسية</span></a></li>
+            <li class="member-nav"><a href="#dashboard" class="nav-link" data-section="dashboard"><i class="fas fa-gauge-high"></i><span>لوحة التحكم</span></a></li>
+            <li><a href="#investments" class="nav-link" data-section="investments"><i class="fas fa-chart-column"></i><span>المشاريع</span></a></li>
+            
+            <li class="sidebar-heading member-nav">المالية</li>
+            <li class="member-nav"><a href="#wallet" class="nav-link" data-section="wallet"><i class="fas fa-wallet"></i><span>المحفظة</span></a></li>
+            <li class="member-nav"><a href="#transactions" class="nav-link" data-section="transactions"><i class="fas fa-arrow-right-arrow-left"></i><span>المعاملات</span></a></li>
+            
+            <li class="sidebar-heading member-nav">الإحصائيات و الحساب</li>
+            <li class="member-nav"><a href="#dashboard" class="nav-link" data-section="dashboard"><i class="fas fa-gauge-high"></i><span>لوحة الاستثمار</span></a></li>
+            <li class="member-nav"><a href="#analytics" class="nav-link" data-section="analytics"><i class="fas fa-chart-pie"></i><span>التحليلات</span></a></li>
+            <li class="member-nav"><a href="#account" class="nav-link" data-section="account"><i class="fas fa-id-card"></i><span>حسابي</span></a></li>
+            <li class="member-nav"><a href="#messages" class="nav-link" data-section="messages"><i class="fas fa-envelope"></i><span>الرسائل</span></a></li>
+
+            <li class="sidebar-heading admin-only">الإدارة</li>
+            <li class="admin-only"><a href="#admin" class="nav-link" data-section="admin"><i class="fas fa-user-shield"></i><span>لوحة المدير</span></a></li>
+            <li class="admin-only"><a href="#admin-wallets" class="nav-link" data-section="admin-wallets"><i class="fas fa-vault"></i><span>محافظ الأدمن</span></a></li>
+            <li class="admin-only"><a href="#admin-settings" class="nav-link" data-section="admin-settings"><i class="fas fa-sliders"></i><span>الإعدادات</span></a></li>
+        </ul>
+    </nav>
+    
+    <div class="sidebar-footer">
+        <button id="sidebarLogoutBtn" class="btn btn-outline" style="width: 100%;">
+            <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+        </button>
+    </div>
+</aside>

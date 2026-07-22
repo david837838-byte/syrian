@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوريا العقارية | منصة استثمار عقاري رقمية</title>
+    <meta name="theme-color" content="#065f46">
+    <meta name="application-name" content="سوريا العقارية">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='images/app-icon-192.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('favicon') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/app-icon-192.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css', v='20260617-chart-interactions') }}">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+    <div class="site-breadcrumbs" id="siteBreadcrumbs" aria-label="مسار التنقل">
+        <div class="container">
+            <div class="site-breadcrumbs__inner">
+                <span class="site-breadcrumbs__label">أنت هنا</span>
+                <div class="site-breadcrumbs__trail">
+                    <span>الرئيسية</span>
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    <strong id="currentSectionLabel">الرئيسية</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="siteMaintenanceBanner" class="site-maintenance-banner" hidden>
+        <div class="container">
+            <div class="site-maintenance-banner__inner">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                <span id="siteMaintenanceText">نحن الآن في وضع صيانة لتحسين المنصة. نعتذر عن الإزعاج وسنعود إليكم قريبًا.</span>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/home.html' %}
+    {% include 'partials/features.html' %}
+    {% include 'partials/trust_center.html' %}
+    {% include 'partials/auth.html' %}
+    {% include 'partials/dashboard.html' %}
+    {% include 'partials/account.html' %}
+    {% include 'partials/wallet.html' %}
+    {% include 'partials/investments.html' %}
+    {% include 'partials/transactions.html' %}
+    {% include 'partials/analytics.html' %}
+    {% include 'partials/messages.html' %}
+    {% include 'partials/admin.html' %}
+    {% include 'partials/admin_wallets.html' %}
+    {% include 'partials/admin_settings.html' %}
+    {% include 'partials/footer.html' %}
+    {% include 'partials/modals.html' %}
+    {% include 'partials/loading_overlay.html' %}
+    <button id="smartAdvisorLauncher" class="smart-advisor-launcher" type="button" aria-label="فتح المستشار الذكي">
+        <i class="fas fa-wand-magic-sparkles"></i>
+        <span>المستشار الذكي</span>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='vendor/qrcode-generator.min.js', v='20260614-qr-local') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/qrcode-compat.js', v='20260614-qr-local') }}"></script>
+    <script>
+        window.APP_CONFIG = Object.assign({}, window.APP_CONFIG || {}, {
+            googleClientId: {{ config.get('GOOGLE_CLIENT_ID', '') | tojson }}
+        });
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="{{ url_for('static', filename='js/app.js', v='20260617-chart-interactions') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.investments.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.messages.js', v='20260614-company-fees') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.account-actions.js', v='20260614-company-fees') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.analytics.js', v='20260617-chart-interactions') }}"></script>
+</body>
+</html>

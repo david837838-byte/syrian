@@ -1,0 +1,189 @@
+<section id="messages" class="section-hidden">
+    <div class="container">
+        <div class="account-hero js-reveal">
+            <div class="section-title account-title">
+                <span class="section-kicker">
+                    <i class="fas fa-comments"></i>
+                    التواصل الداخلي والدعم
+                </span>
+                <h2>محادثات بين المستخدمين والدعم من داخل المنصة</h2>
+                <p>ابدأ محادثة عبر رقم الحساب العام، أو افتح محادثة مباشرة مع فريق المنصة للمساعدة والمتابعة.</p>
+            </div>
+            <div class="account-hero-panel">
+                <div class="account-hero-panel__badge">
+                    <i class="fas fa-headset"></i>
+                    <span>رسائل مركزية</span>
+                </div>
+                <h3>الواجهة هنا صارت أقرب لتجربة مراسلة حديثة: محادثات مرتبة، فقاعات أوضح، وإرسال نصوص وصور ورسائل صوتية من نفس المكان.</h3>
+                <div class="hero-panel-summary">
+                    <div class="hero-panel-summary__item">
+                        <span>المحادثات</span>
+                        <strong id="messagesHeroConversations">0</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>غير المقروء</span>
+                        <strong id="messagesHeroUnread">0</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>الرسائل الصوتية</span>
+                        <strong id="messagesHeroVoiceState">جاهزة</strong>
+                    </div>
+                    <div class="hero-panel-summary__item">
+                        <span>الدعم</span>
+                        <strong id="messagesHeroSupportState">متاح</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="messages-shell">
+            <aside class="messages-sidebar">
+                <div class="messages-sidebar-card">
+                    <div class="account-card-header">
+                        <div>
+                            <h3><i class="fas fa-plus-circle"></i> بدء محادثة</h3>
+                            <p>اكتب رقم الحساب العام للمستخدم أو افتح محادثة مساعدة مع الإدارة.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="messageRecipientPublicId">رقم الحساب العام</label>
+                        <input type="text" id="messageRecipientPublicId" class="form-control" placeholder="مثال: 100006">
+                    </div>
+                    <div id="messageRecipientSummary" class="message-recipient-summary" hidden>
+                        <i class="fas fa-user-check"></i>
+                        <div>
+                            <strong id="messageRecipientSummaryName">لم يتم اختيار مستلم بعد</strong>
+                            <span id="messageRecipientSummaryMeta">بعد بدء المحادثة سيظهر الاسم هنا بدل رقم الحساب.</span>
+                        </div>
+                    </div>
+                    <div class="wallet-actions">
+                        <button id="startDirectConversationBtn" type="button" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> بدء محادثة
+                        </button>
+                        <button id="startSupportConversationBtn" type="button" class="btn btn-light">
+                            <i class="fas fa-headset"></i> تواصل مع الدعم
+                        </button>
+                    </div>
+                </div>
+
+                <div class="messages-sidebar-card messages-sidebar-card--conversations">
+                    <div class="messages-sidebar-head">
+                        <div>
+                            <h3><i class="fas fa-inbox"></i> المحادثات</h3>
+                            <p>آخر المحادثات المفتوحة من حسابك.</p>
+                        </div>
+                    </div>
+                    <div id="conversationsList" class="messages-conversations-list">
+                        <div class="transactions-empty-state">
+                            <i class="fas fa-comments"></i>
+                            <h4>لا توجد محادثات بعد</h4>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="messages-main">
+                <div class="messages-main-card">
+                    <div class="messages-chat-head">
+                        <div class="messages-chat-head__identity">
+                            <div id="messagesCurrentAvatar" class="messages-avatar messages-avatar--large">؟</div>
+                            <div>
+                                <h3 id="messagesCurrentConversationTitle"><i class="fas fa-comment-dots"></i> اختر محادثة</h3>
+                                <p id="messagesCurrentConversationMeta">ستظهر الرسائل هنا بعد اختيار المحادثة أو بدء واحدة جديدة.</p>
+                            </div>
+                        </div>
+                        <div class="messages-chat-head__actions">
+                            <button type="button" class="btn btn-light btn-sm" id="viewChatCounterpartProfileBtn" title="عرض ملف الحساب" aria-label="عرض ملف الحساب" style="display: none;">
+                                <i class="fas fa-user-gear"></i>
+                            </button>
+                            <button type="button" class="btn btn-light btn-sm" id="startAudioCallBtn" aria-label="بدء اتصال صوتي">
+                                <i class="fas fa-phone-volume"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm" id="endAudioCallBtn" aria-label="إنهاء الاتصال" hidden>
+                                <i class="fas fa-phone-slash"></i>
+                            </button>
+                            <button type="button" class="btn btn-light btn-sm" id="messagesRefreshBtn" aria-label="تحديث الرسائل">
+                                <i class="fas fa-rotate"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="messagesThread" class="messages-thread messages-thread--whatsapp">
+                        <div class="transactions-empty-state">
+                            <i class="fas fa-paper-plane"></i>
+                            <h4>لا توجد محادثة نشطة الآن</h4>
+                        </div>
+                    </div>
+
+                    <div class="messages-composer messages-composer--whatsapp">
+                        <div class="messages-composer__row">
+                            <!-- Left Controls: Attachment and Voice Recording -->
+                            <div class="messages-composer__left-tools">
+                                <label for="messageAttachmentInput" class="messages-tool-btn" title="إرفاق صورة أو رسالة صوتية">
+                                    <i class="fas fa-paperclip"></i>
+                                </label>
+                                <input type="file" id="messageAttachmentInput" accept="image/*,audio/*">
+                                
+                                <button id="startVoiceRecordingBtn" type="button" class="messages-tool-btn" title="بدء تسجيل صوتي" aria-label="بدء تسجيل صوتي">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button id="stopVoiceRecordingBtn" type="button" class="messages-tool-btn messages-tool-btn--danger" title="إيقاف التسجيل وإرساله" aria-label="إيقاف التسجيل وإرساله" hidden>
+                                    <i class="fas fa-stop"></i>
+                                </button>
+                            </div>
+
+                            <!-- Center: Input Textarea and Attachment Status -->
+                            <div class="messages-composer__input-wrap">
+                                <textarea id="messageComposerText" class="form-control messages-composer__input" rows="1" placeholder="اكتب رسالة هنا..."></textarea>
+                                <div id="messageAttachmentStatus" class="messages-composer__status-badge">يمكنك رفع صورة أو رسالة صوتية مع الرسالة.</div>
+                            </div>
+
+                            <!-- Right: Send Button -->
+                            <button id="sendConversationMessageBtn" type="button" class="btn btn-success messages-send-btn" title="إرسال">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="callOverlay" class="call-overlay" hidden>
+            <div class="call-overlay__card">
+                <div class="call-overlay__badge">
+                    <i class="fas fa-phone-volume"></i>
+                    <span id="callOverlayBadgeText">اتصال صوتي</span>
+                </div>
+                <div class="call-overlay__avatar" id="callOverlayAvatar">؟</div>
+                <h3 id="callOverlayTitle">لا يوجد اتصال نشط</h3>
+                <p id="callOverlayStatus">عند بدء اتصال أو ورود اتصال جديد ستظهر حالته هنا.</p>
+                <div class="call-overlay__media-controls">
+                    <button id="toggleMuteCallBtn" type="button" class="btn btn-light btn-sm" hidden>
+                        <i class="fas fa-microphone"></i>
+                        <span>كتم الميكروفون</span>
+                    </button>
+                    <button id="toggleSpeakerCallBtn" type="button" class="btn btn-light btn-sm" hidden>
+                        <i class="fas fa-volume-high"></i>
+                        <span>مكبر الصوت</span>
+                    </button>
+                </div>
+                <div class="call-overlay__actions">
+                    <button id="acceptIncomingCallBtn" type="button" class="btn btn-success call-action-btn call-action-btn--accept" title="قبول" hidden>
+                        <i class="fas fa-phone"></i>
+                    </button>
+                    <button id="rejectIncomingCallBtn" type="button" class="btn btn-danger call-action-btn call-action-btn--reject" title="رفض / إلغاء" hidden>
+                        <i class="fas fa-phone-slash"></i>
+                    </button>
+                    <button id="overlayEndCallBtn" type="button" class="btn btn-danger call-action-btn call-action-btn--hangup" title="إنهاء الاتصال" hidden>
+                        <i class="fas fa-phone-slash"></i>
+                    </button>
+                    <button id="closeCallOverlayBtn" type="button" class="btn btn-light call-action-btn call-action-btn--close" title="إغلاق" hidden>
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </div>
+                <audio id="remoteCallAudio" autoplay playsinline></audio>
+                <audio id="localCallAudio" autoplay playsinline muted></audio>
+            </div>
+        </div>
+    </div>
+</section>

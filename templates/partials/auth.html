@@ -1,0 +1,258 @@
+<section id="auth" class="section-hidden">
+    <div class="container">
+        <div class="auth-shell">
+            <div>
+                <div class="auth-hero js-reveal">
+                    <div class="section-title auth-title">
+                        <span class="section-kicker">
+                            <i class="fas fa-user-shield"></i>
+                            دخول المستثمرين والإدارة
+                        </span>
+                        <h2>ابدأ حسابك بخطوات واضحة</h2>
+                        <p>
+                            سجل الدخول أو افتح حسابًا جديدًا للوصول إلى المحافظ الرقمية، فرص الاستثمار، وسجل المعاملات داخل
+                            المنصة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <div class="auth-tab active" data-tab="login">تسجيل الدخول</div>
+                        <div class="auth-tab" data-tab="register">حساب جديد</div>
+                    </div>
+
+                    <form id="loginForm" class="auth-form active">
+                        <div class="auth-form-intro">
+                            <span class="auth-form-kicker">مستخدم حالي</span>
+                            <h3>سجّل دخولك للوصول إلى لوحة استثمارك</h3>
+                            <p>أدخل بريدك وكلمة المرور للدخول المباشر.</p>
+                        </div>
+                        <div id="loginCredentialsSection">
+                            <div class="form-group">
+                                <label for="loginEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="example@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loginPassword"><i class="fas fa-lock"></i> كلمة المرور</label>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="********" required>
+                            </div>
+
+                            <div style="display: flex; justify-content: flex-end; margin: -4px 0 16px;">
+                                <button id="forgotPasswordBtn" type="button" class="btn btn-link" style="padding: 0; color: var(--primary); font-weight: 700;">
+                                    نسيت كلمة المرور؟
+                                </button>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                            </button>
+
+                            <div class="auth-social-block">
+                                <div class="auth-social-divider"><span>أو تابع عبر</span></div>
+                                <div id="googleAuthButtonLogin" class="google-auth-button-slot" data-google-context="login"></div>
+                                <div id="googleAuthUnavailableLogin" class="auth-social-note" hidden>تسجيل Google غير مفعّل حاليًا.</div>
+                            </div>
+                        </div>
+
+                        <!-- 2FA verification block during login -->
+                        <div id="loginTwoFactorSection" style="display: none;">
+                            <div class="wallet-note" style="margin-bottom: 16px;">
+                                <h4 class="wallet-note-title"><i class="fas fa-shield-halved"></i> المصادقة الثنائية (2FA)</h4>
+                                <p style="margin: 0; font-size: 14px; line-height: 1.5;">يرجى إدخال الرمز المكون من 6 أرقام من تطبيق المصادقة الخاص بك أو أحد رموز النسخ الاحتياطي.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginTwoFactorCode">رمز التحقق</label>
+                                <input type="text" id="loginTwoFactorCode" class="form-control" placeholder="000000" maxlength="8" style="text-align: center; font-size: 20px; letter-spacing: 4px;">
+                            </div>
+                            <button id="submitLoginTwoFactorBtn" type="button" class="btn btn-primary" style="width: 100%;">
+                                <i class="fas fa-key"></i> تأكيد الدخول
+                            </button>
+                            <button id="cancelLoginTwoFactorBtn" type="button" class="btn btn-ghost" style="width: 100%; margin-top: 10px;">
+                                إلغاء والعودة
+                            </button>
+                        </div>
+
+                        <div class="auth-inline-points">
+                            <div class="auth-inline-point">
+                                <i class="fas fa-shield-halved"></i>
+                                <span>واجهة آمنة وواضحة</span>
+                            </div>
+                            <div class="auth-inline-point">
+                                <i class="fas fa-bolt"></i>
+                                <span>وصول سريع للمشاريع</span>
+                            </div>
+                        </div>
+
+                        <div id="loginError" style="color: var(--danger); margin-top: 15px; display: none; text-align: center;">
+                            <i class="fas fa-exclamation-circle"></i> <span id="loginErrorText"></span>
+                        </div>
+                    </form>
+
+                    <form id="registerForm" class="auth-form">
+                        <div class="auth-form-intro">
+                            <span class="auth-form-kicker">مستخدم جديد</span>
+                            <h3>أنشئ حسابك وابدأ الرحلة الاستثمارية</h3>
+                            <p>أكمل بياناتك لفتح حسابك الجديد بسهولة.</p>
+                        </div>
+                        <div class="auth-account-type-group">
+                            <label class="auth-account-type-option is-active" for="registerAccountTypeIndividual">
+                                <input type="radio" id="registerAccountTypeIndividual" name="registerAccountType" value="individual" checked>
+                                <span>حساب فردي</span>
+                                <small>للمستثمر أو المستخدم الفردي</small>
+                            </label>
+                            <label class="auth-account-type-option" for="registerAccountTypeCompany">
+                                <input type="radio" id="registerAccountTypeCompany" name="registerAccountType" value="company">
+                                <span>حساب شركة</span>
+                                <small>لشركة استثمار أو جهة تطوير</small>
+                            </label>
+                        </div>
+                        <div id="companyAccountDisabledNote" class="auth-company-note" style="display: none;">
+                            تسجيل حسابات الشركات متوقف حاليًا من إعدادات الإدارة.
+                        </div>
+                        <div class="form-group">
+                            <label for="registerName"><i class="fas fa-user"></i> الاسم الكامل</label>
+                            <input type="text" id="registerName" class="form-control" placeholder="أحمد محمد" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                            <input type="email" id="registerEmail" class="form-control" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerPhone"><i class="fas fa-phone"></i> رقم الهاتف</label>
+                            <input type="tel" id="registerPhone" class="form-control" placeholder="+963 9XX XXX XXX" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerPassword"><i class="fas fa-lock"></i> كلمة المرور</label>
+                            <input type="password" id="registerPassword" class="form-control" placeholder="********" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword"><i class="fas fa-lock"></i> تأكيد كلمة المرور</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="********" required>
+                        </div>
+
+                        <div id="companyRegistrationFields" class="auth-company-fields" style="display: none;">
+                            <div class="auth-company-fields__header">
+                                <h4><i class="fas fa-building"></i> بيانات الشركة</h4>
+                                <p>أدخل بيانات الشركة مرة واحدة لتصبح جاهزة للتوثيق ورفع المشاريع باسمها داخل المنصة.</p>
+                            </div>
+                            <div class="account-grid">
+                                <div class="form-group">
+                                    <label for="registerCompanyName">اسم الشركة</label>
+                                    <input type="text" id="registerCompanyName" class="form-control" placeholder="اسم الشركة الرسمي">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerRepresentativeName">اسم الممثل</label>
+                                    <input type="text" id="registerRepresentativeName" class="form-control" placeholder="المدير أو الممثل القانوني">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerTradeName">الاسم التجاري</label>
+                                    <input type="text" id="registerTradeName" class="form-control" placeholder="الاسم التجاري إن وجد">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerRegistrationNumber">رقم السجل</label>
+                                    <input type="text" id="registerRegistrationNumber" class="form-control" placeholder="رقم السجل التجاري">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerRepresentativeTitle">صفة الممثل</label>
+                                    <input type="text" id="registerRepresentativeTitle" class="form-control" placeholder="مدير عام أو مفوض">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerCompanyPhone">هاتف الشركة</label>
+                                    <input type="text" id="registerCompanyPhone" class="form-control" placeholder="+963 ...">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerCompanyEmail">بريد الشركة</label>
+                                    <input type="email" id="registerCompanyEmail" class="form-control" placeholder="company@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerCompanyCountry">دولة الشركة</label>
+                                    <select id="registerCompanyCountry" class="form-control">
+                                        <option value="">اختر الدولة</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerCompanyCity">المدينة</label>
+                                    <input type="text" id="registerCompanyCity" class="form-control" placeholder="المدينة الرئيسية">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerCompanyWebsite">الموقع الإلكتروني</label>
+                                    <input type="url" id="registerCompanyWebsite" class="form-control" placeholder="https://example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerCompanyAddress">عنوان الشركة</label>
+                                <input type="text" id="registerCompanyAddress" class="form-control" placeholder="العنوان الكامل">
+                            </div>
+                            <div class="form-group">
+                                <label for="registerCompanyDescription">نبذة مختصرة</label>
+                                <textarea id="registerCompanyDescription" class="form-control" rows="3" placeholder="نشاط الشركة أو نوع المشاريع التي تعمل عليها"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="registerReferralCode"><i class="fas fa-gift"></i> رمز الإحالة <small style="color: var(--gray);">(اختياري)</small></label>
+                            <input type="text" id="registerReferralCode" class="form-control" placeholder="مثال: INV100123">
+                        </div>
+
+                        <button type="submit" class="btn btn-success" style="width: 100%;">
+                            <i class="fas fa-user-plus"></i> إنشاء حساب جديد
+                        </button>
+
+                        <div class="auth-social-block">
+                            <div class="auth-social-divider"><span>أو أنشئ الحساب عبر</span></div>
+                            <div id="googleAuthButtonRegister" class="google-auth-button-slot" data-google-context="register"></div>
+                            <div id="googleAuthUnavailableRegister" class="auth-social-note" hidden>تسجيل Google غير مفعّل حاليًا.</div>
+                        </div>
+
+                        <div class="auth-inline-points">
+                            <div class="auth-inline-point">
+                                <i class="fas fa-id-card"></i>
+                                <span>إنشاء حساب خلال دقائق</span>
+                            </div>
+                            <div class="auth-inline-point">
+                                <i class="fas fa-wallet"></i>
+                                <span>جاهز للانتقال إلى المحفظة</span>
+                            </div>
+                        </div>
+
+                        <div id="registerError" style="color: var(--danger); margin-top: 15px; display: none; text-align: center;">
+                            <i class="fas fa-exclamation-circle"></i> <span id="registerErrorText"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <aside class="auth-side">
+                <div class="auth-side-badge">
+                    <i class="fas fa-arrow-right-to-bracket"></i>
+                    <span>دخول سريع وآمن</span>
+                </div>
+                <h3>حساب واحد يكفي لتبدأ</h3>
+                <p>
+                    بعد تسجيل الدخول ستنتقل مباشرة إلى المحفظة، المشاريع، المعاملات، وباقي أدوات المنصة من نفس الحساب.
+                </p>
+
+                <div class="auth-side-summary">
+                    <div class="auth-side-summary__item">
+                        <span>الوصول</span>
+                        <strong>محفظة ومشاريع ومعاملات</strong>
+                    </div>
+                    <div class="auth-side-summary__item">
+                        <span>الحماية</span>
+                        <strong>بريد موثق وخطوات دخول أوضح</strong>
+                    </div>
+                    <div class="auth-side-summary__item">
+                        <span>التفاصيل</span>
+                        <strong>شرح أكثر موجود في لماذا نحن ومركز الثقة</strong>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

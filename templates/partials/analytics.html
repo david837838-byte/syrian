@@ -1,0 +1,362 @@
+<section id="analytics" class="section-hidden analytics-section">
+    <div class="container">
+        <div class="analytics-shell">
+            <div class="analytics-hero js-reveal">
+                <div class="section-title analytics-title">
+                    <span class="section-kicker">
+                        <i class="fas fa-chart-pie"></i>
+                        قسم التحليلات
+                    </span>
+                    <h2>قراءة بصرية أوضح لكل ما يحدث داخل حسابك والمنصة</h2>
+                    <p>
+                        تابع استثماراتك، حركة محفظتك، توزيع الفرص والعقارات، ونشاط المنصة من خلال رسوم بيانية
+                        ومؤشرات مختصرة تساعدك على الفهم واتخاذ القرار بسرعة أكبر.
+                    </p>
+                </div>
+                <div class="analytics-hero-panel">
+                    <div class="analytics-hero-panel__badge">
+                        <i class="fas fa-wave-square"></i>
+                        <span>مركز التحليل</span>
+                    </div>
+                    <h3>هذا القسم يجمع الأرقام المالية، حركة المشاريع، والعرض العقاري في لوحة واحدة منظمة.</h3>
+                    <div class="analytics-hero-panel__grid">
+                        <div class="analytics-hero-panel__item">
+                            <span>المستخدم</span>
+                            <strong>أداء الحساب والمحفظة</strong>
+                        </div>
+                        <div class="analytics-hero-panel__item">
+                            <span>السوق</span>
+                            <strong>المشاريع والعقارات</strong>
+                        </div>
+                        <div class="analytics-hero-panel__item">
+                            <span>الإدارة</span>
+                            <strong>نشاط وتشغيل المنصة</strong>
+                        </div>
+                    </div>
+                    <div class="analytics-hero-panel__actions">
+                        <button id="refreshAnalyticsBtn" type="button" class="btn btn-primary">
+                            <i class="fas fa-rotate"></i> تحديث التحليلات
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-summary-strip js-reveal">
+                <div class="analytics-summary-card">
+                    <span>إجمالي رأس المال المستثمر</span>
+                    <strong id="analyticsSummaryInvested">0.00 USDT</strong>
+                    <small>مركزك الحالي داخل المشاريع</small>
+                </div>
+                <div class="analytics-summary-card">
+                    <span>الرصيد المتاح</span>
+                    <strong id="analyticsSummaryBalance">0.00 USDT</strong>
+                    <small>الرصيد القابل للاستخدام الآن</small>
+                </div>
+                <div class="analytics-summary-card">
+                    <span>المشاريع المتاحة</span>
+                    <strong id="analyticsSummaryProjects">0</strong>
+                    <small>فرص ظاهرة ضمن الدولة والمنطقة المختارة</small>
+                </div>
+                <div class="analytics-summary-card">
+                    <span>متوسط العائد</span>
+                    <strong id="analyticsSummaryYield">0%</strong>
+                    <small>قراءة سريعة لجاذبية الفرص</small>
+                </div>
+            </div>
+
+            <div class="analytics-tabs js-reveal" id="analyticsTabs">
+                <button type="button" class="analytics-tab active" data-analytics-tab="overview" aria-pressed="true">
+                    <i class="fas fa-chart-line"></i>
+                    <span>نظرة عامة</span>
+                </button>
+                <button type="button" class="analytics-tab" data-analytics-tab="investments" aria-pressed="false">
+                    <i class="fas fa-building"></i>
+                    <span>الاستثمارات</span>
+                </button>
+                <button type="button" class="analytics-tab" data-analytics-tab="wallet" aria-pressed="false">
+                    <i class="fas fa-wallet"></i>
+                    <span>المحفظة</span>
+                </button>
+                <button type="button" class="analytics-tab" data-analytics-tab="market" aria-pressed="false">
+                    <i class="fas fa-house"></i>
+                    <span>السوق العقاري</span>
+                </button>
+                <button type="button" class="analytics-tab analytics-tab--admin" data-analytics-tab="admin" aria-pressed="false">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>تحليلات الأدمن</span>
+                </button>
+            </div>
+
+            <div class="analytics-panel active" data-analytics-panel="overview">
+                <div class="analytics-grid analytics-grid--two">
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-arrows-rotate"></i> نشاط الحساب</span>
+                                <h3>كيف تحرك حسابك خلال الأشهر الأخيرة؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsOverviewActivityChart"></canvas>
+                        </div>
+                        <p id="analyticsOverviewActivityLead" class="analytics-chart-card__lead">سيظهر هنا تطور النشاط بين الإيداع والسحب والاستثمار والتحويلات.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-chart-pie"></i> توزيع المحفظة</span>
+                                <h3>كيف يتوزع وضعك المالي الآن؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsOverviewMixChart"></canvas>
+                        </div>
+                        <p id="analyticsOverviewMixLead" class="analytics-chart-card__lead">مقارنة بين رأس المال المستثمر، الرصيد المتاح، والأرباح المتراكمة.</p>
+                    </article>
+                </div>
+
+                <div class="analytics-insights-grid">
+                    <article class="analytics-insight-card">
+                        <span>الحركة الأقوى</span>
+                        <strong id="analyticsOverviewTopAction">-</strong>
+                        <small id="analyticsOverviewTopActionNote">بانتظار القراءة</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>أفضل فرصة ظاهرة</span>
+                        <strong id="analyticsOverviewTopProject">-</strong>
+                        <small id="analyticsOverviewTopProjectNote">حسب التمويل والعائد الحالي</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>المنطقة الأوضح</span>
+                        <strong id="analyticsOverviewTopGovernorate">-</strong>
+                        <small id="analyticsOverviewTopGovernorateNote">أكثر حضورًا في المشاريع الحالية</small>
+                    </article>
+                </div>
+            </div>
+
+            <div class="analytics-panel" data-analytics-panel="investments">
+                <div class="analytics-grid analytics-grid--two">
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-location-dot"></i> توزيع المناطق</span>
+                                <h3>أين تتركز المشاريع ورؤوس الأموال؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsInvestmentsGovernorateChart"></canvas>
+                        </div>
+                        <p id="analyticsInvestmentsGovernorateLead" class="analytics-chart-card__lead">قراءة للمناطق الأكثر حضورًا داخل السوق الحالي.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-signal"></i> تقدم التمويل</span>
+                                <h3>ما المشاريع الأقرب إلى الامتلاء؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsInvestmentsProgressChart"></canvas>
+                        </div>
+                        <p id="analyticsInvestmentsProgressLead" class="analytics-chart-card__lead">أعلى المشاريع من حيث نسبة التقدم في التمويل.</p>
+                    </article>
+                </div>
+
+                <div class="analytics-insights-grid">
+                    <article class="analytics-insight-card">
+                        <span>أقوى سوق ظاهر</span>
+                        <strong id="analyticsInvestmentsTopGovernorate">-</strong>
+                        <small id="analyticsInvestmentsTopGovernorateNote">بانتظار المقارنة</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>أعلى مشروع تمويلاً</span>
+                        <strong id="analyticsInvestmentsTopFunding">-</strong>
+                        <small id="analyticsInvestmentsTopFundingNote">بحسب التمويل المجمع حاليًا</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>أفضل دخول صغير</span>
+                        <strong id="analyticsInvestmentsSmallestEntry">-</strong>
+                        <small id="analyticsInvestmentsSmallestEntryNote">أقل حد دخول ضمن المشاريع الحالية</small>
+                    </article>
+                </div>
+            </div>
+
+            <div class="analytics-panel" data-analytics-panel="wallet">
+                <div class="analytics-grid analytics-grid--two">
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-right-left"></i> أنواع الحركات</span>
+                                <h3>ما أكثر العمليات استخدامًا داخل المحفظة؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsWalletTypesChart"></canvas>
+                        </div>
+                        <p id="analyticsWalletTypesLead" class="analytics-chart-card__lead">توزيع واضح لأنواع الحركات داخل سجلك المالي.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-money-bill-trend-up"></i> التدفق المالي</span>
+                                <h3>كيف تحركت السيولة مع الوقت؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsWalletCashflowChart"></canvas>
+                        </div>
+                        <p id="analyticsWalletCashflowLead" class="analytics-chart-card__lead">صافي الحركة بين الإيداع والسحب والاستثمار والاسترداد.</p>
+                    </article>
+                </div>
+
+                <div class="analytics-insights-grid">
+                    <article class="analytics-insight-card">
+                        <span>إجمالي الإيداعات</span>
+                        <strong id="analyticsWalletDeposits">0.00 USDT</strong>
+                        <small>المكتمل منها فقط</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>إجمالي السحوبات</span>
+                        <strong id="analyticsWalletWithdrawals">0.00 USDT</strong>
+                        <small>المكتمل منها فقط</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>التحويلات الداخلية</span>
+                        <strong id="analyticsWalletInternal">0.00 USDT</strong>
+                        <small>مرسل ووارد داخل المنصة</small>
+                    </article>
+                </div>
+            </div>
+
+            <div class="analytics-panel" data-analytics-panel="market">
+                <div class="analytics-grid analytics-grid--two">
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-map"></i> العقارات حسب المنطقة</span>
+                                <h3>أين يتركز عرض العقارات للبيع؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsMarketPropertiesChart"></canvas>
+                        </div>
+                        <p id="analyticsMarketPropertiesLead" class="analytics-chart-card__lead">توزيع العقارات المنشورة بحسب المنطقة الحالية.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-house-chimney"></i> أنواع العقارات</span>
+                                <h3>ما الأنواع الأكثر ظهورًا؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsMarketTypesChart"></canvas>
+                        </div>
+                        <p id="analyticsMarketTypesLead" class="analytics-chart-card__lead">قراءة سريعة لأنواع العقارات المعروضة داخل السوق الحالي.</p>
+                    </article>
+                </div>
+
+                <div class="analytics-insights-grid">
+                    <article class="analytics-insight-card">
+                        <span>العقارات المعروضة</span>
+                        <strong id="analyticsMarketTotalProperties">0</strong>
+                        <small>إجمالي العروض الحالية</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>إجمالي القيمة</span>
+                        <strong id="analyticsMarketTotalValue">$0</strong>
+                        <small>قيمة سوقية تقريبية للعروض الظاهرة</small>
+                    </article>
+                    <article class="analytics-insight-card">
+                        <span>تم البيع</span>
+                        <strong id="analyticsMarketSoldCount">0</strong>
+                        <small>عقارات اكتمل بيعها داخل المنصة</small>
+                    </article>
+                </div>
+            </div>
+
+            <div class="analytics-panel analytics-panel--admin" data-analytics-panel="admin">
+                <div class="analytics-summary-strip analytics-summary-strip--admin">
+                    <div class="analytics-summary-card">
+                        <span>المستخدمون الجدد</span>
+                        <strong id="analyticsAdminUsersTotal">0</strong>
+                        <small>إجمالي ما تم جلبه في لوحة الأدمن</small>
+                    </div>
+                    <div class="analytics-summary-card">
+                        <span>الطلبات المعلقة</span>
+                        <strong id="analyticsAdminPendingTotal">0</strong>
+                        <small>سحب + إيداع + KYC</small>
+                    </div>
+                    <div class="analytics-summary-card">
+                        <span>رأس المال الظاهر</span>
+                        <strong id="analyticsAdminCapitalTotal">$0</strong>
+                        <small>من بيانات الإدارة الحالية</small>
+                    </div>
+                    <div class="analytics-summary-card">
+                        <span>الأرباح الشهرية</span>
+                        <strong id="analyticsAdminProfitTotal">$0</strong>
+                        <small>قراءة سريعة للأداء المالي</small>
+                    </div>
+                </div>
+
+                <div class="analytics-grid analytics-grid--two">
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-user-plus"></i> نمو المستخدمين</span>
+                                <h3>كيف يتزايد عدد الحسابات مع الوقت؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsAdminUsersChart"></canvas>
+                        </div>
+                        <p id="analyticsAdminUsersLead" class="analytics-chart-card__lead">قراءة شهرية لعدد الحسابات الجديدة.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-list-check"></i> طوابير التشغيل</span>
+                                <h3>ما الذي ينتظر المعالجة الآن؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsAdminQueueChart"></canvas>
+                        </div>
+                        <p id="analyticsAdminQueueLead" class="analytics-chart-card__lead">طلبات تحتاج انتباه الإدارة في الوقت الحالي.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-folder-tree"></i> حالات المشاريع</span>
+                                <h3>كيف تتوزع الاستثمارات داخل الإدارة؟</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsAdminInvestmentsChart"></canvas>
+                        </div>
+                        <p id="analyticsAdminInvestmentsLead" class="analytics-chart-card__lead">توزيع المشاريع بين نشطة ومكتملة أو غير ذلك.</p>
+                    </article>
+
+                    <article class="analytics-chart-card">
+                        <div class="analytics-chart-card__header">
+                            <div>
+                                <span class="section-kicker"><i class="fas fa-sack-dollar"></i> الصورة المالية</span>
+                                <h3>مقارنة سريعة بين التمويل والأرباح والطلبات</h3>
+                            </div>
+                        </div>
+                        <div class="analytics-chart-card__canvas">
+                            <canvas id="analyticsAdminFinanceChart"></canvas>
+                        </div>
+                        <p id="analyticsAdminFinanceLead" class="analytics-chart-card__lead">مؤشرات تشغيلية مختصرة لاتخاذ قرارات أسرع.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

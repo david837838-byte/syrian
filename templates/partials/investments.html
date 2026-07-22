@@ -1,0 +1,375 @@
+﻿<section id="investments" class="section-hidden investments-section">
+    <div class="container">
+        <div class="investments-shell">
+            <div class="investments-hero js-reveal">
+                <div class="section-title investments-title">
+                    <span class="section-kicker">
+                        <i class="fas fa-building"></i>
+                        استثمارات وعقارات للبيع في الشرق الأوسط
+                    </span>
+                    <h2>اختر الدولة ثم المنطقة، وقارن الفرص بثقة أكبر</h2>
+                    <p>
+                        هذا القسم يجمع بين فرص الاستثمار العقاري والعقارات المعروضة للبيع ضمن دول الشرق الأوسط،
+                        مع تصفية أوضح حسب الدولة والمنطقة وصور واقعية تساعد المستثمر والمستخدم على اتخاذ القرار بسرعة.
+                    </p>
+                    <div class="investments-decision-board">
+                        <div class="investments-decision-board__grid">
+                            <article class="investments-decision-board__item">
+                                <span>الدولة المختارة</span>
+                                <strong id="investmentsDecisionCountry">الشرق الأوسط</strong>
+                                <small id="investmentsDecisionCountryNote">اختر دولة ثم منطقة لبدء المقارنة</small>
+                            </article>
+                            <article class="investments-decision-board__item">
+                                <span>أقوى تركّز ظاهر</span>
+                                <strong id="investmentsDecisionDemand">بانتظار البيانات</strong>
+                                <small id="investmentsDecisionDemandNote">سنحدد أكثر منطقة تشهد حضورًا استثماريًا</small>
+                            </article>
+                            <article class="investments-decision-board__item">
+                                <span>أعلى تمويل مطروح</span>
+                                <strong id="investmentsDecisionFunding">بانتظار البيانات</strong>
+                                <small id="investmentsDecisionFundingNote">تظهر هنا الجهة الأقوى من حيث حجم رأس المال</small>
+                            </article>
+                            <article class="investments-decision-board__item">
+                                <span>أفضل بداية صغيرة</span>
+                                <strong id="investmentsDecisionSmall">بانتظار البيانات</strong>
+                                <small id="investmentsDecisionSmallNote">فرص مناسبة للدخول بمبالغ صغيرة</small>
+                            </article>
+                        </div>
+                        <div class="investments-decision-board__footer">
+                            <div class="investments-decision-board__tip">
+                                <strong id="investmentsDecisionTipTitle">قرار أوضح للمستخدم والمستثمر</strong>
+                                <p id="investmentsDecisionTipText">كلما اخترت الدولة والمنطقة الأنسب ستظهر لك المشاريع والعقارات الأكثر ارتباطًا بسوقك المحلي.</p>
+                            </div>
+                            <div class="investments-decision-board__actions">
+                                <button id="jumpToPropertyListingsBtn" class="btn btn-light" type="button">
+                                    <i class="fas fa-house"></i> عرض العقارات
+                                </button>
+                                <button id="jumpToProjectsGridBtn" class="btn btn-primary" type="button">
+                                    <i class="fas fa-chart-line"></i> استعراض المشاريع
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="investments-hero-panel">
+                    <div class="investments-hero-panel__badge">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>قرار أوضح</span>
+                    </div>
+                    <h3>نقلنا التجربة من محافظة واحدة إلى سوق أوسع، مع بقاء القرار بسيطًا وواضحًا.</h3>
+                    <div class="investments-hero-panel__grid">
+                        <div class="investments-hero-panel__item">
+                            <span>التصفية</span>
+                            <strong>دولة ثم منطقة</strong>
+                        </div>
+                        <div class="investments-hero-panel__item">
+                            <span>العرض</span>
+                            <strong>استثمار + بيع مباشر</strong>
+                        </div>
+                        <div class="investments-hero-panel__item">
+                            <span>الثقة</span>
+                            <strong>صور وبيانات أوضح</strong>
+                        </div>
+                    </div>
+                    <div class="hero-panel-chart">
+                        <canvas id="investmentsOpportunitiesChart"></canvas>
+                    </div>
+                    <div id="investmentsHeroOpportunityLeaders" class="hero-panel-ranking"></div>
+                </div>
+            </div>
+
+            <div id="governorateHero" class="governorate-hero">
+                <div id="governorateHeroBg" class="governorate-hero-bg"></div>
+                <div class="governorate-hero-overlay"></div>
+                <div class="governorate-hero-content">
+                    <div id="governorateSymbol" class="governorate-hero-symbol">
+                        <i class="fas fa-map-pin"></i>
+                        سوق عقاري إقليمي
+                    </div>
+                    <h3 id="governorateHeroTitle">اختر الدولة والمنطقة الأقرب لك</h3>
+                    <p id="governorateHeroDesc">
+                        يمكن للمنصة اقتراح دولتك تلقائيًا عند التصفح، ومع ذلك يبقى التبديل اليدوي متاحًا دائمًا حتى ترى السوق الذي يناسبك.
+                    </p>
+                </div>
+            </div>
+
+            <div class="investments-insights-grid js-reveal">
+                <article class="investments-insight-card">
+                    <div class="investments-insight-card__header">
+                        <div>
+                            <span class="section-kicker"><i class="fas fa-users"></i> كثافة الاستثمار</span>
+                            <h3>أين يتركز الاهتمام الاستثماري أكثر؟</h3>
+                        </div>
+                    </div>
+                    <div class="investments-insight-card__chart">
+                        <canvas id="investmentsGovernorateDemandChart"></canvas>
+                    </div>
+                    <p id="investmentsGovernorateDemandLead" class="investments-insight-card__lead">جاري تحليل كثافة الاستثمار حسب المناطق...</p>
+                </article>
+
+                <article class="investments-insight-card">
+                    <div class="investments-insight-card__header">
+                        <div>
+                            <span class="section-kicker"><i class="fas fa-sack-dollar"></i> التمويل الظاهر</span>
+                            <h3>أي الأسواق تستقطب تمويلاً أكبر الآن؟</h3>
+                        </div>
+                    </div>
+                    <div class="investments-insight-card__chart">
+                        <canvas id="investmentsGovernorateFundingChart"></canvas>
+                    </div>
+                    <p id="investmentsGovernorateFundingLead" class="investments-insight-card__lead">جاري قراءة الأسواق الأكثر تجميعًا للتمويل...</p>
+                </article>
+
+                <article class="investments-insight-card">
+                    <div class="investments-insight-card__header">
+                        <div>
+                            <span class="section-kicker"><i class="fas fa-seedling"></i> فرص صغيرة</span>
+                            <h3>أين تبدأ الاستثمارات الصغيرة بشكل أسهل؟</h3>
+                        </div>
+                    </div>
+                    <div class="investments-insight-card__chart">
+                        <canvas id="investmentsGovernorateSmallChart"></canvas>
+                    </div>
+                    <p id="investmentsGovernorateSmallLead" class="investments-insight-card__lead">جاري تحديد المناطق الأنسب للبدايات الصغيرة...</p>
+                </article>
+            </div>
+
+            <div class="investments-market-snapshot js-reveal">
+                <div class="investments-market-card">
+                    <span>الفرص النشطة</span>
+                    <strong id="investmentsSnapshotProjects">0</strong>
+                    <small>مشاريع جاهزة للاستعراض والقرار</small>
+                </div>
+                <div class="investments-market-card">
+                    <span>رأس المال الظاهر</span>
+                    <strong id="investmentsSnapshotCapital">$0</strong>
+                    <small>قراءة سريعة لحجم التمويل الحالي</small>
+                </div>
+                <div class="investments-market-card">
+                    <span>متوسط العائد</span>
+                    <strong id="investmentsSnapshotReturn">0%</strong>
+                    <small>مؤشر فوري للمقارنة بين الفرص</small>
+                </div>
+                <div class="investments-market-card">
+                    <span>المناطق المتاحة</span>
+                    <strong id="investmentsSnapshotGovernorates">0</strong>
+                    <small>انتشار أوضح داخل السوق العقاري</small>
+                </div>
+            </div>
+
+            <div class="investment-toolbar">
+                <div class="investment-toolbar-main">
+                    <div class="form-group investment-toolbar-field" style="flex: 1; min-width: 220px; margin-bottom: 0;">
+                        <label for="countryFilter">الدولة</label>
+                        <select id="countryFilter" class="form-control">
+                            <option value="">كل دول الشرق الأوسط</option>
+                        </select>
+                    </div>
+                    <div class="form-group investment-toolbar-field" style="flex: 1; min-width: 260px; margin-bottom: 0;">
+                        <label for="governorateFilter">المنطقة / المحافظة</label>
+                        <select id="governorateFilter" class="form-control">
+                            <option value="">كل المناطق</option>
+                        </select>
+                    </div>
+                    <div class="form-group investment-toolbar-field" style="flex: 1; min-width: 220px; margin-bottom: 0;">
+                        <label for="investmentSortFilter">ترتيب المشاريع</label>
+                        <select id="investmentSortFilter" class="form-control">
+                            <option value="default">الترتيب الافتراضي</option>
+                            <option value="capital_desc">رأس المال: من الأعلى إلى الأقل</option>
+                            <option value="capital_asc">رأس المال: من الأقل إلى الأعلى</option>
+                            <option value="return_desc">العائد: من الأعلى إلى الأقل</option>
+                            <option value="return_asc">العائد: من الأقل إلى الأعلى</option>
+                        </select>
+                    </div>
+                    <div class="form-group investment-toolbar-field" style="flex: 1; min-width: 180px; margin-bottom: 0;">
+                        <label for="investmentPriceMin">سعر/رأس مال من</label>
+                        <input type="number" id="investmentPriceMin" class="form-control" min="0" step="0.01" placeholder="0">
+                    </div>
+                    <div class="form-group investment-toolbar-field" style="flex: 1; min-width: 180px; margin-bottom: 0;">
+                        <label for="investmentPriceMax">سعر/رأس مال إلى</label>
+                        <input type="number" id="investmentPriceMax" class="form-control" min="0" step="0.01" placeholder="بدون حد">
+                    </div>
+                    <p class="investment-toolbar-note">
+                        اختر دولة أولاً ثم منطقة لتظهر لك الاستثمارات والعقارات للبيع ضمن السوق الأقرب لك، مع إمكانية التبديل اليدوي في أي وقت.
+                    </p>
+                </div>
+                <div class="investment-toolbar-actions">
+                    <button id="clearGovernorateFilter" class="btn btn-light" type="button">
+                        <i class="fas fa-times"></i> عرض الكل
+                    </button>
+                    <button id="addInvestmentBtn" class="btn btn-success admin-only">
+                        <i class="fas fa-plus-circle"></i> إضافة استثمار جديد
+                    </button>
+                    <button id="deleteInvestmentBtn" class="btn btn-danger admin-only" style="display: none;">
+                        <i class="fas fa-trash"></i> حذف استثمار
+                    </button>
+                </div>
+            </div>
+
+            <div class="investments-subtabs js-reveal" id="investmentsSubtabs">
+                <button
+                    type="button"
+                    class="investments-subtab active"
+                    data-investments-tab="projects"
+                    aria-pressed="true"
+                >
+                    <span class="investments-subtab__icon"><i class="fas fa-chart-line"></i></span>
+                    <span class="investments-subtab__content">
+                        <strong>المشاريع الاستثمارية</strong>
+                        <small>فرص التمويل والعائد والمتابعة</small>
+                    </span>
+                    <span class="investments-subtab__count" id="projectsSubtabCount">0 مشروع</span>
+                </button>
+                <button
+                    type="button"
+                    class="investments-subtab"
+                    data-investments-tab="market-projects"
+                    aria-pressed="false"
+                >
+                    <span class="investments-subtab__icon"><i class="fas fa-badge-check"></i></span>
+                    <span class="investments-subtab__content">
+                        <strong>مشاريع السوق الموثقة</strong>
+                        <small>فرص موثقة من السوق مع صور وبيانات أوضح</small>
+                    </span>
+                    <span class="investments-subtab__count" id="marketProjectsSubtabCount">0 مشروع</span>
+                </button>
+                <button
+                    type="button"
+                    class="investments-subtab"
+                    data-investments-tab="properties"
+                    aria-pressed="false"
+                >
+                    <span class="investments-subtab__icon"><i class="fas fa-house"></i></span>
+                    <span class="investments-subtab__content">
+                        <strong>بيع عقارات</strong>
+                        <small>عقارات معروضة للبيع بصور وتواصل مباشر</small>
+                    </span>
+                    <span class="investments-subtab__count" id="propertiesSubtabCount">0 عقار</span>
+                </button>
+            </div>
+
+            <div class="investments-subtab-panel active" id="investmentsProjectsPanel" data-investments-panel="projects">
+                <div id="userInvestmentMessage" class="user-investment-message" style="display: none;">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            يمكنك الاستثمار في أي مشروع من خلال زر "استثمر الآن" مع مقارنة أوضح بين العائد والمدة وحجم التمويل المتاح.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="investments-grid" id="investmentsContainer">
+                    <div class="empty-state" style="grid-column: 1/-1;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <h3 style="margin: 18px 0;">جاري تحميل الاستثمارات...</h3>
+                    </div>
+                </div>
+
+                <div class="investments-decision-strip js-reveal">
+                    <div class="investments-decision-strip__header">
+                        <span class="section-kicker">
+                            <i class="fas fa-compass"></i>
+                            وضوح القرار قبل التمويل
+                        </span>
+                        <h3>معلومات مختصرة تبقي المستثمر مطمئنًا حتى آخر الصفحة</h3>
+                        <p>المنصة تعرض الدولة والمنطقة والتمويل والعائد والصور في سياق واحد، حتى تبقى المقارنة أسرع والقرار أكثر ثقة.</p>
+                    </div>
+                    <div class="investments-decision-strip__grid">
+                        <article class="investments-decision-card">
+                            <span class="investments-decision-card__icon"><i class="fas fa-filter"></i></span>
+                            <strong>تصفية أوضح</strong>
+                            <p>الانتقال من دولة إلى منطقة يتم بدون تشتيت أو خطوات زائدة داخل الصفحة.</p>
+                        </article>
+                        <article class="investments-decision-card">
+                            <span class="investments-decision-card__icon"><i class="fas fa-chart-line"></i></span>
+                            <strong>أرقام مباشرة</strong>
+                            <p>العائد والتمويل والمدة وعدد المستثمرين تظهر بسرعة لتسهيل المقارنة الأولية.</p>
+                        </article>
+                        <article class="investments-decision-card">
+                            <span class="investments-decision-card__icon"><i class="fas fa-location-dot"></i></span>
+                            <strong>سوق أقرب للمستخدم</strong>
+                            <p>اقتراح الدولة تلقائيًا ثم السماح بتغييرها يدويًا يجعل التجربة أكثر مرونة وواقعية.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="investments-subtab-panel" id="investmentsMarketProjectsPanel" data-investments-panel="market-projects">
+                <div class="properties-marketplace js-reveal">
+                    <div class="properties-marketplace__header">
+                        <div>
+                            <span class="section-kicker">
+                                <i class="fas fa-badge-check"></i>
+                                مشاريع السوق الموثقة
+                            </span>
+                            <h3>مشاريع وصِفقات موثقة من السوق بصور وبيانات استثمارية واضحة</h3>
+                            <p>
+                                هذا القسم يجمع المشاريع المعلنة والموثقة من السوق الإقليمي، مع فصلها بصريًا عن المشاريع الداخلية
+                                حتى تبقى المقارنة أوضح والثقة أعلى، مع إمكانية الاستثمار فيها من داخل المنصة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="investments-grid" id="marketReferenceInvestmentsContainer">
+                        <div class="empty-state" style="grid-column: 1/-1;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h3 style="margin: 18px 0;">جاري تحميل مشاريع السوق الموثقة...</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="investments-subtab-panel" id="investmentsPropertiesPanel" data-investments-panel="properties">
+                <div class="properties-marketplace js-reveal">
+                    <div class="properties-marketplace__header">
+                        <div>
+                            <span class="section-kicker">
+                                <i class="fas fa-house"></i>
+                                بيع العقارات
+                            </span>
+                            <h3>سوق عقارات بصور واضحة وبيانات تواصل موثقة</h3>
+                            <p id="propertyMarketplaceLead">
+                                كل عقار هنا نُشر من حساب موثق، مع صور متعددة ورسوم منصة مدفوعة من المحفظة، لذلك يبقى العرض أكثر مهنية وثقة.
+                            </p>
+                        </div>
+                        <div class="properties-marketplace__actions">
+                            <div class="form-group investment-toolbar-field" style="min-width: 240px; margin-bottom: 0;">
+                                <label for="propertySortFilter">ترتيب العقارات</label>
+                                <select id="propertySortFilter" class="form-control">
+                                    <option value="default">الترتيب الافتراضي</option>
+                                    <option value="price_desc">السعر: من الأعلى إلى الأقل</option>
+                                    <option value="price_asc">السعر: من الأقل إلى الأعلى</option>
+                                    <option value="area_desc">المساحة: من الأكبر إلى الأصغر</option>
+                                    <option value="area_asc">المساحة: من الأصغر إلى الأكبر</option>
+                                </select>
+                            </div>
+                            <div class="form-group investment-toolbar-field" style="min-width: 170px; margin-bottom: 0;">
+                                <label for="propertyPriceMinFilter">السعر من</label>
+                                <input type="number" id="propertyPriceMinFilter" class="form-control" min="0" step="0.01" placeholder="0">
+                            </div>
+                            <div class="form-group investment-toolbar-field" style="min-width: 170px; margin-bottom: 0;">
+                                <label for="propertyPriceMaxFilter">السعر إلى</label>
+                                <input type="number" id="propertyPriceMaxFilter" class="form-control" min="0" step="0.01" placeholder="بدون حد">
+                            </div>
+                            <div class="properties-marketplace__fee-box">
+                                <span>رسوم نشر العقار الحالية</span>
+                                <strong id="propertyListingFeePreview">-</strong>
+                                <small>تُخصم من المحفظة حسب إعدادات الأدمن</small>
+                            </div>
+                            <button id="addPropertyListingBtn" class="btn btn-primary" type="button">
+                                <i class="fas fa-plus-circle"></i> أضف عقارًا للبيع
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="property-listings-grid" id="propertyListingsContainer">
+                        <div class="empty-state" style="grid-column: 1/-1;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <h3 style="margin: 18px 0;">جاري تحميل العقارات المعروضة للبيع...</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
