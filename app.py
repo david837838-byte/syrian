@@ -104,7 +104,7 @@ if os.environ.get('FLASK_ENV') == 'production' and (
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 app.config['JWT_SECRET_KEY'] = os.environ.get('JWT_SECRET_KEY', 'jwt-secret-key-change-in-production')
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)  # تقليل المدة
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=30)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['BACKUP_FOLDER'] = os.environ.get('BACKUP_FOLDER', 'backups')
 app.config['MAX_CONTENT_LENGTH'] = 128 * 1024 * 1024  # 128MB
