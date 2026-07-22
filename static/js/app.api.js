@@ -51,14 +51,17 @@ async function apiRequest(endpoint, method = 'GET', data = null) {
         const response = await fetch(fullUrl, config);
 
         if (response.status === 401) {
-            localStorage.removeItem('access_token');
-            appState.currentUser = null;
-            appState.isAdmin = false;
-            updateUI();
-            showSection('auth');
-            const authError = new Error('انتهت صلاحية الجلسة، سجّل الدخول من جديد');
-            authError.status = 401;
-            throw authError;
+            const isAuthEndpoint = endpoint.includes('/auth/login') || endpoint.includes('/auth/register');
+            if (!isAuthEndpoint) {
+                localStorage.removeItem('access_token');
+                appState.currentUser = null;
+                appState.isAdmin = false;
+                updateUI();
+                showSection('auth');
+                const authError = new Error('انتهت صلاحية الجلسة، سجّل الدخول من جديد');
+                authError.status = 401;
+                throw authError;
+            }
         }
 
         if (response.status === 403) {
