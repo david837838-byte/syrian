@@ -330,7 +330,8 @@ os.makedirs(app.config['BACKUP_FOLDER'], exist_ok=True)
 
 # تهيئة قاعدة البيانات
 def get_database_path():
-    return app.config.get('DATABASE_PATH') or os.environ.get('DATABASE_PATH', 'database.db')
+    default_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database.db')
+    return app.config.get('DATABASE_PATH') or os.environ.get('DATABASE_PATH', default_path)
 
 
 def column_exists(conn, table_name, column_name):
@@ -1040,9 +1041,8 @@ def init_db():
     conn.execute('PRAGMA foreign_keys = ON')
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
-    
-    # قراءة ملف SQL
-    with open('database_schema.sql', 'r', encoding='utf-8') as f:
+    schema_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'database_schema.sql')
+    with open(schema_path, 'r', encoding='utf-8') as f:
         schema = f.read()
         cursor.executescript(schema)
 
