@@ -943,6 +943,7 @@
         function setMobileNavState(isOpen) {
             appState.mobileNavOpen = Boolean(isOpen);
             $('.site-header').toggleClass('is-menu-open', appState.mobileNavOpen);
+            $('#mainNavMenu').toggleClass('is-open', appState.mobileNavOpen);
             $('body').toggleClass('nav-open', appState.mobileNavOpen);
             $('#mobileNavToggle').attr('aria-expanded', appState.mobileNavOpen ? 'true' : 'false');
         }
