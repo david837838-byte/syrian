@@ -224,6 +224,37 @@ def register_investment_routes(app, ctx):
             LIMIT 1
         ''', (currency_id, network_id)).fetchone()
 
+    def seed_syrian_projects_if_empty(conn):
+        try:
+            count = conn.execute("SELECT COUNT(*) FROM investments").fetchone()[0]
+            if count == 0:
+                admin = conn.execute("SELECT id FROM users WHERE role = 'admin' LIMIT 1").fetchone()
+                admin_id = admin[0] if admin else 1
+                investments = [
+                    ('أبراج ماروتا سيتي الاستثمارية - دمشق', 'مشروع أبراج سكنية وتجارية فخمة في مشروع تنظيم كفرسوسة ماروتا سيتي بالعاصمة دمشق مع عائد استثماري عالي وخيارات سكنية وتجارية متكاملة.', 350000, 100, 16.5, 24, 'real-estate', 'damascus'),
+                    ('مجمع شهباء السكني والتجاري - حلب', 'مشروع إعادة إعمار وتطوير مجمع سكني وتجاري متكامل في حلب الجديدة قرب المراكز الخدمية والأسواق.', 220000, 50, 18.0, 18, 'real-estate', 'aleppo'),
+                    ('منتجع الساحل وبارك الأجنحة - اللاذقية', 'شقق وفيلات شاطئية فاخرة مجهزة للإيجار السياحي والاستثمار العقاري الساحلي على كورنيش اللاذقية.', 190000, 50, 17.5, 15, 'real-estate', 'latakia'),
+                    ('مول وأبراج النواعير التجارية - حماة', 'مركز تجاري ومكاتب استثمارية وسط مدينة حماة قرب النواعير التاريخية مع عائد شهري مستقر.', 160000, 50, 15.0, 12, 'real-estate', 'hama'),
+                    ('مجمع الفيحاء السكني - حمص', 'وحدات سكنية حديثة ومحلات تجارية في موقع حيوي في حمص مع بنية تحتية وخدمات متكاملة.', 140000, 50, 14.5, 18, 'real-estate', 'homs'),
+                    ('أبراج الكورنيش البحرية - طرطوس', 'شقق استثمارية ومحلات تجارية ذات إطلالة مباشرة على البحر والميناء في طرطوس.', 210000, 100, 16.0, 20, 'real-estate', 'tartus'),
+                    ('ضاحية الأمل العمرانية - ريف دمشق', 'مشروع مجمع سكني واسع في ضواحي دمشق يهدف لتوفير سكن عصري بأسعار مناسبة وعائد ممتاز.', 280000, 50, 15.5, 24, 'real-estate', 'rif-dimashq'),
+                    ('مجمع حوران التجاري واللوجستي - درعا', 'سوق تجاري ومحلات ومستودعات على بوابة الجنوب السوري لخدمة حركة التجارة والاستثمار.', 130000, 50, 14.0, 12, 'real-estate', 'daraa'),
+                    ('أبراج البازلت السكنية - السويداء', 'مجمع سكني بتصميم بازلتي مميز في موقع مرتفع بالسويداء يوفر إقامة هادئة واستثماراً آمناً.', 120000, 50, 13.5, 15, 'real-estate', 'as-suwayda'),
+                    ('مجمع الفرات التجاري - دير الزور', 'مركز خدمات ومحلات تجارية ومكاتب مطلة على نهر الفرات في دير الزور.', 150000, 50, 15.0, 18, 'real-estate', 'deir-ez-zor'),
+                    ('مشروع الجزيرة العمراني - الحسكة', 'مجمع مكاتب ومستودعات ومساحات تجارية واعدة في الحسكة لدعم حركة الاستثمار والتنفيذ.', 110000, 50, 14.0, 12, 'real-estate', 'al-hasakah')
+                ]
+                for inv in investments:
+                    gov = conn.execute("SELECT id FROM governorates WHERE slug = ? LIMIT 1", (inv[7],)).fetchone()
+                    gov_id = gov[0] if gov else 1
+                    conn.execute("""
+                        INSERT INTO investments (name, description, total_amount, min_investment, return_rate, duration, category, governorate_id, added_by, status)
+                        SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active'
+                        WHERE NOT EXISTS (SELECT 1 FROM investments WHERE name = ?)
+                    """, (inv[0], inv[1], inv[2], inv[3], inv[4], inv[5], inv[6], gov_id, admin_id, inv[0]))
+                conn.commit()
+        except Exception as e:
+            pass
+
     @app.route('/api/investments', methods=['GET'])
     def get_investments():
         try:
@@ -239,6 +270,7 @@ def register_investment_routes(app, ctx):
                 current_user_id = None
 
             conn = ctx.get_db_connection()
+            seed_syrian_projects_if_empty(conn)
 
             where_clause = "WHERE i.status = 'active'"
             params = []
