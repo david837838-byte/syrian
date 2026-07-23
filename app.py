@@ -1683,7 +1683,7 @@ def insert_default_data(conn):
         ('maintenance_mode', 'false', 'boolean', 'system', 'وضع الصيانة'),
         ('maintenance_message', 'نحن الآن في وضع صيانة لتحسين المنصة. نعتذر عن الإزعاج وسنعود إليكم قريبًا.', 'string', 'system', 'رسالة وضع الصيانة'),
         ('registration_enabled', 'true', 'boolean', 'system', 'تفعيل التسجيل'),
-        ('seed_demo_investments_enabled', 'false', 'boolean', 'system', 'تفعيل إنشاء الاستثمارات التجريبية تلقائياً عند كون الجدول فارغاً'),
+        ('seed_demo_investments_enabled', 'true', 'boolean', 'system', 'تفعيل إنشاء الاستثمارات التجريبية تلقائياً عند كون الجدول فارغاً'),
         ('deposit_enabled', 'true', 'boolean', 'system', 'تفعيل الإيداع'),
         ('withdraw_enabled', 'true', 'boolean', 'system', 'تفعيل السحب'),
         ('internal_transfer_enabled', 'true', 'boolean', 'system', 'تفعيل التحويل الداخلي بين المستخدمين'),
@@ -1883,25 +1883,31 @@ def insert_default_data(conn):
     )
     existing_investments_count = cursor.execute('SELECT COUNT(*) FROM investments').fetchone()[0]
 
-    if seed_demo_investments_enabled and existing_investments_count == 0:
-        investments = [
-            ('مجمع سكني في حلب الجديدة', 'تطوير وحدات سكنية وتجارية قرب مناطق الطلب المتزايد في حلب.', 100000, 0, 15, 12, 'real-estate', 'aleppo'),
-            ('أبراج سكنية في حمص', 'مشروع عقاري متوسط المخاطر في موقع مركزي داخل حمص.', 180000, 0, 14, 14, 'real-estate', 'homs'),
-            ('مكاتب تجارية في دمشق', 'مساحات تجارية صغيرة قابلة للتأجير في العاصمة.', 250000, 0, 12, 10, 'real-estate', 'damascus'),
-            ('شقق سياحية في اللاذقية', 'وحدات مفروشة قريبة من الساحل موجهة للإيجار الموسمي.', 150000, 0, 18, 18, 'real-estate', 'latakia'),
-            ('مستودعات تجارية في طرطوس', 'مستودعات وخدمات لوجستية مرتبطة بالميناء والساحل.', 220000, 0, 13, 16, 'real-estate', 'tartus')
-        ]
+    investments = [
+        ('أبراج ماروتا سيتي الاستثمارية - دمشق', 'مشروع أبراج سكنية وتجارية فخمة في مشروع تنظيم كفرسوسة ماروتا سيتي بالعاصمة دمشق مع عائد استثماري عالي وخيارات سكنية وتجارية متكاملة.', 350000, 100, 16.5, 24, 'real-estate', 'damascus'),
+        ('مجمع شهباء السكني والتجاري - حلب', 'مشروع إعادة إعمار وتطوير مجمع سكني وتجاري متكامل في حلب الجديدة قرب المراكز الخدمية والأسواق.', 220000, 50, 18.0, 18, 'real-estate', 'aleppo'),
+        ('منتجع الساحل وبارك الأجنحة - اللاذقية', 'شقق وفيلات شاطئية فاخرة مجهزة للإيجار السياحي والاستثمار العقاري الساحلي على كورنيش اللاذقية.', 190000, 50, 17.5, 15, 'real-estate', 'latakia'),
+        ('مول وأبراج النواعير التجارية - حماة', 'مركز تجاري ومكاتب استثمارية وسط مدينة حماة قرب النواعير التاريخية مع عائد شهري مستقر.', 160000, 50, 15.0, 12, 'real-estate', 'hama'),
+        ('مجمع الفيحاء السكني - حمص', 'وحدات سكنية حديثة ومحلات تجارية في موقع حيوي في حمص مع بنية تحتية وخدمات متكاملة.', 140000, 50, 14.5, 18, 'real-estate', 'homs'),
+        ('أبراج الكورنيش البحرية - طرطوس', 'شقق استثمارية ومحلات تجارية ذات إطلالة مباشرة على البحر والميناء في طرطوس.', 210000, 100, 16.0, 20, 'real-estate', 'tartus'),
+        ('ضاحية الأمل العمرانية - ريف دمشق', 'مشروع مجمع سكني واسع في ضواحي دمشق يهدف لتوفير سكن عصري بأسعار مناسبة وعائد ممتاز.', 280000, 50, 15.5, 24, 'real-estate', 'rif-dimashq'),
+        ('مجمع حوران التجاري واللوجستي - درعا', 'سوق تجاري ومحلات ومستودعات على بوابة الجنوب السوري لخدمة حركة التجارة والاستثمار.', 130000, 50, 14.0, 12, 'real-estate', 'daraa'),
+        ('أبراج البازلت السكنية - السويداء', 'مجمع سكني بتصميم بازلتي مميز في موقع مرتفع بالسويداء يوفر إقامة هادئة واستثماراً آمناً.', 120000, 50, 13.5, 15, 'real-estate', 'as-suwayda'),
+        ('مجمع الفرات التجاري - دير الزور', 'مركز خدمات ومحلات تجارية ومكاتب مطلة على نهر الفرات في دير الزور.', 150000, 50, 15.0, 18, 'real-estate', 'deir-ez-zor'),
+        ('مشروع الجزيرة العمراني - الحسكة', 'مجمع مكاتب ومستودعات ومساحات تجارية واعدة في الحسكة لدعم حركة الاستثمار والتنفيذ.', 110000, 50, 14.0, 12, 'real-estate', 'al-hasakah')
+    ]
 
-        for inv in investments:
-            governorate = cursor.execute('SELECT id FROM governorates WHERE slug = ?', (inv[7],)).fetchone()
-            governorate_id = governorate[0] if governorate else None
-            cursor.execute('''
-                INSERT INTO investments (name, description, total_amount, min_investment, return_rate, duration, category, governorate_id, added_by, status)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'active')
-            ''', (inv[0], inv[1], inv[2], inv[3], inv[4], inv[5], inv[6], governorate_id, admin_id))
-        print("[OK] Demo investments created because the table was empty and seeding is enabled")
-    else:
-        print("[OK] Demo investment seeding skipped")
+    for inv in investments:
+        governorate = cursor.execute('SELECT id FROM governorates WHERE slug = ?', (inv[7],)).fetchone()
+        governorate_id = governorate[0] if governorate else None
+        cursor.execute('''
+            INSERT INTO investments (name, description, total_amount, min_investment, return_rate, duration, category, governorate_id, added_by, status)
+            SELECT ?, ?, ?, ?, ?, ?, ?, ?, ?, 'active'
+            WHERE NOT EXISTS (
+                SELECT 1 FROM investments WHERE name = ?
+            )
+        ''', (inv[0], inv[1], inv[2], inv[3], inv[4], inv[5], inv[6], governorate_id, admin_id, inv[0]))
+    print("[OK] Syrian real estate & investment projects seeded successfully")
 
     market_reference_investments = [
         {
