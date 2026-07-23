@@ -427,11 +427,81 @@ def register_investment_routes(app, ctx):
                 'currency': 'USDT',
                 'network': 'TRC20'
             }
+            fee = {'mode': 'none', 'value': 0, 'currency': 'USDT', 'network': 'TRC20'}
             fee_transaction_id = None
             platform_fee_charged = False
 
             if is_company_publisher:
                 fee = compute_company_investment_fee(conn, total_amount)
+                fee_value = float(fee['value'] or 0)
+                if fee_value > 0:
+                    currency = conn.execute(
+                        'SELECT id, code FROM currencies WHERE code = ? AND is_active = 1',
+                        (fee['currency'],)
+                    ).fetchone()
+                    if not currency:
+                        conn.close()
+                        return jsonify({'error': 'Company investment fee currency is not configured', 'code': 'COMPANY_FEE_CURRENCY_NOT_CONFIGURED'}), 500
+
+                    network = conn.execute(
+                        'SELECT id, code FROM networks WHERE currency_id = ? AND code = ? AND is_active = 1',
+                        (currency['id'], fee['network'])
+                    ).fetchone()
+                    if not network:
+                        conn.close()
+                        return jsonify({'error': 'Company investment fee network is not configured', 'code': 'COMPANY_FEE_NETWORK_NOT_CONFIGURED'}), 500
+
+                    admin_wallet = resolve_platform_fee_wallet(conn, currency['id'], network['id'])
+                    if not admin_wallet:
+                        conn.close()
+                        return jsonify({'error': 'No active admin wallet available for company investment fee', 'code': 'COMPANY_FEE_WALLET_NOT_CONFIGURED'}), 400
+
+                    wallet = conn.execute('''
+                        SELECT balance FROM user_wallets WHERE user_id = ? AND currency_id = ?
+                    ''', (user_id, currency['id'])).fetchone()
+                    if not wallet or float(wallet['balance'] or 0) < fee_value:
+                        conn.close()
+                        return jsonify({
+                            'error': f'Insufficient balance to pay company investment publishing fee of {fee_value:.8f} {fee["currency"]}',
+                            'code': 'INSUFFICIENT_BALANCE'
+                        }), 400
+
+                    cursor = conn.cursor()
+                    cursor.execute('''
+                        UPDATE user_wallets
+                        SET balance = balance - ?, updated_at = CURRENT_TIMESTAMP
+                        WHERE user_id = ? AND currency_id = ? AND balance >= ?
+                    ''', (fee_value, user_id, currency['id'], fee_value))
+                    if cursor.rowcount == 0:
+                        conn.rollback()
+                        conn.close()
+                        return jsonify({'error': 'Insufficient balance', 'code': 'INSUFFICIENT_BALANCE'}), 400
+
+                    cursor.execute('''
+                        UPDATE admin_wallets
+                        SET current_balance = current_balance + ?,
+                            total_received = total_received + ?,
+                            updated_at = CURRENT_TIMESTAMP
+                        WHERE id = ?
+                    ''', (fee_value, fee_value, admin_wallet['id']))
+
+                    tx_hash = f'company-fee-{uuid.uuid4().hex[:18]}'
+                    cursor.execute('''
+                        INSERT INTO transactions (
+                            user_id, type, currency_id, network_id, amount, tx_hash,
+                            admin_wallet_address, status, note, verified_at
+                        ) VALUES (?, 'company_investment_listing_fee', ?, ?, ?, ?, ?, 'completed', ?, CURRENT_TIMESTAMP)
+                    ''', (
+                        user_id,
+                        currency['id'],
+                        network['id'],
+                        fee_value,
+                        tx_hash,
+                        admin_wallet['address'],
+                        'Platform fee for publishing investment'
+                    ))
+                    fee_transaction_id = cursor.lastrowid
+                    platform_fee_charged = True
 
             cursor.execute('''
                 INSERT INTO investments (

@@ -84,7 +84,7 @@ def register_wallet_routes(app, ctx):
         return value if value not in (None, '') else fallback
 
     def is_real_money_enabled(conn):
-        return bool(get_setting_value(conn, 'real_money_enabled', False))
+        return bool(get_setting_value(conn, 'real_money_enabled', True))
 
     def is_real_wallets_section_enabled(conn):
         return bool(get_setting_value(conn, 'real_wallets_section_enabled', True))
@@ -423,9 +423,9 @@ def register_wallet_routes(app, ctx):
 
             selected_country_code = requested_country_code or normalize_country_code(
                 user['preferred_country_code'] if user and user['preferred_country_code'] else (
-                    user['detected_country_code'] if user and user['detected_country_code'] else ''
+                    user['detected_country_code'] if user and user['detected_country_code'] else 'SY'
                 )
-            )
+            ) or 'SY'
 
             params = []
             country_filter = "TRIM(COALESCE(fc.country_code, '')) = ''"

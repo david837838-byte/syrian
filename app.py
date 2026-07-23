@@ -1691,7 +1691,7 @@ def insert_default_data(conn):
         ('real_wallets_section_enabled', 'true', 'boolean', 'launch', 'إظهار أو إخفاء قسم المحافظ الحقيقية'),
         ('financial_channels_enabled', 'true', 'boolean', 'launch', 'إظهار أو إخفاء القنوات المالية الحقيقية'),
         ('real_crypto_wallet_creation_enabled', 'true', 'boolean', 'launch', 'السماح بإنشاء محافظ كريبتو حقيقية جديدة للمستخدمين'),
-        ('real_money_enabled', 'false', 'boolean', 'launch', 'تجهيز تفعيل الوضع الحقيقي'),
+        ('real_money_enabled', 'true', 'boolean', 'launch', 'تجهيز تفعيل الوضع الحقيقي'),
         ('real_wallet_generation_mode', 'manual_pool', 'string', 'launch', 'طريقة إنشاء المحافظ الحقيقية الجديدة'),
         ('real_wallet_blockchain_provider', 'tatum', 'string', 'launch', 'مزود إنشاء المحافظ الحقيقية'),
         ('real_wallet_provider_api_key', os.environ.get('TATUM_API_KEY', ''), 'string', 'launch', 'مفتاح API لمزود المحافظ الحقيقية'),
